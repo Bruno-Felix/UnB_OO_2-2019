@@ -5,11 +5,11 @@ Repositório destinado ao desenvolvimento do Trabalho Final na disciplina Orient
 
 |Membro|Email|Matrícula|
 |--|--|--|
-|[Antônio Rangel](https://https://github.com/AntonioRangelC)|antonio.rangel.02@gmail.com|18/0098021|
+|[Antônio Rangel](https://github.com/AntonioRangelC)|antonio.rangel.02@gmail.com|18/0098021|
 |[Bruno Félix](https://github.com/Bruno-Felix)|balvesfelix@gmail.com|16/0114705|
-|[Enzo Gabriel](https://https://https://github.com/enzinxd)|||
-|[Geovani Cavalcante](https://https://github.com/geovanicv)|||
-|[Pedro Haick](https://github.com/peHaick)|||
+|[Enzo Gabriel](https://github.com/enzinxd)|||
+|[Geovani Cavalcante](https://github.com/geovanicv)|||
+|[Pedro Haick](https://github.com/peHaick)|pedrohaickzz@gmail.com|18/0129147|
 
-### Professor
+## Professor
 [Andre Lanna](https://github.com/andrelanna)
