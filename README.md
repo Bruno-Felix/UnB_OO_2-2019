@@ -1,2 +1,15 @@
 # UnB_OO_2-2019
-Repositório destinado aos exercícios e trabalhos aplicados na disciplina Orientação a Objetos, no 2º semestre de 2019, do curso de Engenharia de Software da Universidade de Brasília.
+Repositório destinado ao desenvolvimento do Trabalho Final na disciplina Orientação a Objetos, no 2º semestre de 2019, do curso de Engenharia de Software da Universidade de Brasília.
+
+## Equipe
+
+|Membro|Email|Matrícula|
+|--|--|--|
+|[Antônio Rangel](https://https://github.com/AntonioRangelC)|antonio.rangel.02@gmail.com|18/0098021|
+|[Bruno Félix](https://github.com/Bruno-Felix)|balvesfelix@gmail.com|16/0114705|
+|[Enzo Gabriel](https://https://https://github.com/enzinxd)|||
+|[Geovani Cavalcante](https://https://github.com/geovanicv)|||
+|[Pedro Haick](https://github.com/peHaick)|||
+
+### Professor
+[Andre Lanna](https://github.com/andrelanna)
