@@ -1,4 +1,4 @@
-package instituicao;
+package Instituicao;
 import javax.swing.JOptionPane;
 public class Disciplina {
 	public String nomeDisciplina;
