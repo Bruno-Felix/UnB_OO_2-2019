@@ -1,4 +1,4 @@
-package Instituicao;
+package instituicao;
 import javax.swing.JOptionPane;
 public class Disciplina {
 	public String nomeDisciplina;
@@ -7,7 +7,7 @@ public class Disciplina {
 		Disciplina dc[] = new Disciplina[10];
 		dc[auxDisciplina].nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da disciplina");
 		dc[auxDisciplina].nomeDisciplina = validaNomeDisciplina(dc[auxDisciplina].nomeDisciplina);
-		dc[auxDisciplina].numCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de créditos da disciplina"));
+		dc[auxDisciplina].numCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o nï¿½mero de crï¿½ditos da disciplina"));
 	}
 	public static void cadastrarTurmas() {
 		
@@ -15,7 +15,7 @@ public class Disciplina {
 	public static void listarTurmas() {
 		
 	}
-	//Objetivo: Validar o nome da Disciplina, pois ele não pode estar em branco
+	//Objetivo: Validar o nome da Disciplina, pois ele nï¿½o pode estar em branco
 	public static String validaNomeDisciplina(String nomeDisciplina){
 		while(nomeDisciplina == "") {
 			//exception

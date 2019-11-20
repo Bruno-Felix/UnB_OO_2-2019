@@ -1,4 +1,4 @@
-package Comunidade;
+package comunidade;
 
 public class Pessoa {
 	public String nomeDaPessoa;

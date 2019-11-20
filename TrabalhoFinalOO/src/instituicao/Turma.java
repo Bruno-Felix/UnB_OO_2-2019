@@ -1,4 +1,4 @@
-package Instituicao;
+package instituicao;
 
 public class Turma {
 	

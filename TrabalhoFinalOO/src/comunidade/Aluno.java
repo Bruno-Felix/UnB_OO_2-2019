@@ -1,4 +1,4 @@
-package Comunidade;
+package comunidade;
 
 public class Aluno extends Pessoa {
 	public int matriculaDoAluno;

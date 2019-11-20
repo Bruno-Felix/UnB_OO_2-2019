@@ -3,7 +3,7 @@ package instituicao;
 import javax.swing.JOptionPane;
 
 public class Predio extends Estrutura {
-    public int numeroDeSalas;
+    public String numeroDeSalas;
 
     @Override
     void criarEstrutura() {
