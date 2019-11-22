@@ -9,12 +9,14 @@ public class Disciplina {
 	static int opcao;
 	//static int auxDisciplina=0;
 	static List<Disciplina> dc = new ArrayList<Disciplina>();
+	static List<Turma> tma = new ArrayList<Turma>();
 	@Override
 	public String toString() {
 		nomeDisciplina = nomeDisciplina.substring(0, 1).toUpperCase() + nomeDisciplina.substring(1).toLowerCase();
 		return  nomeDisciplina;
 	}
-	static List<Turma> tma = new ArrayList<Turma>();
+	
+	
 	
 	public void criarDisciplina() {
 		do {
@@ -49,13 +51,19 @@ public class Disciplina {
 		
 	}
 	
+	
+	
 	public static void listarTurmas() {
-		String turmas = "";
+		/*String turmas = "";
 		for(Turma turma : tma) {
 			turmas += turma + "\n";
 		}
-		JOptionPane.showMessageDialog(null, turmas);
+		JOptionPane.showMessageDialog(null, turmas.toString());*/
+		for(int i = 0; i < Disciplina.tma.size(); i++) {   
+		    Disciplina.tma.get(i).nomeTurma = Disciplina.tma.get(i).nomeTurma + "\n";
+		} 
 		
+		JOptionPane.showMessageDialog(Disciplina, tma);
 	}
 
 	public static int validaQtd(int qtd) {
