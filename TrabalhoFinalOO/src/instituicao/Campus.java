@@ -1,24 +1,55 @@
 package instituicao;
 
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
-public class Campus {
+public class Campus{
 	
 	public String nomeDoCampus;
     public String numeroDeEstruturas;
     public static int numeroDeCampus;
+    
+    
+    public String getnomeDoCampus() {
+        return nomeDoCampus;
+    }
 
-    void criarCampus() {
-        this.nomeDoCampus = JOptionPane.showInputDialog("Digite o nome do Campus: ");
+    public void setnomeDoCampus(String numeroDeEstruturas) {
+        this.numeroDeEstruturas = numeroDeEstruturas;
+    }
 
-        this.numeroDeEstruturas = JOptionPane.showInputDialog("Digite o número de estruturas: ");
+    public String getnumeroDeEstruturas() {
+        return numeroDeEstruturas;
+    }
 
-        int num = 10;
-        Estrutura estrutura[] = new Estrutura[num];
+    public void setnumeroDeEstruturas(String numeroDeEstruturas) {
+        this.numeroDeEstruturas = numeroDeEstruturas;
+    }
+    
+    
+    public ArrayList<Campus> criarCampus(ArrayList<Campus> Lista) {
+                
+        Campus novoCampus = new Campus();
+        novoCampus.nomeDoCampus = JOptionPane.showInputDialog("Digite o nome do Campus: ");
+        novoCampus.numeroDeEstruturas = JOptionPane.showInputDialog("Digite o número de estruturas: ");
         
-        for (Estrutura est : estrutura) {
-            est = new Estrutura();
-            est.criarEstrutura();
+        Lista.add(novoCampus);
+        
+        numeroDeCampus++;
+		
+        return Lista;
+    }
+    
+    public ArrayList<Campus> listarCampus(ArrayList<Campus> Lista) {
+    	
+    	int i=0;
+        while(i<Lista.size()){
+        	JOptionPane.showMessageDialog(null, "----------- \nNomeDoCampos: " + Lista.get(i).getnomeDoCampus()
+        												    + "\nNumeroDeEstruturas: " + Lista.get(i).getnumeroDeEstruturas()
+        												    + "\nNumeroDeCampus: " + Campus.numeroDeCampus);        	
+        	i++;
         }
+    	
+    	return Lista;
     }
 }
