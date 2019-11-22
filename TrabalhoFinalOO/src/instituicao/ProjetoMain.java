@@ -2,7 +2,7 @@ package instituicao;
 
 import java.util.ArrayList;
 
-public class projetoMain {
+public class ProjetoMain {
 	public static void main(String[] args){
 		
 		Campus classCampus = new Campus();
