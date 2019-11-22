@@ -5,6 +5,12 @@ import java.util.ArrayList;
 
 public class Campus{
 	
+	@Override
+	public String toString() {
+		return "  Nome do Campus: " + nomeDoCampus + "\n" 
+	         + "  Numero de Estruturas: " + numeroDeEstruturas + "\n";
+	}
+
 	public String nomeDoCampus;
     public String numeroDeEstruturas;
     public static int numeroDeCampus;
@@ -42,12 +48,15 @@ public class Campus{
     
     public ArrayList<Campus> listarCampus(ArrayList<Campus> Lista) {
     	
-    	int i=0;
-        while(i<Lista.size()){
-        	JOptionPane.showMessageDialog(null, "----------- \nNomeDoCampos: " + Lista.get(i).getnomeDoCampus()
-        												    + "\nNumeroDeEstruturas: " + Lista.get(i).getnumeroDeEstruturas()
-        												    + "\nNumeroDeCampus: " + Campus.numeroDeCampus);        	
-        	i++;
+    	int aux = 1;
+    	
+    	System.out.println("Lista de Campus:\n");
+    	while(!Lista.isEmpty()){
+    		
+    		System.out.println("- " + aux + "º campus:");
+    		System.out.println(Lista.remove(0));
+    		
+    		aux++;
         }
     	
     	return Lista;
