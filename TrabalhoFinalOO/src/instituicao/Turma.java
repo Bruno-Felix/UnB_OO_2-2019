@@ -6,10 +6,6 @@ public class Turma {
 	public int numeroDeAlunos;
 	public String disciplinaDaTurma;
 	
-	public void criarTurma() {
-		
-	}
-	
 	public void matricularAlunos() {
 		
 	}
