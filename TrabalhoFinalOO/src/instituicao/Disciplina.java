@@ -23,7 +23,7 @@ public class Disciplina {
 			Disciplina preenche = new Disciplina();
 			preenche.nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da disciplina");
 			preenche.nomeDisciplina = validaNome(preenche.nomeDisciplina);
-			preenche.numCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de créditos da disciplina"));
+			preenche.numCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o nï¿½mero de crï¿½ditos da disciplina"));
 			preenche.numCreditos = validaNumCreditos(preenche.numCreditos);
 			dc.add(preenche);
 			opcao = JOptionPane.showConfirmDialog(null,
@@ -31,8 +31,8 @@ public class Disciplina {
 		}while(opcao == 0);
 	}
 	
-	//objetivo: quando o usuário selecionar a opção cadastrar turma, uma lista de disciplinas deve ser mostrada,
-	//			e o usuário deverá escolher uma disciplina para essa turma, e depois os seus atributos
+	//objetivo: quando o usuï¿½rio selecionar a opï¿½ï¿½o cadastrar turma, uma lista de disciplinas deve ser mostrada,
+	//			e o usuï¿½rio deverï¿½ escolher uma disciplina para essa turma, e depois os seus atributos
 	public static void cadastrarTurmas() {
 		Turma preenche = new Turma();
 		 Object[] objArray = dc.toArray();
@@ -40,10 +40,10 @@ public class Disciplina {
 			String temporaria = String.valueOf(JOptionPane.showInputDialog(
 					null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
 					null,objArray,objArray[0]));
-			preenche.nomeTurma = JOptionPane.showInputDialog("Digite o nome da turma");
-			preenche.nomeTurma = validaNome(preenche.nomeTurma);
-			preenche.qtdAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de alunos"));
-			preenche.disciplina = temporaria;
+			preenche.nomeDaTurma = JOptionPane.showInputDialog("Digite o nome da turma");
+			preenche.nomeDaTurma = validaNome(preenche.nomeDaTurma);
+			preenche.numeroDeAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de alunos"));
+			preenche.disciplinaDaTurma = temporaria;
 			tma.add(preenche);
 			opcao = JOptionPane.showConfirmDialog(null,
 					"Quer continuar cadastrando turmas ?", "Escolha um", JOptionPane.YES_NO_OPTION);
@@ -60,10 +60,10 @@ public class Disciplina {
 		}
 		JOptionPane.showMessageDialog(null, turmas.toString());*/
 		for(int i = 0; i < Disciplina.tma.size(); i++) {   
-		    Disciplina.tma.get(i).nomeTurma = Disciplina.tma.get(i).nomeTurma + "\n";
+		    Disciplina.tma.get(i).nomeDaTurma = Disciplina.tma.get(i).nomeDaTurma + "\n";
 		} 
 		
-		JOptionPane.showMessageDialog(Disciplina, tma);
+		//JOptionPane.showMessageDialog(Disciplina, tma);
 	}
 
 	public static int validaQtd(int qtd) {
@@ -74,17 +74,17 @@ public class Disciplina {
 	}
 	
 	
-	//objetivo: validar o número de créditos, que não pode ser menor ou igual a 0, e não pode ser maior que 6
+	//objetivo: validar o nï¿½mero de crï¿½ditos, que nï¿½o pode ser menor ou igual a 0, e nï¿½o pode ser maior que 6
 	public static int validaNumCreditos(int numCreditos) {
 		while(numCreditos <= 0 || numCreditos > 6) {
 			//exception
-			numCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de créditos da disciplina"));
+			numCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o nï¿½mero de crï¿½ditos da disciplina"));
 		}
 		return numCreditos;
 	}
 	
 	
-	//Objetivo: Validar o nome da Disciplina, pois ele não pode estar em branco
+	//Objetivo: Validar o nome da Disciplina, pois ele nï¿½o pode estar em branco
 	public static String validaNome(String nome){
 		while(nome == "") {
 			//exception
