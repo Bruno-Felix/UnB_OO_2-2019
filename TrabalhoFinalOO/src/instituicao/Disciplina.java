@@ -1,15 +1,13 @@
 package instituicao;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JOptionPane;
 public class Disciplina {
 	public String nomeDisciplina;
 	public int numCreditos;
 	static int opcao;
-	//static int auxDisciplina=0;
+	public static List<Turma> listaTurma = ArrayList<Turma>();
 	static List<Disciplina> listaDisciplina = new ArrayList<Disciplina>();
-	static List<Turma> listaTurma = new ArrayList<Turma>();
 	@Override
 	public String toString() {
 		nomeDisciplina = nomeDisciplina.substring(0, 1).toUpperCase() + nomeDisciplina.substring(1).toLowerCase();
@@ -44,17 +42,22 @@ public class Disciplina {
 	//objetivo: quando o usuario selecionar a opcao cadastrar turma, uma lista de disciplinas deve ser mostrada,
 	//			e o usuario devera escolher uma disciplina para essa turma, e depois os seus atributos
 	public static void cadastrarTurmas() {
-		Turma preenche = new Turma();
+		Turma preencheTurma = new Turma();
 		 Object[] objArray = listaDisciplina.toArray();
+		 int indice;
 		do {
 			String temporaria = String.valueOf(JOptionPane.showInputDialog(
 					null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
 					null,objArray,objArray[0]));
-			preenche.nomeDaTurma = JOptionPane.showInputDialog("Digite o nome da turma");
-			preenche.nomeDaTurma = validaNome(preenche.nomeDaTurma);
-			preenche.numeroDeAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de alunos"));
-			preenche.disciplinaDaTurma = temporaria;
-			listaTurma.add(preenche);
+			preencheTurma.nomeDaTurma = JOptionPane.showInputDialog("Digite o nome da turma");
+			preencheTurma.nomeDaTurma = validaNome(preencheTurma.nomeDaTurma);
+			preencheTurma.numeroDeAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de alunos"));
+			preencheTurma.disciplinaDaTurma = temporaria;
+				for(int aux=0; aux<listaDisciplina.size() ; aux++) {
+					if(listaDisciplina.get(aux).nomeDisciplina.equalsIgnoreCase(temporaria)) {
+						listaDisciplina.get(aux).listaTurma.add(preencheTurma);
+					}
+				}
 			opcao = JOptionPane.showConfirmDialog(null,
 					"Quer continuar cadastrando turmas ?", "Escolha um", JOptionPane.YES_NO_OPTION);
 		}while(opcao==0);
