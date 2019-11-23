@@ -2,7 +2,7 @@ package instituicao;
 
 import java.util.ArrayList;
 
-public class ProjetoMain {
+public class projetoMain {
 
 	public static void main(String[] args){
 		
@@ -11,5 +11,6 @@ public class ProjetoMain {
 		ArrayList<Campus> listaCampus = new ArrayList<>();
 		
 		listaCampus = classCampus.criarCampus(listaCampus);
+
 	}
 }
