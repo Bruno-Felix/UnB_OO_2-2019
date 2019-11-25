@@ -1,65 +1,73 @@
 package instituicao;
 
-import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
-public class Campus{
-	
+import javax.swing.JOptionPane;
+
+public class Campus {
 	@Override
 	public String toString() {
-		return "  Nome do Campus: " + nomeDoCampus + "\n" 
-	         + "  Numero de Estruturas: " + numeroDeEstruturas + "\n";
+		return "  Nome do Campus: " + nomeDoCampus + "\n" + "  Numero de Estruturas: " + numeroDeEstruturas + "\n";
 	}
 
 	public String nomeDoCampus;
-    public String numeroDeEstruturas;
-    public static int numeroDeCampus;
-    
-    
-    public String getnomeDoCampus() {
-        return nomeDoCampus;
-    }
+	public int numeroDeEstruturas;
+	public static int numeroDeCampus;
+	public ArrayList<Estrutura> estruturasDoCampus; // ArrayList das estruturas desse campus
 
-    public void setnomeDoCampus(String numeroDeEstruturas) {
-        this.numeroDeEstruturas = numeroDeEstruturas;
-    }
+	public String getnomeDoCampus() {
+		return nomeDoCampus;
+	}
 
-    public String getnumeroDeEstruturas() {
-        return numeroDeEstruturas;
-    }
+	public void setnomeDoCampus(String nomeDoCampus) {
+		this.nomeDoCampus = nomeDoCampus;
+	}
 
-    public void setnumeroDeEstruturas(String numeroDeEstruturas) {
-        this.numeroDeEstruturas = numeroDeEstruturas;
-    }
-    
-    
-    public ArrayList<Campus> criarCampus(ArrayList<Campus> Lista) {
-                
-        Campus novoCampus = new Campus();
-        
-        novoCampus.nomeDoCampus = JOptionPane.showInputDialog(null, "Digite o nome do Campus: ", "Nome do Campus");
-        novoCampus.numeroDeEstruturas = JOptionPane.showInputDialog(null, "Digite o número de estruturas: ", "Número de estruturas");
-        
-        Lista.add(novoCampus);
-        
-        numeroDeCampus++;
-		
-        return Lista;
-    }
-    
-    public ArrayList<Campus> listarCampus(ArrayList<Campus> Lista) {
-    	
-    	int aux = 1;
-    	
-    	System.out.println("Lista de Campus:\n");
-    	while(!Lista.isEmpty()){
-    		
-    		System.out.println("- " + aux + "º campus:");
-    		System.out.println(Lista.remove(0));
-    		
-    		aux++;
-        }
-    	
-    	return Lista;
-    }
+	public int getnumeroDeEstruturas() {
+		return numeroDeEstruturas;
+	}
+
+	public void setnumeroDeEstruturas(int numeroDeEstruturas) {
+		this.numeroDeEstruturas = numeroDeEstruturas;
+	}
+
+	void criarEstrutura() { // Criação de estruturas fica para o campus no qual está a estrutura
+		Estrutura novaEstrutura = new Estrutura();
+		novaEstrutura.nomeDaEstrutura = JOptionPane.showInputDialog("Digite o nome da Estrutura: ");
+		novaEstrutura.campusDaEstrutura = this;
+		this.numeroDeEstruturas++;
+		this.estruturasDoCampus.add(novaEstrutura);
+	}
+
+	public static ArrayList<Campus> criarCampus(ArrayList<Campus> Lista) {
+
+		Campus novoCampus = new Campus();
+		novoCampus.nomeDoCampus = JOptionPane.showInputDialog("Digite o nome do Campus: ");
+		novoCampus.numeroDeEstruturas = 0; // numero de estruturas começa como 0 e aumenta com a criação de estruturas
+		Lista.add(novoCampus);
+
+		numeroDeCampus++;
+
+		return Lista;
+	}
+
+	public static ArrayList<Campus> listarCampus(ArrayList<Campus> Lista) {
+
+		int aux = 1;
+
+		if (!Lista.isEmpty()) {
+			System.out.println("Lista de Campus:\n");
+		}else {
+			System.out.println("Nenhum Campus Cadastrado!");
+		}
+		while (!Lista.isEmpty()) {
+
+			System.out.println("- " + aux + "º campus:");
+			System.out.println(Lista.remove(0));
+
+			aux++;
+		}
+
+		return Lista;
+	}
 }
