@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import view.viewMenuPrincipal;
+import comunidade.Pessoa;
+import comunidade.Professor;
 
 public class ProjetoMain {
 

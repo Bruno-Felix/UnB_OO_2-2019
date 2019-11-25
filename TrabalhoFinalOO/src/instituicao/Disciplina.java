@@ -6,7 +6,7 @@ public class Disciplina {
 	public String nomeDisciplina;
 	public int numCreditos;
 	static int opcao;
-	//public static List<Turma> listaTurma = ArrayList<Turma>();
+	public static List<Turma> listaTurma = new ArrayList<Turma>();
 	static List<Disciplina> listaDisciplina = new ArrayList<Disciplina>();
 	@Override
 	public String toString() {
