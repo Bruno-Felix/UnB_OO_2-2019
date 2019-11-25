@@ -55,7 +55,7 @@ public class Disciplina {
 			preencheTurma.disciplinaDaTurma = temporaria;
 				for(int aux=0; aux<listaDisciplina.size() ; aux++) {
 					if(listaDisciplina.get(aux).nomeDisciplina.equalsIgnoreCase(temporaria)) {
-						listaDisciplina.get(aux).listaTurma.add(preencheTurma);
+						//listaDisciplina.get(aux).listaTurma.add(preencheTurma);
 					}
 				}
 			opcao = JOptionPane.showConfirmDialog(null,
@@ -68,11 +68,11 @@ public class Disciplina {
 	
 	public static void listarTurmas() {
 		Disciplina aux = new Disciplina ();
-		for(int i = 0; i < Disciplina.listaTurma.size(); i++) {   
-		    Disciplina.listaTurma.get(i).nomeDaTurma = Disciplina.listaTurma.get(i).nomeDaTurma + "\n";
+		//for(int i = 0; i < Disciplina.listaTurma.size(); i++) {   
+		  //  Disciplina.listaTurma.get(i).nomeDaTurma = Disciplina.listaTurma.get(i).nomeDaTurma + "\n";
 		} 
-		JOptionPane.showMessageDialog(null, listaTurma,aux.getNomeDisciplina(), JOptionPane.INFORMATION_MESSAGE);
-	}
+		//JOptionPane.showMessageDialog(null, listaTurma,aux.getNomeDisciplina(), JOptionPane.INFORMATION_MESSAGE);
+	//}
 	//Objetivo: Nao permitir que o usuario cadastre um valor invalido de pessoas por turma
 	public static int validaQtd(int qtd) {
 		while(qtd<10 || qtd>130) {
