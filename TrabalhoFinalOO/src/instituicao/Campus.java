@@ -36,8 +36,9 @@ public class Campus{
     public ArrayList<Campus> criarCampus(ArrayList<Campus> Lista) {
                 
         Campus novoCampus = new Campus();
-        novoCampus.nomeDoCampus = JOptionPane.showInputDialog("Digite o nome do Campus: ");
-        novoCampus.numeroDeEstruturas = JOptionPane.showInputDialog("Digite o número de estruturas: ");
+        
+        novoCampus.nomeDoCampus = JOptionPane.showInputDialog(null, "Digite o nome do Campus: ", "Nome do Campus");
+        novoCampus.numeroDeEstruturas = JOptionPane.showInputDialog(null, "Digite o número de estruturas: ", "Número de estruturas");
         
         Lista.add(novoCampus);
         
