@@ -9,9 +9,11 @@ import instituicao.Turma;
 public class Pessoa {
 	public String nomeDaPessoa;
 	public int idadeDaPessoa;
-	public ArrayList<Turma> turmas = new ArrayList<>();
+	public ArrayList<Turma> turmas;
 	
 	Pessoa() {
+					
+		this.turmas = new ArrayList<Turma>();
 		
 		try {
 			this.nomeDaPessoa = JOptionPane.showInputDialog("Digite o nome: ");
@@ -23,21 +25,16 @@ public class Pessoa {
 	}
 	
 	Pessoa(String nomeDaPessoa, int idadeDaPessoa) {
-		
-		
+	
 			this.nomeDaPessoa = nomeDaPessoa;
 			this.idadeDaPessoa = idadeDaPessoa;
 		
 	}
 	
-	public void cadastrarPessoaEmTurma(Turma turma) {
-		this.turmas.add(turma);
-	}
+	public void cadastrarPessoaEmTurma(Turma turma) {}
 	
 	
-	public void listarTurmasCadastradas() {
-		
-	}
+	public void listarTurmasCadastradas() {}
 
 	// getters e setters
 	

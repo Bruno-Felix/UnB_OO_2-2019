@@ -30,9 +30,7 @@ public class Professor extends Pessoa {
 	
 	
 	public void listarTurmasCadastradas() {
-			
-		JOptionPane.showMessageDialog(null, "Professor: "+this.getNomeDaPessoa());
-		
+					
 		if(turmas.size() == 0) {
 			
 			JOptionPane.showMessageDialog(null, "Não há turmas cadastradas para o professor "+this.getNomeDaPessoa());
@@ -41,10 +39,8 @@ public class Professor extends Pessoa {
 				
 				for(int i=0; i<turmas.size(); i++) {
 					
-					JOptionPane.showMessageDialog(null, "Turma: "+this.turmas.get(i).nomeDaTurma);
-					JOptionPane.showMessageDialog(null, "Disciplina: "+this.turmas.get(i).disciplinaDaTurma);
-					JOptionPane.showMessageDialog(null, "Vagas: "+this.turmas.get(i).numeroDeAlunos);
-				
+					JOptionPane.showMessageDialog(null, "Professor: "+this.getNomeDaPessoa()+ "\nTurma: "+this.turmas.get(i).nomeDaTurma +"\nDisciplina: "+this.turmas.get(i).disciplinaDaTurma+ "\nVagas: "+this.turmas.get(i).numeroDeAlunos);
+					
 			}
 		}
 	}

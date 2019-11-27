@@ -19,6 +19,9 @@ public class App {
 			criar = JOptionPane.showConfirmDialog(null, "Deseja cadastrar um novo Campus?");
 		}
 		Campus.listarCampus(UnB);
+		
+		
+		
 	}
 
 }
