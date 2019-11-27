@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Predio extends Estrutura {
     public String numeroDeSalas;
 
-    @Override
+    
     void criarEstrutura() {
         this.nomeDaEstrutura = JOptionPane.showInputDialog("Digite o nome do Prédio: ");
 
