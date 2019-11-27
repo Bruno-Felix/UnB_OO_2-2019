@@ -6,7 +6,7 @@ public class Disciplina {
 	public String nomeDisciplina;
 	public int numCreditos;
 	static int opcao;
-	public static List<Turma> listaTurma = new ArrayList<Turma>();
+	List<Turma> listaTurma = new ArrayList<Turma>();
 	static List<Disciplina> listaDisciplina = new ArrayList<Disciplina>();
 	@Override
 	public String toString() {
@@ -44,7 +44,6 @@ public class Disciplina {
 	public static void cadastrarTurmas() {
 		Turma preencheTurma = new Turma();
 		 Object[] objArray = listaDisciplina.toArray();
-		 int indice;
 		do {
 			String temporaria = String.valueOf(JOptionPane.showInputDialog(
 					null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
@@ -67,12 +66,16 @@ public class Disciplina {
 	
 	
 	public static void listarTurmas() {
-		Disciplina aux = new Disciplina ();
-		//for(int i = 0; i < Disciplina.listaTurma.size(); i++) {   
-		  //  Disciplina.listaTurma.get(i).nomeDaTurma = Disciplina.listaTurma.get(i).nomeDaTurma + "\n";
-		} 
-		//JOptionPane.showMessageDialog(null, listaTurma,aux.getNomeDisciplina(), JOptionPane.INFORMATION_MESSAGE);
-	//}
+		Object[] objArray = listaDisciplina.toArray();
+		String temporaria = String.valueOf(JOptionPane.showInputDialog(
+				null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
+				null,objArray,objArray[0]));
+		for(int aux =0; aux < listaDisciplina.size(); aux ++) {
+			if(listaDisciplina.get(aux).listaTurma.get(aux).disciplinaDaTurma.equalsIgnoreCase(temporaria)) {
+				System.out.println(listaDisciplina.get(aux).listaTurma.get(aux).nomeDaTurma);
+			}
+		}
+	}
 	//Objetivo: Nao permitir que o usuario cadastre um valor invalido de pessoas por turma
 	public static int validaQtd(int qtd) {
 		while(qtd<10 || qtd>130) {
