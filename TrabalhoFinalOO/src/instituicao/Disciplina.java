@@ -21,7 +21,7 @@ public class Disciplina {
 			Disciplina preencheDsc = new Disciplina();
 			preencheDsc.nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da disciplina");
 			preencheDsc.nomeDisciplina = validaNome(preencheDsc.nomeDisciplina);
-			preencheDsc.numCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o n�mero de cr�ditos da disciplina"));
+			preencheDsc.numCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de creditos da disciplina"));
 			preencheDsc.numCreditos = validaNumCreditos(preencheDsc.numCreditos);
 			listaDisciplina.add(preencheDsc);
 			opcao = JOptionPane.showConfirmDialog(null,
@@ -85,6 +85,33 @@ public class Disciplina {
 			}
 		}
 	}
+	
+	
+	//Objetivo: Alterar os dados da disciplina
+	public static void alterarDisciplina() {
+		Object[] objArray = listaDisciplina.toArray();
+		String temporaria_Disciplina = String.valueOf(JOptionPane.showInputDialog(
+				null,"Qual a disciplina voce quer alterar?","Escolha",JOptionPane.QUESTION_MESSAGE,
+				null,objArray,objArray[0]));
+		for(Disciplina disciplina : listaDisciplina) {
+			if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_Disciplina)) {
+				System.out.println(((Disciplina) Disciplina.listaDisciplina).getNomeDisciplina());
+				System.out.println("   " + "Numero de creditos:  " + ((Disciplina) Disciplina.listaDisciplina).getNumCreditos());
+				System.out.println("Digite :");
+				System.out.println("1. Para alterar o nome");
+				System.out.println("2. Para alterar o numero de creditos");
+				int opcao = Integer.parseInt(JOptionPane.showInputDialog(null));
+				if(opcao == 1) {
+					String novoNome = JOptionPane.showInputDialog("Digite o nome da disciplina");
+					disciplina.setNomeDisciplina(novoNome);
+				}
+				else if(opcao == 2) {
+					
+				}
+			}
+		}
+		
+	}
 	//Objetivo: Nao permitir que o usuario cadastre um valor invalido de pessoas por turma
 	public static int validaQtd(int qtd) {
 		while(qtd<10 || qtd>130) {
@@ -98,7 +125,7 @@ public class Disciplina {
 	public static int validaNumCreditos(int numCreditos) {
 		while(numCreditos <= 0 || numCreditos > 6) {
 			//exception
-			numCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o n�mero de cr�ditos da disciplina"));
+			numCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de creditos da disciplina"));
 		}
 		return numCreditos;
 	}
