@@ -31,10 +31,10 @@ public class Disciplina {
 	
 	//Objetivo: Listar disciplinas
 	public void listarDisciplinas() {
-			for(int i = 0; i < Disciplina.listaDisciplina.size(); i++) {   
-				Disciplina.listaDisciplina.get(i).nomeDisciplina = Disciplina.listaDisciplina.get(i).nomeDisciplina + "\n";
-			} 
-		JOptionPane.showMessageDialog(null, listaDisciplina,"Disciplinas", JOptionPane.INFORMATION_MESSAGE);
+		for(int i = 0; i < Disciplina.listaDisciplina.size(); i++) {   
+			System.out.println(Disciplina.listaDisciplina.get(i).nomeDisciplina);
+			System.out.println("   " + "Numero de creditos:  " + Disciplina.listaDisciplina.get(i).numCreditos);
+		} 
 	}
 		
 	
@@ -42,9 +42,12 @@ public class Disciplina {
 	//objetivo: quando o usuario selecionar a opcao cadastrar turma, uma lista de disciplinas deve ser mostrada,
 	//			e o usuario devera escolher uma disciplina para essa turma, e depois os seus atributos
 	public static void cadastrarTurmas() {
-		Turma preencheTurma = new Turma();
-		 Object[] objArray = listaDisciplina.toArray();
+		Object[] objArray = listaDisciplina.toArray();
+		 
 		do {
+			
+			Turma preencheTurma = new Turma(); 
+			
 			String temporaria = String.valueOf(JOptionPane.showInputDialog(
 					null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
 					null,objArray,objArray[0]));
@@ -54,7 +57,7 @@ public class Disciplina {
 			preencheTurma.disciplinaDaTurma = temporaria;
 				for(int aux=0; aux<listaDisciplina.size() ; aux++) {
 					if(listaDisciplina.get(aux).nomeDisciplina.equalsIgnoreCase(temporaria)) {
-						//listaDisciplina.get(aux).listaTurma.add(preencheTurma);
+						listaDisciplina.get(aux).listaTurma.add(preencheTurma);
 					}
 				}
 			opcao = JOptionPane.showConfirmDialog(null,
@@ -67,12 +70,18 @@ public class Disciplina {
 	
 	public static void listarTurmas() {
 		Object[] objArray = listaDisciplina.toArray();
-		String temporaria = String.valueOf(JOptionPane.showInputDialog(
-				null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
+		String temporaria_turma = String.valueOf(JOptionPane.showInputDialog(
+				null,"Qual a disciplina deve ter as turmas listadas?","Escolha",JOptionPane.QUESTION_MESSAGE,
 				null,objArray,objArray[0]));
-		for(int aux =0; aux < listaDisciplina.size(); aux ++) {
-			if(listaDisciplina.get(aux).listaTurma.get(aux).disciplinaDaTurma.equalsIgnoreCase(temporaria)) {
-				System.out.println(listaDisciplina.get(aux).listaTurma.get(aux).nomeDaTurma);
+		
+		for(Disciplina disciplina :  listaDisciplina) {
+			for(Turma turma: disciplina.listaTurma) {
+				if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_turma)) {
+					System.out.println("Turmas de " + disciplina + ":");
+					System.out.println("  Nome da turma : " + turma.nomeDaTurma);
+					System.out.println("    Numero de alunos: " + turma.numeroDeAlunos);
+
+				}
 			}
 		}
 	}
@@ -95,12 +104,13 @@ public class Disciplina {
 	}
 	
 	
-	//Objetivo: Validar o nome da Disciplina, pois ele n�o pode estar em branco
+	//Objetivo: Validar o nome da Disciplina, pois ele nao pode estar em branco
 	public static String validaNome(String nome){
 		while(nome == "") {
 			//exception
 			nome = JOptionPane.showInputDialog("Nome invalido, digite novamente");
 		}
+		nome = nome.substring(0, 1).toUpperCase() + nome.substring(1).toLowerCase();
 		return nome;
 	}
 	public String getNomeDisciplina() {
