@@ -97,16 +97,16 @@ public class Disciplina {
 			if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_Disciplina)) {
 				System.out.println(((Disciplina) Disciplina.listaDisciplina).getNomeDisciplina());
 				System.out.println("   " + "Numero de creditos:  " + ((Disciplina) Disciplina.listaDisciplina).getNumCreditos());
-				System.out.println("Digite :");
-				System.out.println("1. Para alterar o nome");
-				System.out.println("2. Para alterar o numero de creditos");
-				int opcao = Integer.parseInt(JOptionPane.showInputDialog(null));
+				int opcao = Integer.parseInt(JOptionPane.showInputDialog("Digite :\n 1. Para alterar o nome\n2. Para alterar o numero de creditos "));
 				if(opcao == 1) {
 					String novoNome = JOptionPane.showInputDialog("Digite o nome da disciplina");
+					novoNome = Disciplina.validaNome(novoNome);
 					disciplina.setNomeDisciplina(novoNome);
 				}
 				else if(opcao == 2) {
-					
+					int novoNumCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o novo numero de creditos"));
+					novoNumCreditos = Disciplina.validaNumCreditos(novoNumCreditos);
+					disciplina.setNumCreditos(novoNumCreditos);
 				}
 			}
 		}
