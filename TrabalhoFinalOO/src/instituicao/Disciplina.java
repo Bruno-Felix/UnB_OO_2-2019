@@ -66,8 +66,43 @@ public class Disciplina {
 		
 	}
 	
+	//Objetivo: Alterar os dados das turmas
 	
+	public static void alterarTurmas() {
+		Object[] objArrayDsc = listaDisciplina.toArray();
+		Object[] objArrayTrm = listaDisciplina.toArray();
+		String temporaria_disciplina = String.valueOf(JOptionPane.showInputDialog(
+				null,"Selecione uma disciplina","Escolha",JOptionPane.QUESTION_MESSAGE,
+				null,objArrayDsc,objArrayDsc[0]));
+		for(Disciplina disciplina :  listaDisciplina) {
+				if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_disciplina)) {
+					String temporaria_turma = String.valueOf(JOptionPane.showInputDialog(
+							null,"Selecione uma turma de " + temporaria_disciplina,"Escolha",JOptionPane.QUESTION_MESSAGE,
+							null,objArrayTrm,objArrayTrm[0]));
+					for(Turma turma: disciplina.listaTurma) {
+						if(turma.nomeDaTurma.equalsIgnoreCase(temporaria_turma)) {
+							int opcao = Integer.parseInt(JOptionPane.showInputDialog("Digite :\n 1. Para alterar o nome da turma\n2. Para alterar o numero de alunos"));
+							if(opcao == 1) {
+								turma.nomeDaTurma = JOptionPane.showInputDialog("Digite o novo nome da turma");
+								turma.nomeDaTurma = Disciplina.validaNome(turma.nomeDaTurma);
+							}
+							else if(opcao == 2) {
+								turma.numeroDeAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a nova quantidade de alunos"));
+								turma.numeroDeAlunos = Disciplina.validaQtd(turma.numeroDeAlunos);
+							}
+						}
+					}
+				}
+
+		}
+			
+		
+	}
 	
+
+
+
+	//Objetivo: Listar todas as turmas de uma certa disciplina
 	public static void listarTurmas() {
 		Object[] objArray = listaDisciplina.toArray();
 		String temporaria_turma = String.valueOf(JOptionPane.showInputDialog(
@@ -99,14 +134,12 @@ public class Disciplina {
 				System.out.println("   " + "Numero de creditos:  " + ((Disciplina) Disciplina.listaDisciplina).getNumCreditos());
 				int opcao = Integer.parseInt(JOptionPane.showInputDialog("Digite :\n 1. Para alterar o nome\n2. Para alterar o numero de creditos "));
 				if(opcao == 1) {
-					String novoNome = JOptionPane.showInputDialog("Digite o nome da disciplina");
-					novoNome = Disciplina.validaNome(novoNome);
-					disciplina.setNomeDisciplina(novoNome);
+					disciplina.nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da disciplina");
+					disciplina.nomeDisciplina = Disciplina.validaNome(disciplina.nomeDisciplina);
 				}
 				else if(opcao == 2) {
-					int novoNumCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o novo numero de creditos"));
-					novoNumCreditos = Disciplina.validaNumCreditos(novoNumCreditos);
-					disciplina.setNumCreditos(novoNumCreditos);
+					disciplina.numCreditos = Integer.parseInt(JOptionPane.showInputDialog("Digite o novo numero de creditos"));
+					disciplina.numCreditos = Disciplina.validaNumCreditos(disciplina.numCreditos);
 				}
 			}
 		}
