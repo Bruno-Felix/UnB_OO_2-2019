@@ -13,15 +13,15 @@ public class Pessoa {
 	
 	Pessoa() {
 					
-		this.turmas = new ArrayList<Turma>();
-		
-		try {
-			this.nomeDaPessoa = JOptionPane.showInputDialog("Digite o nome: ");
-			this.idadeDaPessoa = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade: "));
-			
-		}catch(NumberFormatException ex) {
-			JOptionPane.showMessageDialog(null, "Campo idade deve ser numérico!");
-		}
+//		this.turmas = new ArrayList<Turma>();
+//		
+//		try {
+//			this.nomeDaPessoa = JOptionPane.showInputDialog("Digite o nome: ");
+//			this.idadeDaPessoa = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade: "));
+//			
+//		}catch(NumberFormatException ex) {
+//			JOptionPane.showMessageDialog(null, "Campo idade deve ser numï¿½rico!");
+//		}
 	}
 	
 	Pessoa(String nomeDaPessoa, int idadeDaPessoa) {

@@ -1,13 +1,17 @@
 package instituicao;
 import java.util.ArrayList;
+
 import java.util.List;
 import javax.swing.JOptionPane;
+
 public class Disciplina {
+	
 	public String nomeDisciplina;
 	public int numCreditos;
 	static int opcao;
 	List<Turma> listaTurma = new ArrayList<Turma>();
 	static List<Disciplina> listaDisciplina = new ArrayList<Disciplina>();
+	
 	@Override
 	public String toString() {
 		nomeDisciplina = nomeDisciplina.substring(0, 1).toUpperCase() + nomeDisciplina.substring(1).toLowerCase();
@@ -15,8 +19,8 @@ public class Disciplina {
 	}
 	
 	
-	
-	public void criarDisciplina() {
+	public static void criarDisciplina() {
+		
 		do {
 			Disciplina preencheDsc = new Disciplina();
 			preencheDsc.nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da disciplina");
@@ -26,14 +30,20 @@ public class Disciplina {
 			listaDisciplina.add(preencheDsc);
 			opcao = JOptionPane.showConfirmDialog(null,
 					"Quer continuar cadastrando disciplinas ?", "Escolha um", JOptionPane.YES_NO_OPTION);
+		
 		}while(opcao == 0);
 	}
 	
 	//Objetivo: Listar disciplinas
-	public void listarDisciplinas() {
+	public static void listarDisciplinas() {
+		
+		System.out.println("LISTA DE DISCIPLINAS:\n");
+		
 		for(int i = 0; i < Disciplina.listaDisciplina.size(); i++) {   
-			System.out.println(Disciplina.listaDisciplina.get(i).nomeDisciplina);
-			System.out.println("   " + "Numero de creditos:  " + Disciplina.listaDisciplina.get(i).numCreditos);
+			
+			System.out.println("Disciplina: " + Disciplina.listaDisciplina.get(i).nomeDisciplina);
+			System.out.println("Numero de creditos: " + Disciplina.listaDisciplina.get(i).numCreditos);
+			System.out.println("---------------------");
 		} 
 	}
 		
@@ -41,7 +51,7 @@ public class Disciplina {
 	
 	//objetivo: quando o usuario selecionar a opcao cadastrar turma, uma lista de disciplinas deve ser mostrada,
 	//			e o usuario devera escolher uma disciplina para essa turma, e depois os seus atributos
-	public static void cadastrarTurmas() {
+	public static void criarTurma() {
 		Object[] objArray = listaDisciplina.toArray();
 		 
 		do {
@@ -51,15 +61,23 @@ public class Disciplina {
 			String temporaria = String.valueOf(JOptionPane.showInputDialog(
 					null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
 					null,objArray,objArray[0]));
-			preencheTurma.nomeDaTurma = JOptionPane.showInputDialog("Digite o nome da turma");
-			preencheTurma.nomeDaTurma = validaNome(preencheTurma.nomeDaTurma);
-			preencheTurma.numeroDeAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de alunos"));
-			preencheTurma.disciplinaDaTurma = temporaria;
-				for(int aux=0; aux<listaDisciplina.size() ; aux++) {
-					if(listaDisciplina.get(aux).nomeDisciplina.equalsIgnoreCase(temporaria)) {
-						listaDisciplina.get(aux).listaTurma.add(preencheTurma);
-					}
-				}
+			
+//			Disciplina disciplinaParaCriarATurma = new Disciplina();
+//			disciplinaParaCriarATurma = Disciplina.valueOf(JOptionPane.showInputDialog(
+//					null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
+//					null,objArray,objArray[0]));
+			
+			preencheTurma.cadastrasTurma(temporaria, listaDisciplina, preencheTurma);
+			
+//			preencheTurma.nomeDaTurma = JOptionPane.showInputDialog("Digite o nome da turma");
+//			preencheTurma.nomeDaTurma = validaNome(preencheTurma.nomeDaTurma);
+//			preencheTurma.numeroDeAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de alunos"));
+//			preencheTurma.disciplinaDaTurma = disciplinaParaCriarATurma;
+//				for(int aux=0; aux<listaDisciplina.size() ; aux++) {
+//					if(listaDisciplina.get(aux).nomeDisciplina.equalsIgnoreCase(disciplinaParaCriarATurma.getNomeDisciplina())) {
+//						listaDisciplina.get(aux).listaTurma.add(preencheTurma);
+//					}
+//				}
 			opcao = JOptionPane.showConfirmDialog(null,
 					"Quer continuar cadastrando turmas ?", "Escolha um", JOptionPane.YES_NO_OPTION);
 		}while(opcao==0);
@@ -68,6 +86,12 @@ public class Disciplina {
 	
 	
 	
+	private static Disciplina valueOf(Object showInputDialog) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	public static void listarTurmas() {
 		Object[] objArray = listaDisciplina.toArray();
 		String temporaria_turma = String.valueOf(JOptionPane.showInputDialog(

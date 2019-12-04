@@ -1,5 +1,7 @@
 package comunidade;
 
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 public class Aluno extends Pessoa {
@@ -7,19 +9,28 @@ public class Aluno extends Pessoa {
 	public int periodosDoAluno;
 	
 	public Aluno(){
-		super();
-		try {
-			this.matriculaDoAluno = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de matrícula: "));
-		}catch(NumberFormatException e) {
-			JOptionPane.showMessageDialog(null, "Campo matrícula deve ser numérico!");
-		
-		}
+//		super();
+//		try {
+//			this.matriculaDoAluno = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de matrï¿½cula: "));
+//		}catch(NumberFormatException e) {
+//			JOptionPane.showMessageDialog(null, "Campo matrï¿½cula deve ser numï¿½rico!");
+//		
+//		}
 	}
 	
 	Aluno(String nomeDaPessoa, int idadeDaPessoa, int matriculaDoAluno, int periodosDoAluno){
 		super(nomeDaPessoa, idadeDaPessoa);
 		this.matriculaDoAluno = matriculaDoAluno;
 		this.periodosDoAluno = periodosDoAluno;
+	}
+	
+	
+	public static Aluno cadastrarAluno(Aluno novoAluno) {
+		
+		novoAluno.nomeDaPessoa = JOptionPane.showInputDialog("Digite o nome do Aluno");
+		novoAluno.matriculaDoAluno = Integer.parseInt(JOptionPane.showInputDialog("Digite a matricula do Aluno:"));
+		
+		return novoAluno;
 	}
 	
 	public void verificarTurmasCadastradas() {
