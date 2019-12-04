@@ -22,4 +22,13 @@ public class Turma {
 	public void inscreverProfessor() {
 		
 	}
+	public String getNomeDaTurma() {
+		return nomeDaTurma;
+	}
+	public int getNumeroDeAlunos() {
+		return numeroDeAlunos;
+	}
+	public String getDisciplinaDaTurma() {
+		return disciplinaDaTurma;
+	}
 }
