@@ -88,12 +88,12 @@ public class Disciplina {
 	
 	public static void alterarTurmas() {
 		Object[] objArrayDsc = listaDisciplina.toArray();
+		Object[] objArrayTrm = listaDisciplina.toArray();
 		String temporaria_disciplina = String.valueOf(JOptionPane.showInputDialog(
 				null,"Selecione uma disciplina","Escolha",JOptionPane.QUESTION_MESSAGE,
 				null,objArrayDsc,objArrayDsc[0]));
 		for(Disciplina disciplina :  listaDisciplina) {
 				if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_disciplina)) {
-					Object[] objArrayTrm = disciplina.listaTurma.toArray();
 					String temporaria_turma = String.valueOf(JOptionPane.showInputDialog(
 							null,"Selecione uma turma de " + temporaria_disciplina,"Escolha",JOptionPane.QUESTION_MESSAGE,
 							null,objArrayTrm,objArrayTrm[0]));
@@ -143,8 +143,8 @@ public class Disciplina {
 				null,objArray,objArray[0]));
 		for(Disciplina disciplina : listaDisciplina) {
 			if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_Disciplina)) {
-				System.out.println(((Disciplina) Disciplina.listaDisciplina).getNomeDisciplina());
-				System.out.println("   " + "Numero de creditos:  " + ((Disciplina) Disciplina.listaDisciplina).getNumCreditos());
+				System.out.println(disciplina.getNomeDisciplina());
+				System.out.println("   " + "Numero de creditos:  " + disciplina.getNumCreditos());
 				int opcao = Integer.parseInt(JOptionPane.showInputDialog("Digite :\n 1. Para alterar o nome\n2. Para alterar o numero de creditos "));
 				if(opcao == 1) {
 					disciplina.nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da disciplina");
