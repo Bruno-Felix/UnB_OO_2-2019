@@ -22,7 +22,7 @@ public class App {
 //		}
 //		Campus.listarCampus(UnB);
 		
-		
+//		Sala.cadastrarSala();
 //		Disciplina.criarDisciplina();
 //		Disciplina.listarDisciplinas();
 //		Disciplina.alterarDisciplina();
