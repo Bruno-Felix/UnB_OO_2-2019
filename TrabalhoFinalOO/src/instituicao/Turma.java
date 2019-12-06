@@ -7,6 +7,8 @@ import javax.swing.JOptionPane;
 
 import comunidade.Aluno;
 import comunidade.Professor;
+import excessoes.DisciplinaNaoInformadaException;
+import excessoes.ProfessorNaoAtribuidoException;
 
 public class Turma {
 	
@@ -14,7 +16,7 @@ public class Turma {
 	public int numeroDeAlunos;
 	public Disciplina disciplinaDaTurma;
 	List<Aluno> listaDeAlunos = new ArrayList<Aluno>();
-	List<Aluno> listaDeProfessores = new ArrayList<Aluno>();
+	public Professor professorDaTurma;
 	
 	@Override
 	public String toString() {
@@ -48,7 +50,7 @@ public class Turma {
 	
 	public void cadastrasTurma(String temporaria, List <Disciplina> listaDisciplina, Turma turmaCriada) {
 		
-		int opcao = 0;
+		int opcaoAluno = 0;
 		
 		turmaCriada.nomeDaTurma = JOptionPane.showInputDialog("Digite o nome da turma");
 		turmaCriada.numeroDeAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de alunos"));
@@ -67,9 +69,14 @@ public class Turma {
 				inserirAlunoNaTurmaCasoTeste(turmaCriada);
 			}
 			
-			opcao = JOptionPane.showConfirmDialog(null,
+			opcaoAluno = JOptionPane.showConfirmDialog(null,
 					"Quer continuar inserindo Alunos na Turma ?", "Escolha um", JOptionPane.YES_NO_OPTION);
-		}while(opcao == 0);
+		}while(opcaoAluno == 0);
+		
+//		Professor professorCriado = new Professor();
+//		ProfessorNaoAtribuidoException.ProfessorNaoAtribuidoException(professorCriado, turmaCriada);
+		
+//		turmaCriada.professorDaTurma.cadastro = Integer.parseInt(JOptionPane.showInputDialog("Digite o cadastro do Professor"));
 		
 		for(int aux = 0; aux<Disciplina.listaDisciplina.size(); aux++) {
 			if(Disciplina.listaDisciplina.get(aux).nomeDisciplina.equalsIgnoreCase(temporaria)) {
@@ -180,7 +187,8 @@ public class Turma {
 		}		
 	}
 
-	public void atribuirProfessor() {
+	public static void atribuirProfessor(Professor professorCriado, Turma turmaCriada) throws NullPointerException{
 		
+		turmaCriada.professorDaTurma.nomeDaPessoa = JOptionPane.showInputDialog("Digite o nome do Professor");
 	}
 }

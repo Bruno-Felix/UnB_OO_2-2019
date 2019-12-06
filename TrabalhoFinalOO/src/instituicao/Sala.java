@@ -54,7 +54,7 @@ public class Sala {
 			else {
 				
 				preencheSala.possuiProjetor = false;
-				System.out.println("Ar: " + preencheSala.possuiProjetor );
+				System.out.println("Projetor: " + preencheSala.possuiProjetor );
 			}
 			
 			int opcaoTV = 0;
