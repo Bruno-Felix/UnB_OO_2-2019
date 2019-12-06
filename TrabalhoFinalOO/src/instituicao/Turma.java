@@ -46,15 +46,26 @@ public class Turma {
 	}
 	
 	
-	public void cadastrasTurma(String temporaria, List <Disciplina> listaDisciplina, Turma preencheTurma) {
+	public void cadastrasTurma(String temporaria, List <Disciplina> listaDisciplina, Turma turmaCriada) {
 		
 		int opcao = 0;
 		
-		preencheTurma.nomeDaTurma = JOptionPane.showInputDialog("Digite o nome da turma");
-		preencheTurma.numeroDeAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de alunos"));
+		turmaCriada.nomeDaTurma = JOptionPane.showInputDialog("Digite o nome da turma");
+		turmaCriada.numeroDeAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de alunos"));
 		
 		do {
-			preencheTurma.inserirAlunoNaTurma();
+			String opcaoTurmaCriada = JOptionPane.showInputDialog("Digite 1 para Inserir um Aluno\n"
+															    + "Digite 2 para Inserir um Caso Teste de Alunos.");
+			
+			if(opcaoTurmaCriada.equalsIgnoreCase("1")) {
+				System.out.println("\nAluno Sendo Criado...");
+				Aluno novoAluno = new Aluno();
+				turmaCriada.inserirAlunoNaTurma(turmaCriada, novoAluno);
+			}
+			else {
+				System.out.println("\nAluno Caso Teste Sendo Criado...");
+				inserirAlunoNaTurmaCasoTeste(turmaCriada);
+			}
 			
 			opcao = JOptionPane.showConfirmDialog(null,
 					"Quer continuar inserindo Alunos na Turma ?", "Escolha um", JOptionPane.YES_NO_OPTION);
@@ -63,26 +74,74 @@ public class Turma {
 		for(int aux = 0; aux<Disciplina.listaDisciplina.size(); aux++) {
 			if(Disciplina.listaDisciplina.get(aux).nomeDisciplina.equalsIgnoreCase(temporaria)) {
 				
-				preencheTurma.disciplinaDaTurma = Disciplina.listaDisciplina.get(aux);
-				Disciplina.listaDisciplina.get(aux).listaTurma.add(preencheTurma);
+				turmaCriada.disciplinaDaTurma = Disciplina.listaDisciplina.get(aux);
+				Disciplina.listaDisciplina.get(aux).listaTurma.add(turmaCriada);
 			}
 		}
 	}
 	
-	public void inserirAlunoNaTurma() {
-		
-		Aluno novoAluno = new Aluno();
+	public void inserirAlunoNaTurma(Turma turmaCriada, Aluno novoAluno) {
 		
 		novoAluno = Aluno.cadastrarAluno(novoAluno);
 		
-		listaDeAlunos.add(novoAluno);
+		turmaCriada.listaDeAlunos.add(novoAluno);
+		
+		System.out.println("\nAluno Criado!!");
 	}
 	
-	public void inserirAlunoNaTurmaCasoTeste() {
+	public void inserirAlunoNaTurmaCasoTeste(Turma turmaCriada) {
 		
-//		Aluno novoAluno = new Aluno();
-//		
-//		novoAluno = Aluno.cadastrarAluno(novoAluno);
+		Aluno novoAluno1 = new Aluno();
+		novoAluno1.nomeDaPessoa = "Bruno";
+		novoAluno1.matriculaDoAluno = "500329778";
+		turmaCriada.listaDeAlunos.add(novoAluno1);
+		
+		Aluno novoAluno2 = new Aluno();
+		novoAluno2.nomeDaPessoa = "Antônio";
+		novoAluno2.matriculaDoAluno = "258691821";
+		turmaCriada.listaDeAlunos.add(novoAluno2);
+		
+		Aluno novoAluno3 = new Aluno();
+		novoAluno3.nomeDaPessoa = "Antônio";
+		novoAluno3.matriculaDoAluno = "769229926";
+		turmaCriada.listaDeAlunos.add(novoAluno3);
+		
+		Aluno novoAluno4 = new Aluno();
+		novoAluno4.nomeDaPessoa = "Geovani";
+		novoAluno4.matriculaDoAluno = "875941241";
+		turmaCriada.listaDeAlunos.add(novoAluno4);
+		
+		Aluno novoAluno5 = new Aluno();
+		novoAluno5.nomeDaPessoa = "Pedro";
+		novoAluno5.matriculaDoAluno = "828411452";
+		turmaCriada.listaDeAlunos.add(novoAluno5);
+		
+		Aluno novoAluno6 = new Aluno();
+		novoAluno6.nomeDaPessoa = "Enzo";
+		novoAluno6.matriculaDoAluno = "697893097";
+		turmaCriada.listaDeAlunos.add(novoAluno6);
+		
+		Aluno novoAluno7 = new Aluno();
+		novoAluno7.nomeDaPessoa = "André";
+		novoAluno7.matriculaDoAluno = "479878157";
+		turmaCriada.listaDeAlunos.add(novoAluno7);
+		
+		Aluno novoAluno8 = new Aluno();
+		novoAluno8.nomeDaPessoa = "João";
+		novoAluno8.matriculaDoAluno = "751584490";
+		turmaCriada.listaDeAlunos.add(novoAluno8);
+		
+		Aluno novoAluno9 = new Aluno();
+		novoAluno9.nomeDaPessoa = "Iury";
+		novoAluno9.matriculaDoAluno = "477877588";
+		turmaCriada.listaDeAlunos.add(novoAluno9);
+		
+		Aluno novoAluno10 = new Aluno();
+		novoAluno10.nomeDaPessoa = "Alberto";
+		novoAluno10.matriculaDoAluno = "110769588";
+		turmaCriada.listaDeAlunos.add(novoAluno10);
+		
+		System.out.println("\nAluno Caso Teste Criado!!");
 	}
 	
 	public static void listarAlunosDaTurma() {
