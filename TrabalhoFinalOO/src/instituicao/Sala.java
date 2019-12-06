@@ -27,16 +27,19 @@ public class Sala {
 					null,"Selecione uma atividade","Escolha",JOptionPane.QUESTION_MESSAGE,
 					null,Atividade,Atividade[0]));
 			
-			int opcaoAr = JOptionPane.showConfirmDialog(null,
-					"Quer continuar cadastrando salas?", "Escolha um", JOptionPane.YES_NO_OPTION);
+			int opcaoAr = 0;
+			opcaoAr = JOptionPane.showConfirmDialog(null,
+					"A Sala tem Arcondicionado?", "Escolha um", JOptionPane.YES_NO_OPTION);
 			
 			if(opcaoAr == 0) {
+				
 				preencheSala.possuiArCondicionado = true;
 				System.out.println("Ar: " + preencheSala.possuiArCondicionado );
 			}
 			else {
+				
 				preencheSala.possuiArCondicionado = false;
-
+				System.out.println("Ar: " + preencheSala.possuiArCondicionado );
 			}
 			listaSala.add(preencheSala);
 			opcao = JOptionPane.showConfirmDialog(null,
