@@ -41,6 +41,38 @@ public class Sala {
 				preencheSala.possuiArCondicionado = false;
 				System.out.println("Ar: " + preencheSala.possuiArCondicionado );
 			}
+			
+			int opcaoProj = 0;
+			opcaoProj = JOptionPane.showConfirmDialog(null,
+					"A Sala tem Projetor?", "Escolha um", JOptionPane.YES_NO_OPTION);
+			
+			if(opcaoProj == 0) {
+				
+				preencheSala.possuiProjetor = true;
+				System.out.println("Projetor: " + preencheSala.possuiProjetor );
+			}
+			else {
+				
+				preencheSala.possuiProjetor = false;
+				System.out.println("Ar: " + preencheSala.possuiProjetor );
+			}
+			
+			int opcaoTV = 0;
+			opcaoTV = JOptionPane.showConfirmDialog(null,
+					"A Sala possui Televisao", "Escolha um", JOptionPane.YES_NO_OPTION);
+			
+			if(opcaoTV == 0) {
+				
+				preencheSala.possuiTelevisao = true;
+				System.out.println("Televisao: " + preencheSala.possuiTelevisao );
+			}
+			else {
+				
+				preencheSala.possuiTelevisao = false;
+				System.out.println("Televisao: " + preencheSala.possuiTelevisao );
+			}
+			
+			
 			listaSala.add(preencheSala);
 			opcao = JOptionPane.showConfirmDialog(null,
 					"Quer continuar cadastrando salas?", "Escolha um", JOptionPane.YES_NO_OPTION);
