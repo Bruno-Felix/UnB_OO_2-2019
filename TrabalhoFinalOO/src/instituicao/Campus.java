@@ -15,8 +15,8 @@ public class Campus {
 	public int numeroDeEstruturas;
 	public static int numeroDeCampus;
 	public static ArrayList<Campus> listaDeCampus = new ArrayList<Campus>();
-	List<Estrutura> estruturasDoCampus; // ArrayList das estruturas desse campus
-	List<Estrutura> listaDePredios;
+	List<Estrutura> estruturasDoCampus = new ArrayList<Estrutura>(); // ArrayList das estruturas desse campus
+	List<Predio> listaDePredios = new ArrayList<Predio>();
 
 	public String getnomeDoCampus() {
 		return nomeDoCampus;
@@ -39,14 +39,19 @@ public class Campus {
 
 		int opcao = 0;
 		
+		System.out.println("---------------------");
 		do {
 			Campus novoCampus = new Campus();
+			
+			System.out.println("# Novo Campus Sendo Criado...");
 			
 			novoCampus.nomeDoCampus = JOptionPane.showInputDialog("Digite o nome do Campus: ");
 			novoCampus.numeroDeEstruturas = 0; // numero de estruturas começa como 0 e aumenta com a criação de estruturas
 			Campus.numeroDeCampus++;
 			
 			listaDeCampus.add(novoCampus);
+			
+			System.out.println("  Campus " + novoCampus.nomeDoCampus + " Criado!\n");
 			
 			opcao = JOptionPane.showConfirmDialog(null,
 					"Quer continuar criando Campus?", "Escolha um", JOptionPane.YES_NO_OPTION);
@@ -56,16 +61,20 @@ public class Campus {
 
 	public static void listarCampus() {
 
-		if (listaDeCampus.size() == 0) {
-			System.out.println("Lista de Campus:\n");
+		if (listaDeCampus.size() != 0) {
+			
+			System.out.println("---------------------");
+			System.out.println("LISTA DE CAMPUS:\n");
 		}else {
+			
 			System.out.println("Nenhum Campus Cadastrado!");
 		}
+		
 		for(int aux = 0; aux<Campus.listaDeCampus.size(); aux++) {
 		
-			System.out.println("- " + aux + "º campus:");
-			System.out.println("Nome do Campus: " + listaDeCampus.get(aux).nomeDoCampus);
-			System.out.println("Numero de Estruturas: " + listaDeCampus.get(aux).numeroDeEstruturas);
+			System.out.println(" - " + (aux+1) + "º campus:");
+			System.out.println("   Nome do Campus: " + listaDeCampus.get(aux).nomeDoCampus);
+			System.out.println("   Numero de Estruturas: " + listaDeCampus.get(aux).numeroDeEstruturas + "\n");
 		}
 	}
 	
@@ -87,14 +96,18 @@ public class Campus {
 		do {
 			Predio novoPredio = new Predio();
 			
+			System.out.println("---------------------");
+			System.out.println("# Novo Prédio Sendo Criado...");
+			
 			Object[] objArrayCampus = listaDeCampus.toArray();
 	    	
-			System.out.println(listaDeCampus.size());
 	    	String auxCampus = String.valueOf(JOptionPane.showInputDialog(
-					null,"Listar de Campus:","Escolha",JOptionPane.QUESTION_MESSAGE,
+					null,"Criar Prédio - Campus:","Escolha",JOptionPane.QUESTION_MESSAGE,
 					null,objArrayCampus,objArrayCampus[0]));
 	    			
 			novoPredio.cadastrarPredio(auxCampus, novoPredio, listaDeCampus);
+			
+			System.out.println("  Prédio " + novoPredio.nomeDaEstrutura + " Criado no Campus " + auxCampus + "!\n");
 	    	
 	    	opcao = JOptionPane.showConfirmDialog(null,
 					"Quer continuar criando Predios?", "Escolha um", JOptionPane.YES_NO_OPTION);

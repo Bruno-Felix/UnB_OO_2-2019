@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
 
 import comunidade.Aluno;
 import comunidade.Professor;
-import excessoes.DisciplinaNaoInformadaException;
-import excessoes.ProfessorNaoAtribuidoException;
+//import excessoes.DisciplinaNaoInformadaException;
+//import excessoes.ProfessorNaoAtribuidoException;
 
 public class Turma {
 	
@@ -60,12 +60,14 @@ public class Turma {
 															    + "Digite 2 para Inserir um Caso Teste de Alunos.");
 			
 			if(opcaoTurmaCriada.equalsIgnoreCase("1")) {
-				System.out.println("\nAluno Sendo Criado...");
+				System.out.println("\n   Aluno Sendo Inserido na Turma...\n");
+				
 				Aluno novoAluno = new Aluno();
 				turmaCriada.inserirAlunoNaTurma(turmaCriada, novoAluno);
 			}
 			else {
-				System.out.println("\nAluno Caso Teste Sendo Criado...");
+				System.out.println("\n   Alunos Caso Teste Sendo Inseridos na Turma...\n");
+				
 				inserirAlunoNaTurmaCasoTeste(turmaCriada);
 			}
 			
@@ -93,7 +95,7 @@ public class Turma {
 		
 		turmaCriada.listaDeAlunos.add(novoAluno);
 		
-		System.out.println("\nAluno Criado!!");
+		System.out.println("   Aluno" + novoAluno.nomeDaPessoa + "Inserido!\n");
 	}
 	
 	public void inserirAlunoNaTurmaCasoTeste(Turma turmaCriada) {
@@ -148,7 +150,7 @@ public class Turma {
 		novoAluno10.matriculaDoAluno = "110769588";
 		turmaCriada.listaDeAlunos.add(novoAluno10);
 		
-		System.out.println("\nAluno Caso Teste Criado!!");
+		System.out.println("   Alunos Caso Teste Inseridos!\n");
 	}
 	
 	public static void listarAlunosDaTurma() {
