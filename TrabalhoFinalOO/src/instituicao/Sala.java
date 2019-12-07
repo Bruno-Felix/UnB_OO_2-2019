@@ -81,6 +81,10 @@ public class Sala {
 		
 	}
 	
+	public void cadastrarSala(Estrutura estruturaDoCampus) {
+		
+	}
+	
 	public void verificarAtividadeAtribuida() {
 		
 	}
