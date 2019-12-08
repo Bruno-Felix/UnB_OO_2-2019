@@ -95,7 +95,7 @@ public class Turma {
 		
 		turmaCriada.listaDeAlunos.add(novoAluno);
 		
-		System.out.println("   Aluno" + novoAluno.nomeDaPessoa + "Inserido!\n");
+		System.out.println("   Aluno " + novoAluno.nomeDaPessoa + " Inserido!\n");
 	}
 	
 	public void inserirAlunoNaTurmaCasoTeste(Turma turmaCriada) {
@@ -171,6 +171,7 @@ public class Turma {
 				for(int aux1 = 0; aux1 < Disciplina.listaDisciplina.get(aux).listaTurma.size(); aux1++) {
 					if(Disciplina.listaDisciplina.get(aux).listaTurma.get(aux1).nomeDaTurma.equalsIgnoreCase(auxTurma)) {
 						
+						System.out.println("---------------------");
 						System.out.println("LISTA DE ALUNOS DA TURMA:\n");
 						
 						System.out.println("Disciplina: " + Disciplina.listaDisciplina.get(aux) + " | " + 
@@ -180,8 +181,7 @@ public class Turma {
 						for(int i = 0; i < Disciplina.listaDisciplina.get(aux).listaTurma.get(aux1).listaDeAlunos.size(); i++) {
 							
 							System.out.println("Nome do Aluno: " +  Disciplina.listaDisciplina.get(aux).listaTurma.get(aux1).listaDeAlunos.get(i).nomeDaPessoa);
-							System.out.println("Matricula do Aluno: " +  Disciplina.listaDisciplina.get(aux).listaTurma.get(aux1).listaDeAlunos.get(i).matriculaDoAluno);
-							System.out.println("---------------------");
+							System.out.println("Matricula do Aluno: " +  Disciplina.listaDisciplina.get(aux).listaTurma.get(aux1).listaDeAlunos.get(i).matriculaDoAluno + "\n");
 						}
 					}
 				}

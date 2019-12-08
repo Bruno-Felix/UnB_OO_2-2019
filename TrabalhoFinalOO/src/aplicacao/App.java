@@ -1,8 +1,7 @@
 package aplicacao;
 
-import comunidade.Aluno;
-import comunidade.Professor;
-import instituicao.Campus;
+import instituicao.*;
+import comunidade.*;
 
 public class App {
 
@@ -30,10 +29,5 @@ public class App {
 		//Aluno a1 = new Aluno("Luiz", 21, "18/012454", 0);
 		//Campus.cadastrarAlunoEmCampus(a1);
 		//Campus.listarAlunosCampus();
-		
-		
-		
-		
-		
 	}
 }

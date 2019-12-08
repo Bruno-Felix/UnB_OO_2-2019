@@ -23,44 +23,9 @@ public class Campus {
 	
 	// associacao com Pessoa:
 	
-	public static List<Professor> professores = new ArrayList<>();
-	public static List<Aluno> alunos = new ArrayList<>();
+	public static List<Professor> listaDeProfessores = new ArrayList<>();
+	public static List<Aluno> listaDeAlunos = new ArrayList<>();
 	
-	public static void cadastrarProfessoeEmCampus(Professor professor) {
-		professores.add(professor);
-	}
-	
-	public static void cadastrarAlunoEmCampus(Aluno aluno) {
-		alunos.add(aluno);
-	}
-	
-	public static void listarProfessoresCampus() {
-		
-		if(professores.size() == 0) {
-			System.out.println("Não há professores cadastrados!");
-		}else {
-			
-			System.out.println("Professores: ");
-			
-			for(int i=0; i < professores.size() ; i++) {
-				System.out.println(professores.get(i).nomeDaPessoa);
-			}
-		}
-		
-	}
-	
-	public static void listarAlunosCampus( ) {
-		if(alunos.size() == 0) {
-			System.out.println("Não há alunos cadastrados: ");
-		}else {
-			
-			System.out.println("Alunos: ");
-			
-			for(int i=0; i < alunos.size() ; i++) {
-				System.out.println(alunos.get(i).nomeDaPessoa);
-			}
-		}
-	}
 
 	public String getnomeDoCampus() {
 		return nomeDoCampus;
@@ -157,5 +122,65 @@ public class Campus {
 					"Quer continuar criando Predios?", "Escolha um", JOptionPane.YES_NO_OPTION);
 	    	
 		}while(opcao == 0);
+	}
+	
+public static void criarProfessor() {
+		
+		Professor novoProfessor = new Professor();
+			
+		cadastrarProfessoeEmCampus(novoProfessor);
+	}
+	
+	public static void cadastrarProfessoeEmCampus(Professor professor) {
+		listaDeProfessores.add(professor);
+	}
+	
+	public static void criarAluno() {
+		
+		Aluno novoAluno = new Aluno();
+			
+		cadastrarAlunoEmCampus(novoAluno);
+	}
+
+	public static void cadastrarAlunoEmCampus(Aluno aluno) {
+		listaDeAlunos.add(aluno);
+	}
+	
+	public static void listarProfessoresCampus() {
+		
+		if(listaDeProfessores.size() == 0) {
+			
+			System.out.println("NÃ£o hÃ¡ professores cadastrados!");
+		}
+		else {
+		
+			System.out.println("---------------------");
+			System.out.println("LISTA DE PROFESSORES:\n");
+			
+			for(int i = 0; i < listaDeProfessores.size(); i++) {
+				
+				System.out.println("Nome do Professor: " + listaDeProfessores.get(i).nomeDaPessoa);
+				System.out.println("Cadastro do Professor: " + listaDeProfessores.get(i).cadastro + "\n");
+			}
+		}
+	}
+	
+	public static void listarAlunosCampus( ) {
+		
+		if(listaDeAlunos.size() == 0) {
+		
+			System.out.println("NÃ£o hÃ¡ alunos cadastrados!");
+		}
+		else {
+			
+			System.out.println("---------------------");
+			System.out.println("LISTA DE ALUNO:\n");
+			
+			for(int i=0; i < listaDeAlunos.size() ; i++) {
+				
+				System.out.println("Nome do Aluno: " + listaDeAlunos.get(i).nomeDaPessoa);
+				System.out.println("Matricula do Aluno: " + listaDeAlunos.get(i).nomeDaPessoa + "\n");
+			}
+		}
 	}
 }
