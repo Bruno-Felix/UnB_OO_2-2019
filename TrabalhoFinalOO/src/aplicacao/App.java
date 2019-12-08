@@ -1,6 +1,8 @@
 package aplicacao;
 
-import instituicao.*;
+import comunidade.Aluno;
+import comunidade.Professor;
+import instituicao.Campus;
 
 public class App {
 
@@ -21,5 +23,17 @@ public class App {
 		//Disciplina.criarTurma();
 		//Turma.listarAlunosDaTurma();
 		//Disciplina.listarTurmas();
+		
+		//Professor p1 = new Professor("Andre", 30, 789456);
+		//Campus.cadastrarProfessoeEmCampus(p1);
+		//Campus.listarProfessoresCampus();
+		//Aluno a1 = new Aluno("Luiz", 21, "18/012454", 0);
+		//Campus.cadastrarAlunoEmCampus(a1);
+		//Campus.listarAlunosCampus();
+		
+		
+		
+		
+		
 	}
 }
