@@ -15,7 +15,8 @@ public class App {
 		//Sala.listarSalasDeUmPredio();
 			
 		//Sala.cadastrarSala();
-		Campus.criarProfessorCasoTeste();
+		//Campus.criarProfessorCasoTeste();
+		Aluno.cadastrarAlunoCasoTeste();
 		Disciplina.criarDisciplina();
 		Disciplina.listarDisciplinas();
 		//Disciplina.alterarDisciplina();
@@ -23,6 +24,7 @@ public class App {
 		Disciplina.criarTurma();
 		//Turma.listarAlunosDaTurma();
 		Turma.listarTurmas();
+		Aluno.listarTurmasDoAluno();
 		
 		//Professor p1 = new Professor("Andre", 30, 789456);
 		//Campus.cadastrarProfessoeEmCampus(p1);

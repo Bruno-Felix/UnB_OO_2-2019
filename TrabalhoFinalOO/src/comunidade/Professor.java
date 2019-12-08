@@ -90,6 +90,4 @@ public class Professor extends Pessoa {
 	public void setTurmas(List<Turma> turmas) {
 		this.turmas = turmas;
 	}
-	
-	
 }

@@ -9,8 +9,8 @@ public class Disciplina {
 	public String nomeDisciplina;
 	public int numCreditos;
 	static int opcao;
-	List<Turma> listaTurma = new ArrayList<Turma>();
-	static List<Disciplina> listaDisciplina = new ArrayList<Disciplina>();
+	public List<Turma> listaTurma = new ArrayList<Turma>();
+	public static List<Disciplina> listaDisciplina = new ArrayList<Disciplina>();
 	
 	@Override
 	public String toString() {

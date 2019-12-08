@@ -16,7 +16,7 @@ public class Turma {
 	public String nomeDaTurma;
 	public int numeroDeAlunos;
 	public Disciplina disciplinaDaTurma;
-	List<Aluno> listaDeAlunos = new ArrayList<Aluno>();
+	public List<Aluno> listaDeAlunos = new ArrayList<Aluno>();
 	public Professor professorDaTurma;
 	
 	@Override

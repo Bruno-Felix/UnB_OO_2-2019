@@ -1,6 +1,5 @@
 package excessoes;
 
-import comunidade.Professor;
 import instituicao.Campus;
 import instituicao.Turma;
 

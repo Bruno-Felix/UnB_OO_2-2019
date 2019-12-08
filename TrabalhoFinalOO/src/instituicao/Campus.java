@@ -167,6 +167,10 @@ public class Campus {
 	}
 
 	public static void cadastrarAlunoEmCampus(Aluno aluno) {
+		
+		aluno.nomeDaPessoa = JOptionPane.showInputDialog("Digite o nome do Aluno");
+		aluno.matriculaDoAluno = JOptionPane.showInputDialog("Digite a matricula do Aluno:");
+		
 		listaDeAlunos.add(aluno);
 	}
 }
