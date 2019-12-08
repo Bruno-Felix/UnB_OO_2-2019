@@ -165,6 +165,9 @@ public class Turma {
 		
 		turmaCriada.listaDeAlunos.add(novoAluno);
 		
+		//adicionando a turma na lista de turmas do aluno
+		novoAluno.getListaDeturmasAluno().add(turmaCriada);
+		
 		System.out.println("   Aluno " + novoAluno.nomeDaPessoa + " Inserido!\n");
 	}
 	
@@ -279,6 +282,9 @@ public class Turma {
 			if(Campus.listaDeProfessores.get(aux).nomeDaPessoa.equalsIgnoreCase(auxProfessor)) {
 				
 				turmaCriada.professorDaTurma = Campus.listaDeProfessores.get(aux);
+				
+				//adicionando a turma na lista de turmas do professor
+				turmaCriada.professorDaTurma.getListaDeTurmasProfessor().add(turmaCriada);
 			}
 		}
 	}

@@ -17,7 +17,7 @@ public class Aluno extends Pessoa {
 	
 	// association 
 	
-	public List<Turma> turmas = new ArrayList<>();
+	public List<Turma> listaDeturmasAluno = new ArrayList<>();
 	
 	// constructors
 	
@@ -166,12 +166,14 @@ public class Aluno extends Pessoa {
 		this.periodosDoAluno = periodosDoAluno;
 	}
 
-	public List<Turma> getTurmas() {
-		return turmas;
+	public List<Turma> getListaDeturmasAluno() {
+		return listaDeturmasAluno;
 	}
 
-	public void setTurmas(List<Turma> turmas) {
-		this.turmas = turmas;
+	public void setListaDeturmasAluno(List<Turma> listaDeturmasAluno) {
+		this.listaDeturmasAluno = listaDeturmasAluno;
 	}
+
+	
 
 }

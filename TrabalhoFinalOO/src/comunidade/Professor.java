@@ -14,7 +14,7 @@ public class Professor extends Pessoa {
 	
 	// association
 	
-	public List<Turma> turmas = new ArrayList<>();
+	public List<Turma> listaDeTurmasProfessor = new ArrayList<>();
 		
 	
 	// constructor
@@ -42,14 +42,14 @@ public class Professor extends Pessoa {
 	
 	public void listarTurmas() {
 		
-		if(this.getTurmas().size() == 0) {
+		if(this.getListaDeTurmasProfessor().size() == 0) {
 			System.out.println("N�o h� turmas cadastradas para o professor: "+ this.getNomeDaPessoa());
 		}else {
 			
 			System.out.println("Turmas cadastradas do professor: "+this.getNomeDaPessoa());
 			
-			for(int i=0; i < this.getTurmas().size() ; i++) {
-				System.out.println(this.turmas.get(i));
+			for(int i=0; i < this.getListaDeTurmasProfessor().size() ; i++) {
+				System.out.println(this.listaDeTurmasProfessor.get(i));
 			}
 		}
 	}
@@ -83,11 +83,13 @@ public class Professor extends Pessoa {
 		this.cadastro = cadastro;
 	}
 
-	public List<Turma> getTurmas() {
-		return turmas;
+	public List<Turma> getListaDeTurmasProfessor() {
+		return listaDeTurmasProfessor;
 	}
 
-	public void setTurmas(List<Turma> turmas) {
-		this.turmas = turmas;
+	public void setListaDeTurmasProfessor(List<Turma> listaDeTurmasProfessor) {
+		this.listaDeTurmasProfessor = listaDeTurmasProfessor;
 	}
+
+	
 }
