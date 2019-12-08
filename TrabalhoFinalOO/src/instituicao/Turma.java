@@ -177,60 +177,70 @@ public class Turma {
 		novoAluno1.nomeDaPessoa = "Bruno";
 		novoAluno1.matriculaDoAluno = "500329778";
 		turmaCriada.listaDeAlunos.add(novoAluno1);
+		novoAluno1.getListaDeturmasAluno().add(turmaCriada);
 		Campus.listaDeAlunos.add(novoAluno1);
 		
 		Aluno novoAluno2 = new Aluno();
 		novoAluno2.nomeDaPessoa = "Antônio";
 		novoAluno2.matriculaDoAluno = "258691821";
 		turmaCriada.listaDeAlunos.add(novoAluno2);
+		novoAluno2.getListaDeturmasAluno().add(turmaCriada);
 		Campus.listaDeAlunos.add(novoAluno2);
 		
 		Aluno novoAluno3 = new Aluno();
 		novoAluno3.nomeDaPessoa = "Antônio";
 		novoAluno3.matriculaDoAluno = "769229926";
 		turmaCriada.listaDeAlunos.add(novoAluno3);
+		novoAluno3.getListaDeturmasAluno().add(turmaCriada);
 		Campus.listaDeAlunos.add(novoAluno3);
 		
 		Aluno novoAluno4 = new Aluno();
 		novoAluno4.nomeDaPessoa = "Geovani";
 		novoAluno4.matriculaDoAluno = "875941241";
 		turmaCriada.listaDeAlunos.add(novoAluno4);
+		novoAluno4.getListaDeturmasAluno().add(turmaCriada);
 		Campus.listaDeAlunos.add(novoAluno4);
 		
 		Aluno novoAluno5 = new Aluno();
 		novoAluno5.nomeDaPessoa = "Pedro";
 		novoAluno5.matriculaDoAluno = "828411452";
 		turmaCriada.listaDeAlunos.add(novoAluno5);
+		novoAluno5.getListaDeturmasAluno().add(turmaCriada);
 		Campus.listaDeAlunos.add(novoAluno5);
 		
 		Aluno novoAluno6 = new Aluno();
 		novoAluno6.nomeDaPessoa = "Enzo";
 		novoAluno6.matriculaDoAluno = "697893097";
 		turmaCriada.listaDeAlunos.add(novoAluno6);
+		novoAluno6.getListaDeturmasAluno().add(turmaCriada);
 		Campus.listaDeAlunos.add(novoAluno6);
 		
 		Aluno novoAluno7 = new Aluno();
 		novoAluno7.nomeDaPessoa = "André";
 		novoAluno7.matriculaDoAluno = "479878157";
 		turmaCriada.listaDeAlunos.add(novoAluno7);
+		novoAluno7.getListaDeturmasAluno().add(turmaCriada);
 		Campus.listaDeAlunos.add(novoAluno7);
 		
 		Aluno novoAluno8 = new Aluno();
 		novoAluno8.nomeDaPessoa = "João";
 		novoAluno8.matriculaDoAluno = "751584490";
 		turmaCriada.listaDeAlunos.add(novoAluno8);
+		novoAluno8.getListaDeturmasAluno().add(turmaCriada);
 		Campus.listaDeAlunos.add(novoAluno8);
 		
 		Aluno novoAluno9 = new Aluno();
 		novoAluno9.nomeDaPessoa = "Iury";
 		novoAluno9.matriculaDoAluno = "477877588";
 		turmaCriada.listaDeAlunos.add(novoAluno9);
+		novoAluno9.getListaDeturmasAluno().add(turmaCriada);
 		Campus.listaDeAlunos.add(novoAluno9);
 		
 		Aluno novoAluno10 = new Aluno();
 		novoAluno10.nomeDaPessoa = "Alberto";
 		novoAluno10.matriculaDoAluno = "110769588";
 		turmaCriada.listaDeAlunos.add(novoAluno10);
+		novoAluno10.getListaDeturmasAluno().add(turmaCriada);
 		Campus.listaDeAlunos.add(novoAluno10);
 		
 		System.out.println("   Alunos Caso Teste Inseridos!\n");
