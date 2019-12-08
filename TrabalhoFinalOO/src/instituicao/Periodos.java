@@ -13,18 +13,21 @@ public class Periodos {
 	String minutosInicio;
 	String horaTermino;
 	String minutosTermino;
-	List<Periodos> listaSegunda = new ArrayList<Periodos>();
-	List<Periodos> listaTerca = new ArrayList<Periodos>();
-	List<Periodos> listaQuarta = new ArrayList<Periodos>();
-	List<Periodos> listaQuinta = new ArrayList<Periodos>();
-	List<Periodos> listaSexta = new ArrayList<Periodos>();
-	List<Periodos> listaSabado = new ArrayList<Periodos>();
-	Object[] dias = {"Segunda", "Terca","Quarta","Quinta","Sexta","Sabado"};
-	String [] horas = {"00","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"};
-    String [] minutos;
-    int opcao,valido;
+	
+	public static List<Periodos> listaSegunda = new ArrayList<Periodos>();
+	public static List<Periodos> listaTerca = new ArrayList<Periodos>();
+	public static List<Periodos> listaQuarta = new ArrayList<Periodos>();
+	public static List<Periodos> listaQuinta = new ArrayList<Periodos>();
+	public static List<Periodos> listaSexta = new ArrayList<Periodos>();
+	public static List<Periodos> listaSabado = new ArrayList<Periodos>();
+	
+	public static Object[] dias = {"Segunda", "Terca","Quarta","Quinta","Sexta","Sabado"};
+	public static String [] horas = {"00","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"};
+	public static String [] minutos;
+    static int opcao;
+	static int valido;
     
-	public void cadastrarPeriodos() {
+	public static void cadastrarPeriodos() {
 		do {
 			Periodos preenchePeriodo = new Periodos();
 			do {
@@ -166,7 +169,7 @@ public class Periodos {
 	
 	
 	//Objetivo: verificar se esse periodo cadastrado ja existe
-	public int verificaHorario(String horaInicio, String minutosInicio,String horaTermino, String minutosTermino,String diaDaSemana) {
+	public static int verificaHorario(String horaInicio, String minutosInicio,String horaTermino, String minutosTermino,String diaDaSemana) {
 		int	horaInicioMod = Integer.parseInt(horaInicio) * 60 + Integer.parseInt(minutosInicio);
 		int	horaTerminoMod = Integer.parseInt(horaTermino)* 60 + Integer.parseInt(minutosTermino);
 		switch(diaDaSemana) {
@@ -264,7 +267,7 @@ public class Periodos {
 	}
 	
 	
-	public void preencheArray() {
+	public static void preencheArray() {
 		
 		minutos = new String[60];
 		

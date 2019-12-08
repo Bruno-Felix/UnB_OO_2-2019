@@ -9,6 +9,8 @@ public class App {
 	
 	public static void main(String[] args) {
 			
+		//Periodos.cadastrarPeriodos();
+		
 		form = new menuPrincipal();
 		
 //		Campus.criarCampus();
