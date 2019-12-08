@@ -12,7 +12,7 @@ public class menuPrincipal  extends JFrame{
 	
 	public menuPrincipal() {
 		
-		setBounds(0, 0, 800, 600);
+		setBounds(900, 150, 290, 300);
 		setTitle("Trabalho Final OO");
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));  
 		

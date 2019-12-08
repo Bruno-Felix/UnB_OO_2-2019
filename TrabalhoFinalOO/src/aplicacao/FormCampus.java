@@ -23,7 +23,7 @@ public class FormCampus extends JFrame {
 	
 	public FormCampus() {
 		
-		setBounds(50, 50, 300, 400);
+		setBounds(800, 200, 480, 300);
 		setLayout(new GridLayout(3, 3)); //nesse caso, uma tabela 3x3
 		setTitle("Campos");
 		
