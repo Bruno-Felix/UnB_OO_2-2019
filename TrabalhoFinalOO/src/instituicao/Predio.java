@@ -72,7 +72,7 @@ public class Predio extends Estrutura {
 							null,"Criar Sala - Predios:","Escolha",JOptionPane.QUESTION_MESSAGE,
 							null,objArrayPredio,objArrayPredio[0]));
 					
-					for(int auxB = 0; auxB < Campus.listaDeCampus.size(); auxB++) {
+					for(int auxB = 0; auxB < Campus.listaDeCampus.get(aux).listaDePredios.size(); auxB++) {
 						if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).nomeDaEstrutura.equalsIgnoreCase(auxPredio)) {
 							
 							Sala salaCriada = new Sala();

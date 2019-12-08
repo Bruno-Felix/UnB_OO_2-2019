@@ -14,15 +14,15 @@ public class App {
 		Predio.criarSalaNoPredio();
 		Sala.listarSalasDeUmPredio();
 			
-		Campus.criarProfessorCasoTeste();
-		Aluno.cadastrarAlunoCasoTeste();
-		Disciplina.criarDisciplina();
-		Disciplina.listarDisciplinas();
-		Disciplina.alterarDisciplina();
-		Disciplina.listarDisciplinas();
-		Disciplina.criarTurma();
-		Turma.listarAlunosDaTurma();
-		Turma.listarTurmas();
-		Aluno.listarTurmasDoAluno();
+//		Campus.criarProfessorCasoTeste();
+//		Aluno.cadastrarAlunoCasoTeste();
+//		Disciplina.criarDisciplina();
+//		Disciplina.listarDisciplinas();
+//		Disciplina.alterarDisciplina();
+//		Disciplina.listarDisciplinas();
+//		Disciplina.criarTurma();
+//		Turma.listarAlunosDaTurma();
+//		Turma.listarTurmas();
+//		Aluno.listarTurmasDoAluno();
 	}
 }
