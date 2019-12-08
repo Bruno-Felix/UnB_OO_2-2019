@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import comunidade.Aluno;
+import comunidade.Professor;
+
 public class Campus {
 	@Override
 	public String toString() {
@@ -17,6 +20,47 @@ public class Campus {
 	public static ArrayList<Campus> listaDeCampus = new ArrayList<Campus>();
 	List<Estrutura> estruturasDoCampus = new ArrayList<Estrutura>(); // ArrayList das estruturas desse campus
 	List<Predio> listaDePredios = new ArrayList<Predio>();
+	
+	// associacao com Pessoa:
+	
+	public static List<Professor> professores = new ArrayList<>();
+	public static List<Aluno> alunos = new ArrayList<>();
+	
+	public static void cadastrarProfessoeEmCampus(Professor professor) {
+		professores.add(professor);
+	}
+	
+	public static void cadastrarAlunoEmCampus(Aluno aluno) {
+		alunos.add(aluno);
+	}
+	
+	public static void listarProfessoresCampus() {
+		
+		if(professores.size() == 0) {
+			System.out.println("Não há professores cadastrados!");
+		}else {
+			
+			System.out.println("Professores: ");
+			
+			for(int i=0; i < professores.size() ; i++) {
+				System.out.println(professores.get(i).nomeDaPessoa);
+			}
+		}
+		
+	}
+	
+	public static void listarAlunosCampus( ) {
+		if(alunos.size() == 0) {
+			System.out.println("Não há alunos cadastrados: ");
+		}else {
+			
+			System.out.println("Alunos: ");
+			
+			for(int i=0; i < alunos.size() ; i++) {
+				System.out.println(alunos.get(i).nomeDaPessoa);
+			}
+		}
+	}
 
 	public String getnomeDoCampus() {
 		return nomeDoCampus;
@@ -33,7 +77,7 @@ public class Campus {
 	public void setnumeroDeEstruturas(int numeroDeEstruturas) {
 		this.numeroDeEstruturas = numeroDeEstruturas;
 	}
-
+	
 
 	public static void criarCampus() {
 
