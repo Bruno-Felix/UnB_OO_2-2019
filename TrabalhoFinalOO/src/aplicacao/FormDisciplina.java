@@ -1,10 +1,16 @@
 package aplicacao;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import instituicao.Disciplina;
+import instituicao.Turma;
+
 import javax.swing.JButton;
 public class FormDisciplina extends JFrame{
 	private JPanel contentPane;
@@ -48,5 +54,31 @@ public class FormDisciplina extends JFrame{
 		JButton btnAlterarDisciplina = new JButton("Alterar Disciplina");
 		btnAlterarDisciplina.setBounds(155, 111, 118, 23);
 		contentPane.add(btnAlterarDisciplina);
+	}
+	class ActionListenerbtnCriarDisciplina implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			Disciplina.criarDisciplina();
+		}
+	}
+	
+	class ActionListenerbtnListarDisciplinas implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			Disciplina.listarDisciplinas();
+		}
+	}
+	
+	class ActionListenerbtnAlterarDisciplina implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			Disciplina.alterarDisciplina();
+		}
 	}
 }
