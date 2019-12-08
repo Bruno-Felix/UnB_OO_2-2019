@@ -1,6 +1,11 @@
 package comunidade;
 
 public class Pessoa {
+	@Override
+	public String toString() {
+		return nomeDaPessoa;
+	}
+
 	public String nomeDaPessoa;
 	public int idadeDaPessoa;
 	

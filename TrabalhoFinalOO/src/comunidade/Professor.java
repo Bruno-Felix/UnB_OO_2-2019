@@ -3,12 +3,14 @@ package comunidade;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import instituicao.Campus;
 import instituicao.Turma;
 
 public class Professor extends Pessoa {
 	
-	public int cadastro;
+	public String cadastro;
 	
 	// association
 	
@@ -21,7 +23,7 @@ public class Professor extends Pessoa {
 
 	}
 	
-	public Professor(String nomeDaPessoa, int idadeDaPessoa, int cadastro){
+	public Professor(String nomeDaPessoa, int idadeDaPessoa, String cadastro){
 		super(nomeDaPessoa, idadeDaPessoa);
 		this.cadastro = cadastro;
 	}
@@ -30,10 +32,18 @@ public class Professor extends Pessoa {
 			
 	// methods
 	
+	public void cadastrarProfessor(Professor novoProfessor) {
+		
+		novoProfessor.nomeDaPessoa = JOptionPane.showInputDialog("Digite o Nome do Professor");
+		novoProfessor.cadastro = JOptionPane.showInputDialog("Digite o cadastro do Professor:");
+		
+		Campus.listaDeProfessores.add(novoProfessor);
+	}
+	
 	public void listarTurmas() {
 		
 		if(this.getTurmas().size() == 0) {
-			System.out.println("Não há turmas cadastradas para o professor: "+ this.getNomeDaPessoa());
+			System.out.println("Nï¿½o hï¿½ turmas cadastradas para o professor: "+ this.getNomeDaPessoa());
 		}else {
 			
 			System.out.println("Turmas cadastradas do professor: "+this.getNomeDaPessoa());
@@ -47,11 +57,11 @@ public class Professor extends Pessoa {
 	
 	// getters e setters
 		
-	public int getCadastro() {
+	public String getCadastro() {
 		return cadastro;
 	}
 
-	public void setCadastro(int cadastro) {
+	public void setCadastro(String cadastro) {
 		this.cadastro = cadastro;
 	}
 

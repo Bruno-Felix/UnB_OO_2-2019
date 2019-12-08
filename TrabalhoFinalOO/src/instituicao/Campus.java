@@ -124,15 +124,11 @@ public class Campus {
 		}while(opcao == 0);
 	}
 	
-public static void criarProfessor() {
+	public static void criarProfessor() {
 		
 		Professor novoProfessor = new Professor();
-			
-		cadastrarProfessoeEmCampus(novoProfessor);
-	}
-	
-	public static void cadastrarProfessoeEmCampus(Professor professor) {
-		listaDeProfessores.add(professor);
+		
+		novoProfessor.cadastrarProfessor(novoProfessor);
 	}
 	
 	public static void criarAluno() {

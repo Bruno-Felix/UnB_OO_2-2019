@@ -15,11 +15,11 @@ public class App {
 		//Sala.listarSalasDeUmPredio();
 			
 		//Sala.cadastrarSala();
-		//Disciplina.criarDisciplina();
-		//Disciplina.listarDisciplinas();
+		Disciplina.criarDisciplina();
+		Disciplina.listarDisciplinas();
 		//Disciplina.alterarDisciplina();
 		//Disciplina.listarDisciplinas();
-		//Disciplina.criarTurma();
+		Disciplina.criarTurma();
 		//Turma.listarAlunosDaTurma();
 		//Disciplina.listarTurmas();
 		

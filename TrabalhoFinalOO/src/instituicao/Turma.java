@@ -9,6 +9,7 @@ import comunidade.Aluno;
 import comunidade.Professor;
 //import excessoes.DisciplinaNaoInformadaException;
 //import excessoes.ProfessorNaoAtribuidoException;
+import excessoes.ProfessorNaoAtribuidoException;
 
 public class Turma {
 	
@@ -75,8 +76,10 @@ public class Turma {
 					"Quer continuar inserindo Alunos na Turma ?", "Escolha um", JOptionPane.YES_NO_OPTION);
 		}while(opcaoAluno == 0);
 		
-//		Professor professorCriado = new Professor();
-//		ProfessorNaoAtribuidoException.ProfessorNaoAtribuidoException(professorCriado, turmaCriada);
+		
+		Object[] objArrayProfessores = Campus.listaDeProfessores.toArray();
+		
+		ProfessorNaoAtribuidoException.NaoAtribuidoException(turmaCriada, objArrayProfessores);
 		
 //		turmaCriada.professorDaTurma.cadastro = Integer.parseInt(JOptionPane.showInputDialog("Digite o cadastro do Professor"));
 		
@@ -189,8 +192,17 @@ public class Turma {
 		}		
 	}
 
-	public static void atribuirProfessor(Professor professorCriado, Turma turmaCriada) throws NullPointerException{
+	public static void atribuirProfessor(Turma turmaCriada, Object[] objArrayProfessores) throws ArrayIndexOutOfBoundsException{
 		
-		turmaCriada.professorDaTurma.nomeDaPessoa = JOptionPane.showInputDialog("Digite o nome do Professor");
+		String auxProfessor = String.valueOf(JOptionPane.showInputDialog(
+				null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
+				null,objArrayProfessores,objArrayProfessores[0]));
+		
+		for(int aux = 0; aux<Campus.listaDeProfessores.size(); aux++) {
+			if(Campus.listaDeProfessores.get(aux).nomeDaPessoa.equalsIgnoreCase(auxProfessor)) {
+				
+				turmaCriada.professorDaTurma = Campus.listaDeProfessores.get(aux);
+			}
+		}
 	}
 }
