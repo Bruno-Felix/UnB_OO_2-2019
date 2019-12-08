@@ -1,24 +1,29 @@
 package comunidade;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
+
+import instituicao.Campus;
+import instituicao.Turma;
 
 public class Aluno extends Pessoa {
 	public String matriculaDoAluno;
 	public int periodosDoAluno;
 	
+	
+	// association 
+	
+	public List<Turma> turmas = new ArrayList<>();
+	
+	// constructors
+	
 	public Aluno(){
-//		super();
-//		try {
-//			this.matriculaDoAluno = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de matr�cula: "));
-//		}catch(NumberFormatException e) {
-//			JOptionPane.showMessageDialog(null, "Campo matr�cula deve ser num�rico!");
 //		
-//		}
 	}
 	
-	Aluno(String nomeDaPessoa, int idadeDaPessoa, String matriculaDoAluno, int periodosDoAluno){
+	public Aluno(String nomeDaPessoa, int idadeDaPessoa, String matriculaDoAluno, int periodosDoAluno){
 		super(nomeDaPessoa, idadeDaPessoa);
 		this.matriculaDoAluno = matriculaDoAluno;
 		this.periodosDoAluno = periodosDoAluno;
@@ -33,11 +38,46 @@ public class Aluno extends Pessoa {
 		return novoAluno;
 	}
 	
-	public void verificarTurmasCadastradas() {
+	// methods
+	
+	
+	
+	public void listarTurmas() {
+		
+		System.out.println("Turmas do Aluno "+this.nomeDaPessoa);
+		
+		for(int i=0; i<this.turmas.size();i++) {
+			
+			System.out.println(this.turmas.get(i));
+			
+		}
 		
 	}
 	
-	public void listarAlunos() {
-		
+	// getters e setters
+
+	public String getMatriculaDoAluno() {
+		return matriculaDoAluno;
 	}
+
+	public void setMatriculaDoAluno(String matriculaDoAluno) {
+		this.matriculaDoAluno = matriculaDoAluno;
+	}
+
+	public int getPeriodosDoAluno() {
+		return periodosDoAluno;
+	}
+
+	public void setPeriodosDoAluno(int periodosDoAluno) {
+		this.periodosDoAluno = periodosDoAluno;
+	}
+
+	public List<Turma> getTurmas() {
+		return turmas;
+	}
+
+	public void setTurmas(List<Turma> turmas) {
+		this.turmas = turmas;
+	}
+
 }

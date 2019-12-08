@@ -1,51 +1,50 @@
 package comunidade;
 
-import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import java.util.List;
 
+import instituicao.Campus;
 import instituicao.Turma;
 
 public class Professor extends Pessoa {
 	
 	public int cadastro;
+	
+	// association
+	
+	public List<Turma> turmas = new ArrayList<>();
 		
+	
+	// constructor
+	
+	public Professor() {
+
+	}
 	
 	public Professor(String nomeDaPessoa, int idadeDaPessoa, int cadastro){
 		super(nomeDaPessoa, idadeDaPessoa);
 		this.cadastro = cadastro;
 	}
 	
-	public Professor() {
-		super();
-		try {
-	
-			this.cadastro = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de cadastro: "));
-		}catch(NumberFormatException e) {
-			JOptionPane.showMessageDialog(null, "Campo cadastro deve ser numérico!");
-		}
-	}
-	
-	public void cadastrarPessoaEmTurma(Turma turma) {
-		this.turmas.add(turma);
-	}
-	
-	
-	public void listarTurmasCadastradas() {
-					
-		if(turmas.size() == 0) {
+	///
 			
-			JOptionPane.showMessageDialog(null, "Não há turmas cadastradas para o professor "+this.getNomeDaPessoa());
+	// methods
+	
+	public void listarTurmas() {
+		
+		if(this.getTurmas().size() == 0) {
+			System.out.println("Não há turmas cadastradas para o professor: "+ this.getNomeDaPessoa());
+		}else {
 			
-			}else {
-				
-				for(int i=0; i<turmas.size(); i++) {
-					
-					JOptionPane.showMessageDialog(null, "Professor: "+this.getNomeDaPessoa()+ "\nTurma: "+this.turmas.get(i).nomeDaTurma +"\nDisciplina: "+this.turmas.get(i).disciplinaDaTurma+ "\nVagas: "+this.turmas.get(i).numeroDeAlunos);
-					
+			System.out.println("Turmas cadastradas do professor: "+this.getNomeDaPessoa());
+			
+			for(int i=0; i < this.getTurmas().size() ; i++) {
+				System.out.println(this.turmas.get(i));
 			}
 		}
 	}
-	
 
+	
 	// getters e setters
 		
 	public int getCadastro() {
@@ -55,5 +54,14 @@ public class Professor extends Pessoa {
 	public void setCadastro(int cadastro) {
 		this.cadastro = cadastro;
 	}
+
+	public List<Turma> getTurmas() {
+		return turmas;
+	}
+
+	public void setTurmas(List<Turma> turmas) {
+		this.turmas = turmas;
+	}
+	
 	
 }
