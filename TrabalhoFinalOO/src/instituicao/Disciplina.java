@@ -82,6 +82,13 @@ public class Disciplina {
 	//			e o usuario devera escolher uma disciplina para essa turma, e depois os seus atributos
 	public static void criarTurma() {
 		
+		
+		if(listaDisciplina.size() == 0) {
+			
+			System.out.println("# ERRO: Nao existem disciplinas cadastradas para criar uma turma.\n");
+			Disciplina.criarDisciplina();
+		}
+		
 		Object[] objArray = listaDisciplina.toArray();
 		 
 		do {

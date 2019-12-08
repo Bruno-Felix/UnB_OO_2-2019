@@ -49,6 +49,8 @@ public class menuPrincipal  extends JFrame{
 			Atividades.add(Periodos);
 			Atividades.add(Turmas);
 			Atividades.add(Ocupacoes);
+			
+			Turmas.addActionListener(new ListenerTurma());
 		
 		
 		menuBar.add(Estruturas);
