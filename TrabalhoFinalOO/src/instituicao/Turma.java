@@ -137,12 +137,11 @@ public class Turma {
 		
 		int aux = 1;
 		for(Disciplina disciplina :  Disciplina.listaDisciplina) {
-			
-			System.out.println("---------------------");
-			System.out.println("LISTA DE TURMAS DA DISCIPLINA " + disciplina.getNomeDisciplina() + ":\n");
-			
 			for(Turma turma: disciplina.listaTurma) {
 				if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_turma)) {
+					
+					System.out.println("---------------------");
+					System.out.println("LISTA DE TURMAS DA DISCIPLINA " + disciplina.getNomeDisciplina() + ":\n");
 					
 					System.out.println(" - " + aux + "ª Turma: ");
 					System.out.println("   Nome da turma: " + turma.nomeDaTurma);
@@ -256,7 +255,7 @@ public class Turma {
 	public static void atribuirProfessor(Turma turmaCriada, Object[] objArrayProfessores) throws ArrayIndexOutOfBoundsException{
 		
 		String auxProfessor = String.valueOf(JOptionPane.showInputDialog(
-				null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
+				null,"Escolha O Professor dessa turma","Escolha",JOptionPane.QUESTION_MESSAGE,
 				null,objArrayProfessores,objArrayProfessores[0]));
 		
 		for(int aux = 0; aux<Campus.listaDeProfessores.size(); aux++) {
