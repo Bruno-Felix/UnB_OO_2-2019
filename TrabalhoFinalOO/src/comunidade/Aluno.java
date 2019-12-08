@@ -9,6 +9,7 @@ import instituicao.Campus;
 import instituicao.Turma;
 
 public class Aluno extends Pessoa {
+	
 	public String matriculaDoAluno;
 	public int periodosDoAluno;
 	
@@ -29,7 +30,6 @@ public class Aluno extends Pessoa {
 		this.periodosDoAluno = periodosDoAluno;
 	}
 	
-	
 	public static Aluno cadastrarAluno(Aluno novoAluno) {
 		
 		novoAluno.nomeDaPessoa = JOptionPane.showInputDialog("Digite o nome do Aluno");
@@ -38,10 +38,7 @@ public class Aluno extends Pessoa {
 		return novoAluno;
 	}
 	
-	// methods
-	
-	
-	
+	// methods	
 	public void listarTurmas() {
 		
 		System.out.println("Turmas do Aluno "+this.nomeDaPessoa);
@@ -51,9 +48,27 @@ public class Aluno extends Pessoa {
 			System.out.println(this.turmas.get(i));
 			
 		}
-		
 	}
 	
+	public static void listarAlunosCampus( ) {
+		
+		if(Campus.listaDeAlunos.size() == 0) {
+		
+			System.out.println("Não há alunos cadastrados!");
+		}
+		else {
+			
+			System.out.println("---------------------");
+			System.out.println("LISTA DE ALUNO:\n");
+			
+			for(int i=0; i < Campus.listaDeAlunos.size() ; i++) {
+				
+				System.out.println("Nome do Aluno: " + Campus.listaDeAlunos.get(i).nomeDaPessoa);
+				System.out.println("Matricula do Aluno: " + Campus.listaDeAlunos.get(i).nomeDaPessoa + "\n");
+			}
+		}
+	}
+
 	// getters e setters
 
 	public String getMatriculaDoAluno() {

@@ -61,10 +61,12 @@ public class Turma {
 															    + "Digite 2 para Inserir um Caso Teste de Alunos.");
 			
 			if(opcaoTurmaCriada.equalsIgnoreCase("1")) {
+				
 				System.out.println("\n   Aluno Sendo Inserido na Turma...\n");
 				
 				Aluno novoAluno = new Aluno();
 				turmaCriada.inserirAlunoNaTurma(turmaCriada, novoAluno);
+				Campus.listaDeAlunos.add(novoAluno);
 			}
 			else {
 				System.out.println("\n   Alunos Caso Teste Sendo Inseridos na Turma...\n");
@@ -167,51 +169,61 @@ public class Turma {
 		novoAluno1.nomeDaPessoa = "Bruno";
 		novoAluno1.matriculaDoAluno = "500329778";
 		turmaCriada.listaDeAlunos.add(novoAluno1);
+		Campus.listaDeAlunos.add(novoAluno1);
 		
 		Aluno novoAluno2 = new Aluno();
 		novoAluno2.nomeDaPessoa = "Antônio";
 		novoAluno2.matriculaDoAluno = "258691821";
 		turmaCriada.listaDeAlunos.add(novoAluno2);
+		Campus.listaDeAlunos.add(novoAluno2);
 		
 		Aluno novoAluno3 = new Aluno();
 		novoAluno3.nomeDaPessoa = "Antônio";
 		novoAluno3.matriculaDoAluno = "769229926";
 		turmaCriada.listaDeAlunos.add(novoAluno3);
+		Campus.listaDeAlunos.add(novoAluno3);
 		
 		Aluno novoAluno4 = new Aluno();
 		novoAluno4.nomeDaPessoa = "Geovani";
 		novoAluno4.matriculaDoAluno = "875941241";
 		turmaCriada.listaDeAlunos.add(novoAluno4);
+		Campus.listaDeAlunos.add(novoAluno4);
 		
 		Aluno novoAluno5 = new Aluno();
 		novoAluno5.nomeDaPessoa = "Pedro";
 		novoAluno5.matriculaDoAluno = "828411452";
 		turmaCriada.listaDeAlunos.add(novoAluno5);
+		Campus.listaDeAlunos.add(novoAluno5);
 		
 		Aluno novoAluno6 = new Aluno();
 		novoAluno6.nomeDaPessoa = "Enzo";
 		novoAluno6.matriculaDoAluno = "697893097";
 		turmaCriada.listaDeAlunos.add(novoAluno6);
+		Campus.listaDeAlunos.add(novoAluno6);
 		
 		Aluno novoAluno7 = new Aluno();
 		novoAluno7.nomeDaPessoa = "André";
 		novoAluno7.matriculaDoAluno = "479878157";
 		turmaCriada.listaDeAlunos.add(novoAluno7);
+		Campus.listaDeAlunos.add(novoAluno7);
 		
 		Aluno novoAluno8 = new Aluno();
 		novoAluno8.nomeDaPessoa = "João";
 		novoAluno8.matriculaDoAluno = "751584490";
 		turmaCriada.listaDeAlunos.add(novoAluno8);
+		Campus.listaDeAlunos.add(novoAluno8);
 		
 		Aluno novoAluno9 = new Aluno();
 		novoAluno9.nomeDaPessoa = "Iury";
 		novoAluno9.matriculaDoAluno = "477877588";
 		turmaCriada.listaDeAlunos.add(novoAluno9);
+		Campus.listaDeAlunos.add(novoAluno9);
 		
 		Aluno novoAluno10 = new Aluno();
 		novoAluno10.nomeDaPessoa = "Alberto";
 		novoAluno10.matriculaDoAluno = "110769588";
 		turmaCriada.listaDeAlunos.add(novoAluno10);
+		Campus.listaDeAlunos.add(novoAluno10);
 		
 		System.out.println("   Alunos Caso Teste Inseridos!\n");
 	}

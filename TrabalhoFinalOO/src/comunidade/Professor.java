@@ -54,7 +54,25 @@ public class Professor extends Pessoa {
 		}
 	}
 
-	
+	public static void listarProfessoresCampus() {
+		
+		if(Campus.listaDeProfessores.size() == 0) {
+			
+			System.out.println("Não há professores cadastrados!");
+		}
+		else {
+		
+			System.out.println("---------------------");
+			System.out.println("LISTA DE PROFESSORES:\n");
+			
+			for(int i = 0; i < Campus.listaDeProfessores.size(); i++) {
+				
+				System.out.println("Nome do Professor: " + Campus.listaDeProfessores.get(i).nomeDaPessoa);
+				System.out.println("Cadastro do Professor: " + Campus.listaDeProfessores.get(i).cadastro + "\n");
+			}
+		}
+	}
+
 	// getters e setters
 		
 	public String getCadastro() {

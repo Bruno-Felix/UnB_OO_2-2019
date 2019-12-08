@@ -131,6 +131,34 @@ public class Campus {
 		novoProfessor.cadastrarProfessor(novoProfessor);
 	}
 	
+	public static void criarProfessorCasoTeste() {
+	
+		Professor novoProfessor1 = new Professor();
+		novoProfessor1.nomeDaPessoa = "André Lanna";
+		novoProfessor1.cadastro = "69053";
+		Campus.listaDeProfessores.add(novoProfessor1);
+		
+		Professor novoProfessor2 = new Professor();
+		novoProfessor2.nomeDaPessoa = "Ricardo Fragelli";
+		novoProfessor2.cadastro = "13941";
+		Campus.listaDeProfessores.add(novoProfessor2);
+		
+		Professor novoProfessor3 = new Professor();
+		novoProfessor3.nomeDaPessoa = "Paula Meyer";
+		novoProfessor3.cadastro = "36865";
+		Campus.listaDeProfessores.add(novoProfessor3);
+		
+		Professor novoProfessor4 = new Professor();
+		novoProfessor4.nomeDaPessoa = "Renato Coral";
+		novoProfessor4.cadastro = "46654";
+		Campus.listaDeProfessores.add(novoProfessor4);
+		
+		Professor novoProfessor5 = new Professor();
+		novoProfessor5.nomeDaPessoa = "Tatiane da Silva";
+		novoProfessor5.cadastro = "11112";
+		Campus.listaDeProfessores.add(novoProfessor5);
+	}
+	
 	public static void criarAluno() {
 		
 		Aluno novoAluno = new Aluno();
@@ -140,43 +168,5 @@ public class Campus {
 
 	public static void cadastrarAlunoEmCampus(Aluno aluno) {
 		listaDeAlunos.add(aluno);
-	}
-	
-	public static void listarProfessoresCampus() {
-		
-		if(listaDeProfessores.size() == 0) {
-			
-			System.out.println("Não há professores cadastrados!");
-		}
-		else {
-		
-			System.out.println("---------------------");
-			System.out.println("LISTA DE PROFESSORES:\n");
-			
-			for(int i = 0; i < listaDeProfessores.size(); i++) {
-				
-				System.out.println("Nome do Professor: " + listaDeProfessores.get(i).nomeDaPessoa);
-				System.out.println("Cadastro do Professor: " + listaDeProfessores.get(i).cadastro + "\n");
-			}
-		}
-	}
-	
-	public static void listarAlunosCampus( ) {
-		
-		if(listaDeAlunos.size() == 0) {
-		
-			System.out.println("Não há alunos cadastrados!");
-		}
-		else {
-			
-			System.out.println("---------------------");
-			System.out.println("LISTA DE ALUNO:\n");
-			
-			for(int i=0; i < listaDeAlunos.size() ; i++) {
-				
-				System.out.println("Nome do Aluno: " + listaDeAlunos.get(i).nomeDaPessoa);
-				System.out.println("Matricula do Aluno: " + listaDeAlunos.get(i).nomeDaPessoa + "\n");
-			}
-		}
 	}
 }

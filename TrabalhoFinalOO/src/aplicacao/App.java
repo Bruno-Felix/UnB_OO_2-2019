@@ -15,6 +15,7 @@ public class App {
 		//Sala.listarSalasDeUmPredio();
 			
 		//Sala.cadastrarSala();
+		Campus.criarProfessorCasoTeste();
 		Disciplina.criarDisciplina();
 		Disciplina.listarDisciplinas();
 		//Disciplina.alterarDisciplina();
