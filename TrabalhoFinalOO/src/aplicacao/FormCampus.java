@@ -35,12 +35,12 @@ public class FormCampus extends JFrame {
 //		btnListarCampus.addActionListener(new ActionListenerbtnListarCampus());
 //		add(btnListarCampus);
 
-        btnCriarCampus = new JButton("Criar Turma");
+        btnCriarCampus = new JButton("Criar Campus");
         btnCriarCampus.setBounds(22, 81, 132, 23);
         btnCriarCampus.addActionListener(new ActionListenerbtnCriarCampus());
         add(btnCriarCampus);
 
-        btnListarCampus = new JButton("Listar Turma");
+        btnListarCampus = new JButton("Listar Campus");
         btnListarCampus.setBounds(258, 81, 142, 23);
         btnListarCampus.addActionListener(new ActionListenerbtnListarCampus());
         add(btnListarCampus);
