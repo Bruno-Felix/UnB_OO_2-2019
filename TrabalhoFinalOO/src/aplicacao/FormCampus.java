@@ -25,12 +25,13 @@ public class FormCampus extends JFrame {
 		
 		setBounds(50, 50, 300, 400);
 		setLayout(new GridLayout(3, 3)); //nesse caso, uma tabela 3x3
+		setTitle("Campos");
 		
-		btnCriarCampus = new JButton("ListarTurma");
+		btnCriarCampus = new JButton("Criar Turma");
 		btnCriarCampus.addActionListener(new ActionListenerbtnCriarCampus());
 		add(btnCriarCampus);
 		
-		btnListarCampus = new JButton("ListarTurma");
+		btnListarCampus = new JButton("Listar Turma");
 		btnListarCampus.addActionListener(new ActionListenerbtnListarCampus());
 		add(btnListarCampus);
 		
