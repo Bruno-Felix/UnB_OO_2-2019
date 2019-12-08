@@ -5,14 +5,18 @@ import comunidade.*;
 
 public class App {
 
+	private static menuPrincipal form; 
+	
 	public static void main(String[] args) {
+			
+		form = new menuPrincipal();
 		
-		Campus.criarCampus();
-		Campus.listarCampus();
-		Campus.criarPredio();
-		Predio.listarPredios();
-		Predio.criarSalaNoPredio();
-		Sala.listarSalasDeUmPredio();
+//		Campus.criarCampus();
+//		Campus.listarCampus();
+//		Campus.criarPredio();
+//		Predio.listarPredios();
+//		Predio.criarSalaNoPredio();
+//		Sala.listarSalasDeUmPredio();
 			
 //		Campus.criarProfessorCasoTeste();
 //		Aluno.cadastrarAlunoCasoTeste();
@@ -24,5 +28,7 @@ public class App {
 //		Turma.listarAlunosDaTurma();
 //		Turma.listarTurmas();
 //		Aluno.listarTurmasDoAluno();
+		
+		//viewMenuPrincipal interface = new viewMenuPrincipal();
 	}
 }
