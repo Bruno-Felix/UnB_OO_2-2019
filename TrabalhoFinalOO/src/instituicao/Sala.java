@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import excessoes.TipoDeAtividadeNaoAtribuidaException;
+
 public class Sala {
 	
 	static int opcao;
@@ -30,6 +32,10 @@ public class Sala {
 		salaCriada.tipoDeAtividade = String.valueOf(JOptionPane.showInputDialog(
 				null,"Selecione uma atividade","Escolha",JOptionPane.QUESTION_MESSAGE,
 				null,Atividade,Atividade[0]));
+		
+		TipoDeAtividadeNaoAtribuidaException.AtividadeNaoAtribuidaException(salaCriada);
+		
+		
 		
 		int opcaoAr = 0;
 		opcaoAr = JOptionPane.showConfirmDialog(null,
