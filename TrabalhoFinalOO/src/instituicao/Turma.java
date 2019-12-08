@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import comunidade.Aluno;
 import comunidade.Professor;
+import excessoes.DisciplinaNaoInformadaException;
 //import excessoes.DisciplinaNaoInformadaException;
 //import excessoes.ProfessorNaoAtribuidoException;
 import excessoes.ProfessorNaoAtribuidoException;
@@ -88,7 +89,11 @@ public class Turma {
 		for(int aux = 0; aux<Disciplina.listaDisciplina.size(); aux++) {
 			if(Disciplina.listaDisciplina.get(aux).nomeDisciplina.equalsIgnoreCase(temporaria)) {
 				
-				turmaCriada.disciplinaDaTurma = Disciplina.listaDisciplina.get(aux);
+//				turmaCriada.disciplinaDaTurma = Disciplina.listaDisciplina.get(aux);
+				
+				Object[] objArrayDsc = Disciplina.listaDisciplina.toArray();
+				
+				DisciplinaNaoInformadaException.DisciplinaNaoInformadaException(turmaCriada, objArrayDsc);
 				Disciplina.listaDisciplina.get(aux).listaTurma.add(turmaCriada);
 			}
 		}
@@ -277,4 +282,19 @@ public class Turma {
 			}
 		}
 	}
+	
+	public static void atribuirDisciplina(Turma turmaCriada, Object[] objArrayDisciplinas) throws ArrayIndexOutOfBoundsException{
+		
+		String auxDisciplina = String.valueOf(JOptionPane.showInputDialog(
+				null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
+				null,objArrayDisciplinas,objArrayDisciplinas[0]));
+		
+		for(int aux = 0; aux<Disciplina.listaDisciplina.size(); aux++) {
+			if(Disciplina.listaDisciplina.get(aux).nomeDisciplina.equalsIgnoreCase(auxDisciplina)) {
+		
+				turmaCriada.disciplinaDaTurma = Disciplina.listaDisciplina.get(aux);
+			}
+		}
+	}
 }
+

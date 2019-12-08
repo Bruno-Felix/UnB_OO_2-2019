@@ -95,9 +95,9 @@ public class Sala {
 						
 						System.out.println("---------------------");
 						System.out.println("LISTA DE SALAS DO PRÉDIO " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).nomeDaEstrutura +  
-								           "DO CAMPUS " + Campus.listaDeCampus.get(aux).nomeDoCampus+ ":\n");
+								           " DO CAMPUS " + Campus.listaDeCampus.get(aux).nomeDoCampus+ ":\n");
 						
-						for(int auxC = 0; auxC < Campus.listaDeCampus.size(); auxC++) {
+						for(int auxC = 0; auxC < Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.size(); auxC++) {
 							
 							System.out.println(" - " + (auxC+1) + "º Sala:");
 							System.out.println("   Nome da Sala: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).nomeDaSala);
