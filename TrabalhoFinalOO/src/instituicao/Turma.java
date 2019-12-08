@@ -92,6 +92,67 @@ public class Turma {
 		}
 	}
 	
+	public static void alterarTurmas() {
+		
+		Object[] objArrayDsc = Disciplina.listaDisciplina.toArray();
+		Object[] objArrayTrm = Disciplina.listaDisciplina.toArray();
+		
+		String temporaria_disciplina = String.valueOf(JOptionPane.showInputDialog(
+				null,"Selecione uma disciplina","Escolha",JOptionPane.QUESTION_MESSAGE,
+				null,objArrayDsc,objArrayDsc[0]));
+		
+		for(Disciplina disciplina :  Disciplina.listaDisciplina) {
+			if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_disciplina)) {
+	
+				String temporaria_turma = String.valueOf(JOptionPane.showInputDialog(
+						null,"Selecione uma turma de " + temporaria_disciplina,"Escolha",JOptionPane.QUESTION_MESSAGE,
+						null,objArrayTrm,objArrayTrm[0]));
+				
+				for(Turma turma: disciplina.listaTurma) {
+					if(turma.nomeDaTurma.equalsIgnoreCase(temporaria_turma)) {
+				
+						int opcao = Integer.parseInt(JOptionPane.showInputDialog("Digite :\n 1. Para alterar o nome da turma\n2. Para alterar o numero de alunos"));
+						
+						if(opcao == 1) {
+							turma.nomeDaTurma = JOptionPane.showInputDialog("Digite o novo nome da turma");
+							turma.nomeDaTurma = Disciplina.validaNome(turma.nomeDaTurma);
+						}
+						else if(opcao == 2) {
+							turma.numeroDeAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a nova quantidade de alunos"));
+							turma.numeroDeAlunos = Disciplina.validaQtd(turma.numeroDeAlunos);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	public static void listarTurmas() {
+		
+		Object[] objArray = Disciplina.listaDisciplina.toArray();
+		
+		String temporaria_turma = String.valueOf(JOptionPane.showInputDialog(
+				null,"Qual a disciplina deve ter as turmas listadas?","Escolha",JOptionPane.QUESTION_MESSAGE,
+				null,objArray,objArray[0]));
+		
+		int aux = 1;
+		for(Disciplina disciplina :  Disciplina.listaDisciplina) {
+			
+			System.out.println("---------------------");
+			System.out.println("LISTA DE TURMAS DA DISCIPLINA " + disciplina.getNomeDisciplina() + ":\n");
+			
+			for(Turma turma: disciplina.listaTurma) {
+				if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_turma)) {
+					
+					System.out.println(" - " + aux + "ª Turma: ");
+					System.out.println("   Nome da turma: " + turma.nomeDaTurma);
+					System.out.println("   Nome do professor: " + turma.professorDaTurma.nomeDaPessoa);
+					System.out.println("   Numero de alunos: " + turma.numeroDeAlunos + "\n");
+				}
+			}
+		}
+	}
+
 	public void inserirAlunoNaTurma(Turma turmaCriada, Aluno novoAluno) {
 		
 		novoAluno = Aluno.cadastrarAluno(novoAluno);

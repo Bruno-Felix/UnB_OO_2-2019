@@ -21,7 +21,7 @@ public class App {
 		//Disciplina.listarDisciplinas();
 		Disciplina.criarTurma();
 		//Turma.listarAlunosDaTurma();
-		//Disciplina.listarTurmas();
+		Turma.listarTurmas();
 		
 		//Professor p1 = new Professor("Andre", 30, 789456);
 		//Campus.cadastrarProfessoeEmCampus(p1);
