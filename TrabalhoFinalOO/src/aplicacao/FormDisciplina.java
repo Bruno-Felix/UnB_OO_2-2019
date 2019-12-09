@@ -35,7 +35,6 @@ public class FormDisciplina extends JFrame{
 	 * Create the frame.
 	 */
 	public FormDisciplina() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 650, 300);
 		setTitle("Disciplinas");
 		contentPane = new JPanel();
