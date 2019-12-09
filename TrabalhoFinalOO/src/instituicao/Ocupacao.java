@@ -9,17 +9,233 @@ public class Ocupacao {
 	
 	public Turma turmaDaOcupacao;
 	public Sala salaDaOcupacao;
-	public Periodos peridoDaOcupacao;
+	public Periodos periodoDaOcupacao;
 	public static List<Ocupacao> listaDeOcupacoes = new ArrayList<Ocupacao>();
+	
+	public static Object[] dias = {"Segunda", "Terca","Quarta","Quinta","Sexta","Sabado"};
+	public static String [] horas = {"00","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"};
+	public static String [] minutos;
 
 	public static void criarECadastrarOcupacao() {
 		
 		Ocupacao novaOcupacao = new Ocupacao();
 		
 		System.out.println("---------------------");
-		System.out.println("# Nova Ocupacao Sendo Gerada...\n");
+		System.out.println("\n      # Nova Ocupacao Sendo Gerada...\n");
+		System.out.println("		1º Passo: Escolher um Perído para a Ocupacao.\n");
 		
-		System.out.println("  1º Passo: Escolher uma Turma para a Ocupacao.\n");
+		System.out.println("		Perído para a Ocupacao Sendo Escolhido...\n");
+		String auxDiaPeriodo = String.valueOf(JOptionPane.showInputDialog(null, "Escolha o Dia da Semana dessa Ocupação?", "Escolha",
+				JOptionPane.QUESTION_MESSAGE, null, dias, dias[0]));
+		
+		if(auxDiaPeriodo.equalsIgnoreCase("Segunda")) {
+			
+			if (Periodos.listaSegunda.size() == 0) {
+				System.out.println("---------------------");
+				System.out.println("#		ERRO: Nao existem periodos cadastrados na Segunda.\n");
+				System.out.println("#       Por Favor, crie um período\n");
+				
+				Periodos.cadastrarPeriodos();
+				criarECadastrarOcupacao();
+			}
+			else {
+				
+				Object[] objArrayPeriodos = Periodos.listaSegunda.toArray();
+				
+				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
+						null,"Escolha o Periodo dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
+						null,objArrayPeriodos,objArrayPeriodos[0]));
+				
+				for(int auxB = 0; auxB < Periodos.listaSegunda.size(); auxB++) {
+					if(Periodos.listaSegunda.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo)) {
+						
+						novaOcupacao.periodoDaOcupacao = Periodos.listaSegunda.get(auxB);
+						
+						System.out.println("---------------------\n");
+						System.out.println("		" + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
+						System.out.println("   		Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
+														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosTermino +
+														   ", na " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " Atribuida a Nova Ocupação!\n");
+					}
+				}
+			}
+		}
+		else if(auxDiaPeriodo.equalsIgnoreCase("Terca")) {
+			
+			if (Periodos.listaTerca.size() == 0) {
+				System.out.println("---------------------");
+				System.out.println("#		ERRO: Nao existem periodos cadastrados na Terca.\n");
+				System.out.println("#       Por Favor, crie um período\n");
+				
+				Periodos.cadastrarPeriodos();
+				criarECadastrarOcupacao();
+			}
+			else {
+				
+				Object[] objArrayPeriodos = Periodos.listaTerca.toArray();
+				
+				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
+						null,"Escolha o Dia da Semana dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
+						null,objArrayPeriodos,objArrayPeriodos[0]));
+				
+				for(int auxB = 0; auxB < Periodos.listaTerca.size(); auxB++) {
+					if(Periodos.listaTerca.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo)) {
+						
+						novaOcupacao.periodoDaOcupacao = Periodos.listaTerca.get(auxB);
+						
+						System.out.println("---------------------\n");
+						System.out.println("   " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
+						System.out.println("   Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
+														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosTermino +
+														   ", na " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " Atribuida a Nova Ocupação!\n");
+					}
+				}
+			}
+		}
+		else if(auxDiaPeriodo.equalsIgnoreCase("Quarta")) {
+			
+			if (Periodos.listaQuarta.size() == 0) {
+				System.out.println("---------------------");
+				System.out.println("#		ERRO: Nao existem periodos cadastrados na Quarta.\n");
+				System.out.println("#       Por Favor, crie um período\n");
+				
+				Periodos.cadastrarPeriodos();
+				criarECadastrarOcupacao();
+			}
+			else {
+				
+				Object[] objArrayPeriodos = Periodos.listaQuarta.toArray();
+				
+				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
+						null,"Escolha o Dia da Semana dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
+						null,objArrayPeriodos,objArrayPeriodos[0]));
+				
+				for(int auxB = 0; auxB < Periodos.listaQuarta.size(); auxB++) {
+					if(Periodos.listaQuarta.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo)) {
+						
+						novaOcupacao.periodoDaOcupacao = Periodos.listaQuarta.get(auxB);
+						
+						System.out.println("---------------------\n");
+						System.out.println("   " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
+						System.out.println("   Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
+														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosTermino +
+														   ", na " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " Atribuida a Nova Ocupação!\n");
+					}
+				}
+			}
+		}
+		else if(auxDiaPeriodo.equalsIgnoreCase("Quinta")) {
+			
+			if (Periodos.listaQuinta.size() == 0) {
+				System.out.println("---------------------");
+				System.out.println("#		ERRO: Nao existem periodos cadastrados na Quinta.\n");
+				System.out.println("#       Por Favor, crie um período\n");
+				
+				Periodos.cadastrarPeriodos();
+				criarECadastrarOcupacao();
+			}
+			else {
+				
+				Object[] objArrayPeriodos = Periodos.listaQuinta.toArray();
+				
+				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
+						null,"Escolha o Dia da Semana dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
+						null,objArrayPeriodos,objArrayPeriodos[0]));
+				
+				for(int auxB = 0; auxB < Periodos.listaQuinta.size(); auxB++) {
+					if(Periodos.listaQuinta.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo)) {
+						
+						novaOcupacao.periodoDaOcupacao = Periodos.listaQuinta.get(auxB);
+						
+						System.out.println("---------------------\n");
+						System.out.println("   " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
+						System.out.println("   Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
+														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosTermino +
+														   ", na " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " Atribuida a Nova Ocupação!\n");
+					}
+				}
+			}
+		}
+		else if(auxDiaPeriodo.equalsIgnoreCase("Sexta")) {
+			
+			if (Periodos.listaSexta.size() == 0) {
+				System.out.println("---------------------");
+				System.out.println("#		ERRO: Nao existem periodos cadastrados na Sexta.\n");
+				System.out.println("#       Por Favor, crie um período\n");
+				
+				Periodos.cadastrarPeriodos();
+				criarECadastrarOcupacao();
+			}	
+			else {
+				
+				Object[] objArrayPeriodos = Periodos.listaSexta.toArray();
+				
+				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
+						null,"Escolha o Dia da Semana dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
+						null,objArrayPeriodos,objArrayPeriodos[0]));
+				
+				for(int auxB = 0; auxB < Periodos.listaSexta.size(); auxB++) {
+					if(Periodos.listaSexta.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo)) {
+						
+						novaOcupacao.periodoDaOcupacao = Periodos.listaSexta.get(auxB);
+						
+						System.out.println("---------------------\n");
+						System.out.println("   " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
+						System.out.println("   Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
+														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosTermino +
+														   ", na " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " Atribuida a Nova Ocupação!\n");
+					}
+				}
+			}
+		}
+		else if(auxDiaPeriodo.equalsIgnoreCase("Sabado")) {
+			
+			if (Periodos.listaSabado.size() == 0) {
+				System.out.println("---------------------");
+				System.out.println("#		ERRO: Nao existem periodos cadastrados na Sabado.\n");
+				System.out.println("#       Por Favor, crie um período\n");
+				
+				Periodos.cadastrarPeriodos();
+				criarECadastrarOcupacao();
+			}
+			else {
+				
+				Object[] objArrayPeriodos = Periodos.listaSabado.toArray();
+				
+				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
+						null,"Escolha o Dia da Semana dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
+						null,objArrayPeriodos,objArrayPeriodos[0]));
+				
+				for(int auxB = 0; auxB < Periodos.listaSabado.size(); auxB++) {
+					if(Periodos.listaSabado.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo)) {
+						
+						novaOcupacao.periodoDaOcupacao = Periodos.listaSabado.get(auxB);
+						
+						System.out.println("---------------------\n");
+						System.out.println("   " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
+						System.out.println("   Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
+														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
+														   novaOcupacao.periodoDaOcupacao.minutosTermino +
+														   ", na " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " Atribuida a Nova Ocupação!\n");
+					}
+				}
+			}
+		}
+		
+		
+		System.out.println("---------------------");
+		System.out.println("		2º Passo: Escolher uma Turma para a Ocupacao.\n");
 		
 		Object[] objArrayDisciplina = Disciplina.listaDisciplina.toArray();
 		
@@ -33,8 +249,8 @@ public class Ocupacao {
 		catch(ArrayIndexOutOfBoundsException e) {
 			
 			System.out.println("---------------------");
-			System.out.println("# ERRO: Nao existem disciplinas cadastradas, logo não existe turmas cadastradas.\n");
-			System.out.println("# Por Favor, crie uma disciplina\n");
+			System.out.println("#		ERRO: Nao existem disciplinas cadastradas, logo não existe turmas cadastradas.\n");
+			System.out.println("#       Por Favor, crie uma disciplina\n");
 			
 			Disciplina.criarDisciplina();
 			
@@ -60,10 +276,9 @@ public class Ocupacao {
 				catch(ArrayIndexOutOfBoundsException e) {
 					
 					System.out.println("---------------------");
-					System.out.println("# ERRO: Nao existem turmas cadastradas na disciplina " + auxDisciplina + ".\n");
+					System.out.println("#		ERRO: Nao existem turmas cadastradas na disciplina " + auxDisciplina + ".\n");
+					System.out.println("#       Por Favor, crie uma turma\n");
 					
-					System.out.println("# Por Favor, crie uma turma\n");
-					//Disciplina.criarDisciplina();
 					Disciplina.criarTurma();
 					
 					Object[] objNovoArrayTurma = Disciplina.listaDisciplina.get(aux).listaTurma.toArray();
@@ -85,7 +300,7 @@ public class Ocupacao {
 		System.out.println("---------------------\n");
 		System.out.println("     Turma " + novaOcupacao.turmaDaOcupacao.nomeDaTurma + ", da Disciplina " + auxDisciplina + ", Atribuida a Nova Ocupação!\n");
 	
-		System.out.println("     2º Passo: Escolher uma Sala para a Ocupacao.\n");
+		System.out.println("     3º Passo: Escolher uma Sala para a Ocupacao.\n");
 		
 		
 		Object[] objArrayCampus = Campus.listaDeCampus.toArray();
@@ -100,8 +315,8 @@ public class Ocupacao {
 		catch(ArrayIndexOutOfBoundsException e) {
 			
 			System.out.println("---------------------");
-			System.out.println("# ERRO: Nao existem campus cadastrados, logo não existe prédio e salas cadastradas.\n");
-			System.out.println("# Por Favor, crie um campus\n");
+			System.out.println("#		ERRO: Nao existem campus cadastrados, logo não existe prédio e salas cadastradas.\n");
+			System.out.println("#       Por Favor, crie um campus\n");
 			
 			Campus.criarCampus();
 			
@@ -155,8 +370,8 @@ public class Ocupacao {
 					catch(ArrayIndexOutOfBoundsException e) {
 						
 						System.out.println("---------------------");
-						System.out.println("# ERRO: Nao existem salas cadastradas no predio " + auxPredios + ".\n");
-						System.out.println("# Por Favor, crie uma sala\n");
+						System.out.println("#		ERRO: Nao existem salas cadastradas no predio " + auxPredios + ".\n");
+						System.out.println("#       Por Favor, crie uma sala\n");
 						
 						Predio.criarSalaNoPredio();
 						
@@ -178,7 +393,7 @@ public class Ocupacao {
 		}
 		
 		System.out.println("---------------------\n");
-		System.out.println("     Sala " + novaOcupacao.salaDaOcupacao.nomeDaSala + ", do Prédio " + auxPredios + ", Campus " + auxCampus + "Atribuida a Nova Ocupação!\n");
+		System.out.println("		Sala " + novaOcupacao.salaDaOcupacao.nomeDaSala + ", do Prédio " + auxPredios + ", Campus " + auxCampus + "Atribuida a Nova Ocupação!\n");	
 	}
 
 	public static void listaDeOcupacoes() {

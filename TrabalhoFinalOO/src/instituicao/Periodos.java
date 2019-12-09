@@ -13,7 +13,8 @@ public class Periodos {
 	String minutosInicio;
 	String horaTermino;
 	String minutosTermino;
-	
+
+
 	public static List<Periodos> listaSegunda = new ArrayList<Periodos>();
 	public static List<Periodos> listaTerca = new ArrayList<Periodos>();
 	public static List<Periodos> listaQuarta = new ArrayList<Periodos>();
@@ -26,6 +27,12 @@ public class Periodos {
 	public static String [] minutos;
     static int opcao;
 	static int valido;
+	
+	@Override
+	public String toString() {
+		return horaInicio;
+	}
+	
     
 	public static void cadastrarPeriodos() {
 		do {
