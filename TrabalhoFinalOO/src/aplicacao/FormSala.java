@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 //import javax.swing.JOptionPane;
 //import javax.swing.JTextField;
 
-
+import excessoes.*;
 import instituicao.Sala;
 import instituicao.Predio;
 
@@ -54,8 +54,8 @@ public class FormSala extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			
-			Predio.criarSalaNoPredio();
+			PredioNaoCriadoException.PredioNCriadoException();
+	
 		}
 	}
 	

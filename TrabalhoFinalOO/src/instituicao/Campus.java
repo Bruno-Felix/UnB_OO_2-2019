@@ -107,7 +107,7 @@ public class Campus {
 			Predio novoPredio = new Predio();
 			
 			System.out.println("---------------------");
-			System.out.println("# Novo Prédio Sendo Criado...");
+			System.out.println("# Novo Predio Sendo Criado...");
 			
 			Object[] objArrayCampus = listaDeCampus.toArray();
 	    	
@@ -117,7 +117,7 @@ public class Campus {
 	    			
 			novoPredio.cadastrarPredio(auxCampus, novoPredio, listaDeCampus);
 			
-			System.out.println("  Prédio " + novoPredio.nomeDaEstrutura + " Criado no Campus " + auxCampus + "!\n");
+			System.out.println("  Predio " + novoPredio.nomeDaEstrutura + " Criado no Campus " + auxCampus + "!\n");
 	    	
 	    	opcao = JOptionPane.showConfirmDialog(null,
 					"Quer continuar criando Predios?", "Escolha um", JOptionPane.YES_NO_OPTION);

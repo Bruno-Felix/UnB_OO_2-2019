@@ -13,7 +13,7 @@ import javax.swing.border.EmptyBorder;
 
 import instituicao.Disciplina;
 import instituicao.Turma;
-
+import excessoes.*;
 
 public class FormTurma extends JFrame {
 	
@@ -58,7 +58,7 @@ public class FormTurma extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			
-			Disciplina.criarTurma();
+			DisciplinaNaoCriadaException.DisciplinaNCriadaException();
 		}
 	}
 	
