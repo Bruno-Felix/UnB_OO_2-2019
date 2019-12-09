@@ -11,7 +11,9 @@ public class App {
 			
 		//Periodos.cadastrarPeriodos();
 		
-		form = new menuPrincipal();
+		Ocupacao.criarECadastrarOcupacao();
+		
+		//form = new menuPrincipal();
 		
 //		Campus.criarCampus();
 //		Campus.listarCampus();

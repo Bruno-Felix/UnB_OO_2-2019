@@ -82,25 +82,36 @@ public class Disciplina {
 	//			e o usuario devera escolher uma disciplina para essa turma, e depois os seus atributos
 	public static void criarTurma() {
 		
-		
-		if(listaDisciplina.size() == 0) {
-			
-			System.out.println("# ERRO: Nao existem disciplinas cadastradas para criar uma turma.\n");
-			Disciplina.criarDisciplina();
-		}
-		
 		Object[] objArray = listaDisciplina.toArray();
-		 
+		
 		do {
 			Turma novaTurma = new Turma();
 			
 			System.out.println("# Nova Turma Sendo Criada...");
 			
-			String auxDisciplina = String.valueOf(JOptionPane.showInputDialog(
+			String auxDisciplina = null;
+			try {
+				
+				auxDisciplina = String.valueOf(JOptionPane.showInputDialog(
 					null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
 					null,objArray,objArray[0]));
-			
-			novaTurma.cadastrasTurma(auxDisciplina, listaDisciplina, novaTurma);
+				
+				novaTurma.cadastrasTurma(auxDisciplina, listaDisciplina, novaTurma);
+			}
+			catch(ArrayIndexOutOfBoundsException e) {
+				
+				System.out.println("# ERRO: Nao existem disciplinas cadastradas para criar uma turma.\n");
+				Disciplina.criarDisciplina();
+				
+				
+				Object[] objNovoArray = listaDisciplina.toArray();
+				
+				auxDisciplina = String.valueOf(JOptionPane.showInputDialog(
+						null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
+						null,objNovoArray,objNovoArray[0]));
+					
+				novaTurma.cadastrasTurma(auxDisciplina, listaDisciplina, novaTurma);
+			}
 			
 			System.out.println("   Turma " + novaTurma.nomeDaTurma + " Criada Na Disciplina " + auxDisciplina + "!\n");
 			

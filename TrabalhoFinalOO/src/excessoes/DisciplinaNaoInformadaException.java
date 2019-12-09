@@ -15,7 +15,7 @@ public class DisciplinaNaoInformadaException {
 			System.out.println("---------------------");
 			System.out.println("# ERRO: Nao existem disciplinas cadastradas para atribui-la a turma.\n");
 
-			System.out.println("#       Por Favor, crie uma Disciplina para atribui-la a Turma.\n");
+			System.out.println("# Por Favor, crie uma Disciplina para atribui-la a Turma.\n");
 			
 			Disciplina.criarDisciplina();
 

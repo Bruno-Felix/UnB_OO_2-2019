@@ -302,7 +302,7 @@ public class Turma {
 	public static void atribuirDisciplina(Turma turmaCriada, Object[] objArrayDisciplinas) throws ArrayIndexOutOfBoundsException{
 		
 		String auxDisciplina = String.valueOf(JOptionPane.showInputDialog(
-				null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
+				null,"Escolha a Disciplina da turma","Escolha",JOptionPane.QUESTION_MESSAGE,
 				null,objArrayDisciplinas,objArrayDisciplinas[0]));
 		
 		for(int aux = 0; aux<Disciplina.listaDisciplina.size(); aux++) {
