@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import aplicacao.FormCampus.ActionListenerbtnCriarCampus;
+import excessoes.CampusNaoCriadoException;
 import instituicao.Predio;
 import instituicao.Campus;
 import javax.swing.JButton;
@@ -59,7 +60,7 @@ public class FormPredio extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			Campus.criarPredio();
+			CampusNaoCriadoException.CampusNCriadoException();
 			
 		}
 	}
