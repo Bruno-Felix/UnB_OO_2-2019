@@ -36,7 +36,6 @@ public class FormPredio extends JFrame {
 	 * Create the frame.
 	 */
 	public FormPredio() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 400);
 		setTitle("Predio");
 		contentPane = new JPanel();
