@@ -49,12 +49,12 @@ public class FormDisciplina extends JFrame{
 		contentPane.add(btnCriarDisciplina);
 		
 		JButton btnListarDisciplinas = new JButton("Listar Disciplinas");
-		btnListarDisciplinas.setBounds(296, 111, 150, 23);
+		btnListarDisciplinas.setBounds(210, 111, 150, 23);
 		btnListarDisciplinas.addActionListener(new ActionListenerbtnListarDisciplinas());
 		contentPane.add(btnListarDisciplinas);
 		
 		JButton btnAlterarDisciplina = new JButton("Alterar Disciplina");
-		btnAlterarDisciplina.setBounds(155, 111, 150, 23);
+		btnAlterarDisciplina.setBounds(425, 111, 150, 23);
 		btnAlterarDisciplina.addActionListener(new ActionListenerbtnAlterarDisciplina());
 		contentPane.add(btnAlterarDisciplina);
 		setVisible(true);
