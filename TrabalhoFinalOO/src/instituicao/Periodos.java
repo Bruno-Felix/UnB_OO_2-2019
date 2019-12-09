@@ -78,7 +78,7 @@ public class Periodos {
 		}while(opcao==0);
 	}
 	
-	public void listarPeriodos() {
+	public static void listarPeriodos() {
 		
 		for(int aux=0; aux<dias.length; aux++) {
 			switch(aux) {
