@@ -167,7 +167,7 @@ public class Ocupacao {
 								null,objNovoArraySalas, objNovoArraySalas[0]));	
 					}
 					
-					for(int auxC = 0; auxC < Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.size(); auxB++) { 
+					for(int auxC = 0; auxC < Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.size(); auxC++) { 
 						if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).nomeDaSala.equalsIgnoreCase(auxSalas)) { 
 							
 							novaOcupacao.salaDaOcupacao = Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC);
@@ -179,5 +179,10 @@ public class Ocupacao {
 		
 		System.out.println("---------------------\n");
 		System.out.println("     Sala " + novaOcupacao.salaDaOcupacao.nomeDaSala + ", do Prédio " + auxPredios + ", Campus " + auxCampus + "Atribuida a Nova Ocupação!\n");
+	}
+
+	public static void listaDeOcupacoes() {
+		// TODO Auto-generated method stub
+		
 	}
 }
