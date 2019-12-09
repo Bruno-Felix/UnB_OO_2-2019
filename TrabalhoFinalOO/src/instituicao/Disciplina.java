@@ -87,6 +87,7 @@ public class Disciplina {
 		do {
 			Turma novaTurma = new Turma();
 			
+			System.out.println("---------------------");
 			System.out.println("# Nova Turma Sendo Criada...");
 			
 			String auxDisciplina = null;
@@ -112,7 +113,7 @@ public class Disciplina {
 					
 				novaTurma.cadastrasTurma(auxDisciplina, listaDisciplina, novaTurma);
 			}
-			
+			System.out.println("---------------------");
 			System.out.println("   Turma " + novaTurma.nomeDaTurma + " Criada Na Disciplina " + auxDisciplina + "!\n");
 			
 			opcao = JOptionPane.showConfirmDialog(null,

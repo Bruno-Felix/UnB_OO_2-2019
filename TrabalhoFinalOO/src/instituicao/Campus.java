@@ -60,6 +60,7 @@ public class Campus {
 			
 			listaDeCampus.add(novoCampus);
 			
+			System.out.println("---------------------");
 			System.out.println("  Campus " + novoCampus.nomeDoCampus + " Criado!\n");
 			
 			opcao = JOptionPane.showConfirmDialog(null,

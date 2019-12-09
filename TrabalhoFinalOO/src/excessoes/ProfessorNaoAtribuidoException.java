@@ -16,7 +16,7 @@ public class ProfessorNaoAtribuidoException {
 			System.out.println("---------------------");
 			System.out.println("# ERRO: Não existe professor cadastrados no Campos para atribui-lo a turma.\n");
 			
-			System.out.println("#       Por Favor, crie um Professor para atribui-lo a Turma.\n");
+			System.out.println("# Por Favor, crie um Professor para atribui-lo a Turma.\n");
 			
 			Campus.criarProfessor();
 			
