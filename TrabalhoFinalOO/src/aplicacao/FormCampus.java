@@ -27,14 +27,6 @@ public class FormCampus extends JFrame {
 		setLayout(null); //nesse caso, uma tabela 3x3
 		setTitle("Campos");
 		
-//		btnCriarCampus = new JButton("Criar Turma");
-//		btnCriarCampus.addActionListener(new ActionListenerbtnCriarCampus());
-//		add(btnCriarCampus);
-//		
-//		btnListarCampus = new JButton("Listar Turma");
-//		btnListarCampus.addActionListener(new ActionListenerbtnListarCampus());
-//		add(btnListarCampus);
-
         btnCriarCampus = new JButton("Criar Campus");
         btnCriarCampus.setBounds(22, 81, 132, 23);
         btnCriarCampus.addActionListener(new ActionListenerbtnCriarCampus());
@@ -45,7 +37,6 @@ public class FormCampus extends JFrame {
         btnListarCampus.addActionListener(new ActionListenerbtnListarCampus());
         add(btnListarCampus);
 		
-			
 		setVisible(true);
 	}
 	
