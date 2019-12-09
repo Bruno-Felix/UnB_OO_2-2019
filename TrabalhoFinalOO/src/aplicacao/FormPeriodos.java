@@ -46,11 +46,11 @@ public class FormPeriodos extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnCadastrarPeriodos = new JButton("Cadastrar Periodos");
-		btnCadastrarPeriodos.setBounds(38, 106, 132, 33);
+		btnCadastrarPeriodos.setBounds(38, 106, 200, 33);
 		contentPane.add(btnCadastrarPeriodos);
 		
 		JButton btnListarPeriodos = new JButton("Listar Periodos");
-		btnListarPeriodos.setBounds(274, 106, 103, 33);
+		btnListarPeriodos.setBounds(274, 106, 200, 33);
 		contentPane.add(btnListarPeriodos);
 		setVisible(true);
 	}
