@@ -31,12 +31,15 @@ public class menuPrincipal  extends JFrame{
 			Estruturas.add(Salas);
 			Campus.addActionListener(new ListenerCampus());
 			Predio.addActionListener(new ListenerPredio());
+			Salas.addActionListener(new ListenerSala());
 		//Item de barra de menu chamado "Comunidade"
 		JMenu Comunidade = new JMenu("Comunidade");
 			JMenuItem Professores = new JMenuItem("Professores");
 			JMenuItem Alunos = new JMenuItem("Alunos");
 			Comunidade.add(Professores);
 			Comunidade.add(Alunos);
+			
+	
 			
 		//Item de barra de menu chamado "Atividades"
 		JMenu Atividades = new JMenu("Atividades");
