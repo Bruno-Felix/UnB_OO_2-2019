@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import aplicacao.FormCampus.ActionListenerbtnCriarCampus;
 import instituicao.Periodos;
 import instituicao.Turma;
 
@@ -37,7 +38,7 @@ public class FormPeriodos extends JFrame {
 	 * Create the frame.
 	 */
 	public FormPeriodos() {
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 650, 300);
 		setTitle("Periodos");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -46,10 +47,12 @@ public class FormPeriodos extends JFrame {
 		
 		JButton btnCadastrarPeriodos = new JButton("Cadastrar Periodos");
 		btnCadastrarPeriodos.setBounds(38, 106, 200, 33);
+		btnCadastrarPeriodos.addActionListener(new ActionListenerbtnCadastrarPeriodos());
 		contentPane.add(btnCadastrarPeriodos);
 		
 		JButton btnListarPeriodos = new JButton("Listar Periodos");
 		btnListarPeriodos.setBounds(274, 106, 200, 33);
+		btnListarPeriodos.addActionListener(new ActionListenerbtnListarPeriodos());
 		contentPane.add(btnListarPeriodos);
 		setVisible(true);
 	}
