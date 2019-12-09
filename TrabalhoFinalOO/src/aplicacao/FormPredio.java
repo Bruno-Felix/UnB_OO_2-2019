@@ -36,8 +36,7 @@ public class FormPredio extends JFrame {
 	 * Create the frame.
 	 */
 	public FormPredio() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 600, 400);
 		setTitle("Predio");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -45,15 +44,11 @@ public class FormPredio extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnCadastrarPredios = new JButton("Cadastrar Predios");
-		btnCadastrarPredios.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnCadastrarPredios.setBounds(48, 111, 130, 35);
+		btnCadastrarPredios.setBounds(48, 111, 200, 35);
 		contentPane.add(btnCadastrarPredios);
 		
 		JButton btnListarPredios = new JButton("Listar Predios");
-		btnListarPredios.setBounds(238, 111, 110, 35);
+		btnListarPredios.setBounds(238, 111, 200, 35);
 		contentPane.add(btnListarPredios);
 		setVisible(true);
 	}
