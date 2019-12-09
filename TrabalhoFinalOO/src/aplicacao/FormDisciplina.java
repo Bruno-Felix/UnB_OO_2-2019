@@ -54,6 +54,7 @@ public class FormDisciplina extends JFrame{
 		JButton btnAlterarDisciplina = new JButton("Alterar Disciplina");
 		btnAlterarDisciplina.setBounds(155, 111, 118, 23);
 		contentPane.add(btnAlterarDisciplina);
+		setVisible(true);
 	}
 	class ActionListenerbtnCriarDisciplina implements ActionListener{
 
