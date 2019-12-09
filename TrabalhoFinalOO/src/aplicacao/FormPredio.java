@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import aplicacao.FormCampus.ActionListenerbtnCriarCampus;
 import instituicao.Predio;
 import instituicao.Campus;
 import javax.swing.JButton;
@@ -45,10 +46,12 @@ public class FormPredio extends JFrame {
 		
 		JButton btnCadastrarPredios = new JButton("Cadastrar Predios");
 		btnCadastrarPredios.setBounds(48, 111, 200, 35);
+		btnCadastrarPredios.addActionListener(new ActionListenerbtnCadastrarPredios());
 		contentPane.add(btnCadastrarPredios);
 		
 		JButton btnListarPredios = new JButton("Listar Predios");
 		btnListarPredios.setBounds(238, 111, 200, 35);
+		btnListarPredios.addActionListener(new ActionListenerbtnListarPredios());
 		contentPane.add(btnListarPredios);
 		setVisible(true);
 	}
