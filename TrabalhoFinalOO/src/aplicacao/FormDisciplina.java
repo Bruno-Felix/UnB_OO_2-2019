@@ -36,7 +36,7 @@ public class FormDisciplina extends JFrame{
 	 */
 	public FormDisciplina() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 650, 300);
 		setTitle("Disciplinas");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -44,15 +44,15 @@ public class FormDisciplina extends JFrame{
 		contentPane.setLayout(null);
 		
 		JButton btnCriarDisciplina = new JButton("Criar Disciplina");
-		btnCriarDisciplina.setBounds(30, 111, 101, 23);
+		btnCriarDisciplina.setBounds(30, 111, 150, 23);
 		contentPane.add(btnCriarDisciplina);
 		
 		JButton btnListarDisciplinas = new JButton("Listar Disciplinas");
-		btnListarDisciplinas.setBounds(296, 111, 109, 23);
+		btnListarDisciplinas.setBounds(296, 111, 150, 23);
 		contentPane.add(btnListarDisciplinas);
 		
 		JButton btnAlterarDisciplina = new JButton("Alterar Disciplina");
-		btnAlterarDisciplina.setBounds(155, 111, 118, 23);
+		btnAlterarDisciplina.setBounds(155, 111, 150, 23);
 		contentPane.add(btnAlterarDisciplina);
 		setVisible(true);
 	}
