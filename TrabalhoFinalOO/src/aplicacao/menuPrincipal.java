@@ -52,7 +52,7 @@ public class menuPrincipal  extends JFrame{
 			
 			Turmas.addActionListener(new ListenerTurma());
 			Disciplinas.addActionListener(new  ListenerDisciplina());
-		
+			Periodos.addActionListener(new ListenerPeriodos());
 		menuBar.add(Estruturas);
 		menuBar.add(Comunidade);
 		menuBar.add(Atividades);
