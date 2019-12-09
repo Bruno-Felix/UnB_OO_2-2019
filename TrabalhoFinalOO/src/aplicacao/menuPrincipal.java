@@ -29,17 +29,17 @@ public class menuPrincipal  extends JFrame{
 			Estruturas.add(Campus);
 			Estruturas.add(Predio);
 			Estruturas.add(Salas);
+			
 			Campus.addActionListener(new ListenerCampus());
 			Predio.addActionListener(new ListenerPredio());
 			Salas.addActionListener(new ListenerSala());
+			
 		//Item de barra de menu chamado "Comunidade"
 		JMenu Comunidade = new JMenu("Comunidade");
 			JMenuItem Professores = new JMenuItem("Professores");
 			JMenuItem Alunos = new JMenuItem("Alunos");
 			Comunidade.add(Professores);
 			Comunidade.add(Alunos);
-			
-	
 			
 		//Item de barra de menu chamado "Atividades"
 		JMenu Atividades = new JMenu("Atividades");
@@ -55,6 +55,9 @@ public class menuPrincipal  extends JFrame{
 			Turmas.addActionListener(new ListenerTurma());
 			Disciplinas.addActionListener(new  ListenerDisciplina());
 			Periodos.addActionListener(new ListenerPeriodos());
+			Ocupacoes.addActionListener(new ListenerOcupacao());
+			
+			
 		menuBar.add(Estruturas);
 		menuBar.add(Comunidade);
 		menuBar.add(Atividades);
