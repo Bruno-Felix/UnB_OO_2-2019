@@ -98,6 +98,8 @@ public class Aluno extends Pessoa {
 	// methods	
 	public static void listarTurmasDoAluno() {
 		
+		try {
+		
 		Object[] objArrayAlunos = Campus.listaDeAlunos.toArray();
 		
 		String auxAluno = String.valueOf(JOptionPane.showInputDialog(
@@ -127,7 +129,12 @@ public class Aluno extends Pessoa {
 				}
 			}
 		}
-	}
+		
+	}catch (ArrayIndexOutOfBoundsException e) {
+		System.out.println("Nenhum aluno cadastrado para listagem de turmas!\n");
+	} 
+		
+}
 	
 	public static void listarAlunosCampus( ) {
 		
