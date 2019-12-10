@@ -65,15 +65,20 @@ public class Disciplina {
 	//Objetivo: Listar disciplinas
 	public static void listarDisciplinas() {
 		
-		System.out.println("---------------------");
-		System.out.println("LISTA DE DISCIPLINAS:\n");
+		if(Disciplina.listaDisciplina.size()==0) {
+			System.out.println("Nenhuma disciplina cadastrada!\n");
+		}else {
 		
-		for(int i = 0; i < Disciplina.listaDisciplina.size(); i++) {   
+			System.out.println("---------------------");
+			System.out.println("LISTA DE DISCIPLINAS:\n");
 			
-			System.out.println(" - " + (i+1) + "ª Disciplina:");
-			System.out.println("   Nome Disciplina: " + Disciplina.listaDisciplina.get(i).nomeDisciplina);
-			System.out.println("   Numero de creditos: " + Disciplina.listaDisciplina.get(i).numCreditos + "\n");
-		} 
+			for(int i = 0; i < Disciplina.listaDisciplina.size(); i++) {   
+				
+				System.out.println(" - " + (i+1) + "ª Disciplina:");
+				System.out.println("   Nome Disciplina: " + Disciplina.listaDisciplina.get(i).nomeDisciplina);
+				System.out.println("   Numero de creditos: " + Disciplina.listaDisciplina.get(i).numCreditos + "\n");
+			} 
+		}
 	}
 		
 	
@@ -124,6 +129,8 @@ public class Disciplina {
 	//Objetivo: Alterar os dados da disciplina
 	public static void alterarDisciplina() {
 		
+		try {
+		
 		Object[] objArray = listaDisciplina.toArray();
 		
 		String temporaria_Disciplina = String.valueOf(JOptionPane.showInputDialog(
@@ -150,6 +157,10 @@ public class Disciplina {
 				}
 			}
 		}
+		
+	} catch (ArrayIndexOutOfBoundsException e) {
+		System.out.println("Nenhuma disciplina cadastrada para ser alterada!\n");
+	}
 	}
 	//Objetivo: Nao permitir que o usuario cadastre um valor invalido de pessoas por turma
 	public static int validaQtd(int qtd) {
