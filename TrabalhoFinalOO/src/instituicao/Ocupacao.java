@@ -41,13 +41,15 @@ public class Ocupacao {
 			else {
 				
 				Object[] objArrayPeriodos = Periodos.listaSegunda.toArray();
-				
+				for(int i = 0; i < objArrayPeriodos.length; i++) {
+					objArrayPeriodos[i] = objArrayPeriodos[i] + " : " + Periodos.listaSegunda.get(i).minutosInicio + " - " + Periodos.listaSegunda.get(i).horaTermino + " : " + Periodos.listaSegunda.get(i).minutosTermino;
+				}
 				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
 						null,"Escolha o Periodo dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
 						null,objArrayPeriodos,objArrayPeriodos[0]));
 				
 				for(int auxB = 0; auxB < Periodos.listaSegunda.size(); auxB++) {
-					if(Periodos.listaSegunda.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo)) {
+					if(Periodos.listaSegunda.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo.substring(0,1))) {
 						
 						novaOcupacao.periodoDaOcupacao = Periodos.listaSegunda.get(auxB);
 						
@@ -75,7 +77,9 @@ public class Ocupacao {
 			else {
 				
 				Object[] objArrayPeriodos = Periodos.listaTerca.toArray();
-				
+				for(int i = 0; i < objArrayPeriodos.length; i++) {
+					objArrayPeriodos[i] = objArrayPeriodos[i] + " : " + Periodos.listaTerca.get(i).minutosInicio + " - " + Periodos.listaTerca.get(i).horaTermino + " : " + Periodos.listaTerca.get(i).minutosTermino;
+				}
 				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
 						null,"Escolha o Dia da Semana dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
 						null,objArrayPeriodos,objArrayPeriodos[0]));
@@ -109,7 +113,9 @@ public class Ocupacao {
 			else {
 				
 				Object[] objArrayPeriodos = Periodos.listaQuarta.toArray();
-				
+				for(int i = 0; i < objArrayPeriodos.length; i++) {
+					objArrayPeriodos[i] = objArrayPeriodos[i] + " : " + Periodos.listaQuarta.get(i).minutosInicio + " - " + Periodos.listaQuarta.get(i).horaTermino + " : " + Periodos.listaQuarta.get(i).minutosTermino;
+				}
 				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
 						null,"Escolha o Dia da Semana dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
 						null,objArrayPeriodos,objArrayPeriodos[0]));
@@ -143,13 +149,15 @@ public class Ocupacao {
 			else {
 				
 				Object[] objArrayPeriodos = Periodos.listaQuinta.toArray();
-				
+				for(int i = 0; i < objArrayPeriodos.length; i++) {
+					objArrayPeriodos[i] = objArrayPeriodos[i] + " : " + Periodos.listaQuinta.get(i).minutosInicio + " - " + Periodos.listaQuinta.get(i).horaTermino + " : " + Periodos.listaQuinta.get(i).minutosTermino;
+				}
 				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
 						null,"Escolha o Dia da Semana dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
 						null,objArrayPeriodos,objArrayPeriodos[0]));
 				
 				for(int auxB = 0; auxB < Periodos.listaQuinta.size(); auxB++) {
-					if(Periodos.listaQuinta.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo)) {
+					if(Periodos.listaQuinta.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo.substring(0,1))) {
 						
 						novaOcupacao.periodoDaOcupacao = Periodos.listaQuinta.get(auxB);
 						
@@ -177,13 +185,15 @@ public class Ocupacao {
 			else {
 				
 				Object[] objArrayPeriodos = Periodos.listaSexta.toArray();
-				
+				for(int i = 0; i < objArrayPeriodos.length; i++) {
+					objArrayPeriodos[i] = objArrayPeriodos[i] + " : " + Periodos.listaSexta.get(i).minutosInicio + " - " + Periodos.listaSexta.get(i).horaTermino + " : " + Periodos.listaSexta.get(i).minutosTermino;
+				}
 				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
 						null,"Escolha o Dia da Semana dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
 						null,objArrayPeriodos,objArrayPeriodos[0]));
 				
 				for(int auxB = 0; auxB < Periodos.listaSexta.size(); auxB++) {
-					if(Periodos.listaSexta.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo)) {
+					if(Periodos.listaSexta.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo.substring(0,1))) {
 						
 						novaOcupacao.periodoDaOcupacao = Periodos.listaSexta.get(auxB);
 						
@@ -211,13 +221,15 @@ public class Ocupacao {
 			else {
 				
 				Object[] objArrayPeriodos = Periodos.listaSabado.toArray();
-				
+				for(int i = 0; i < objArrayPeriodos.length; i++) {
+					objArrayPeriodos[i] = objArrayPeriodos[i] + " : " + Periodos.listaSabado.get(i).minutosInicio + " - " + Periodos.listaSabado.get(i).horaTermino + " : " + Periodos.listaSabado.get(i).minutosTermino;
+				}
 				String auxPeriodo = String.valueOf(JOptionPane.showInputDialog(
 						null,"Escolha o Dia da Semana dessa Ocupação","Escolha",JOptionPane.QUESTION_MESSAGE,
 						null,objArrayPeriodos,objArrayPeriodos[0]));
 				
 				for(int auxB = 0; auxB < Periodos.listaSabado.size(); auxB++) {
-					if(Periodos.listaSabado.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo)) {
+					if(Periodos.listaSabado.get(auxB).horaInicio.equalsIgnoreCase(auxPeriodo.substring(0,1))) {
 						
 						novaOcupacao.periodoDaOcupacao = Periodos.listaSabado.get(auxB);
 						
