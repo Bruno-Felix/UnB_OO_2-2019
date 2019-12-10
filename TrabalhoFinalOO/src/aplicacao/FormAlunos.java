@@ -60,6 +60,8 @@ public class FormAlunos extends JFrame {
 		btnListarTurmasDo.setBounds(145, 173, 185, 31);
 		btnListarTurmasDo.addActionListener(new ActionListenerbtnListarTurmasDo());
 		contentPane.add(btnListarTurmasDo);
+		
+		setVisible(true);
 	}
 	class ActionListenerbtnCadastrarAlunos implements ActionListener{
 

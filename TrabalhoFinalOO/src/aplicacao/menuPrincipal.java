@@ -41,6 +41,8 @@ public class menuPrincipal  extends JFrame{
 			Comunidade.add(Professores);
 			Comunidade.add(Alunos);
 			
+			Alunos.addActionListener(new ListenerAluno());
+			
 		//Item de barra de menu chamado "Atividades"
 		JMenu Atividades = new JMenu("Atividades");
 			JMenuItem Disciplinas = new JMenuItem("Disciplinas");
