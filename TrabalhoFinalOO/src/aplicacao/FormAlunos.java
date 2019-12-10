@@ -1,5 +1,5 @@
 package aplicacao;
-import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,10 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import aplicacao.FormTurma.ActionListenerbtnCadastrarTurmas;
 import comunidade.Aluno;
 import instituicao.Campus;
-import instituicao.Turma;
 
 import javax.swing.JButton;
 
@@ -39,30 +37,33 @@ public class FormAlunos extends JFrame {
 	 * Create the frame.
 	 */
 	public FormAlunos() {
-		setBounds(100, 100, 450, 300);
+		
+		setBounds(800, 200, 480, 300);
 		setTitle("Alunos");
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JButton btnCadastrarAlunos = new JButton("Cadastrar Alunos");
-		btnCadastrarAlunos.setBounds(57, 112, 135, 31);
+		btnCadastrarAlunos.setBounds(22, 70, 200, 35);
 		btnCadastrarAlunos.addActionListener(new ActionListenerbtnCadastrarAlunos());
 		contentPane.add(btnCadastrarAlunos);
 		
 		JButton btnListarAlunos = new JButton("Listar Alunos");
-		btnListarAlunos.setBounds(244, 112, 117, 31);
+		btnListarAlunos.setBounds(258, 70, 200, 35);
 		btnListarAlunos.addActionListener(new ActionListenerbtnListarAlunos());
 		contentPane.add(btnListarAlunos);
 		
 		JButton btnListarTurmasDo = new JButton("Listar Turmas do aluno");
-		btnListarTurmasDo.setBounds(145, 173, 185, 31);
+		btnListarTurmasDo.setBounds(130, 140, 220, 35);
 		btnListarTurmasDo.addActionListener(new ActionListenerbtnListarTurmasDo());
 		contentPane.add(btnListarTurmasDo);
 		
 		setVisible(true);
 	}
+	
 	class ActionListenerbtnCadastrarAlunos implements ActionListener{
 
 		@Override
@@ -89,5 +90,4 @@ public class FormAlunos extends JFrame {
 			Aluno.listarTurmasDoAluno();
 		}
 	}
-
 }

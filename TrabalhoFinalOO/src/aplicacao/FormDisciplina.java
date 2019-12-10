@@ -1,5 +1,5 @@
 package aplicacao;
-import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,11 +8,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import aplicacao.FormPeriodos.ActionListenerbtnCadastrarPeriodos;
 import instituicao.Disciplina;
-import instituicao.Turma;
 
 import javax.swing.JButton;
+
 public class FormDisciplina extends JFrame{
 	private JPanel contentPane;
 
@@ -36,29 +35,33 @@ public class FormDisciplina extends JFrame{
 	 * Create the frame.
 	 */
 	public FormDisciplina() {
-		setBounds(100, 100, 650, 300);
+		
+		setBounds(800, 200, 480, 300);
 		setTitle("Disciplinas");
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JButton btnCriarDisciplina = new JButton("Criar Disciplina");
-		btnCriarDisciplina.setBounds(30, 111, 150, 23);
+		btnCriarDisciplina.setBounds(22, 70, 200, 35);
 		btnCriarDisciplina.addActionListener(new ActionListenerbtnCriarDisciplina());
 		contentPane.add(btnCriarDisciplina);
 		
 		JButton btnListarDisciplinas = new JButton("Listar Disciplinas");
-		btnListarDisciplinas.setBounds(210, 111, 150, 23);
+		btnListarDisciplinas.setBounds(130, 140, 220, 35);
 		btnListarDisciplinas.addActionListener(new ActionListenerbtnListarDisciplinas());
 		contentPane.add(btnListarDisciplinas);
 		
 		JButton btnAlterarDisciplina = new JButton("Alterar Disciplina");
-		btnAlterarDisciplina.setBounds(425, 111, 150, 23);
+		btnAlterarDisciplina.setBounds(258, 70, 200, 35);
 		btnAlterarDisciplina.addActionListener(new ActionListenerbtnAlterarDisciplina());
 		contentPane.add(btnAlterarDisciplina);
+		
 		setVisible(true);
 	}
+	
 	class ActionListenerbtnCriarDisciplina implements ActionListener{
 
 		@Override

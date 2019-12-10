@@ -8,10 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-
 import comunidade.Professor;
 import instituicao.Campus;
-
 
 import javax.swing.JButton;
 
@@ -39,30 +37,33 @@ public class FormProfessor extends JFrame {
 	 * Create the frame.
 	 */
 	public FormProfessor() {
-		setBounds(100, 100, 450, 300);
+		
+		setBounds(800, 200, 480, 300);
 		setTitle("Professor");
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JButton btnCadastrarProfessor = new JButton("Cadastrar Professor");
-		btnCadastrarProfessor.setBounds(24, 41, 190, 31);
+		btnCadastrarProfessor.setBounds(22, 70, 200, 35);
 		btnCadastrarProfessor.addActionListener(new ActionListenerbtnCadastrarProfessor());
 		contentPane.add(btnCadastrarProfessor);
 		
 		JButton btnListarProfessor = new JButton("Listar Professor");
-		btnListarProfessor.setBounds(224, 41, 190, 31);
+		btnListarProfessor.setBounds(258, 70, 200, 35);
 		btnListarProfessor.addActionListener(new ActionListenerbtnListarProfessor());
 		contentPane.add(btnListarProfessor);
 		
 		JButton btnListarTurmasDo = new JButton("Listar Turmas do Professor");
-		btnListarTurmasDo.setBounds(84, 83, 265, 31);
+		btnListarTurmasDo.setBounds(130, 140, 220, 35);
 		btnListarTurmasDo.addActionListener(new ActionListenerbtnListarTurmasDo());
 		contentPane.add(btnListarTurmasDo);
 		
 		setVisible(true);
 	}
+	
 	class ActionListenerbtnCadastrarProfessor implements ActionListener{
 
 		@Override
