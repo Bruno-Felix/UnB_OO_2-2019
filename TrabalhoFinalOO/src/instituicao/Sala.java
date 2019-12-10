@@ -16,6 +16,7 @@ public class Sala {
 	public boolean possuiArCondicionado;
 	public boolean possuiProjetor;
 	public boolean possuiTelevisao;
+	
 	static List<Sala> listaSala = new ArrayList<Sala>();
 	static Object[] Atividade = {"graduacao", "pos-graduacao", "extensao"};
 	

@@ -58,7 +58,7 @@ public class FormProfessor extends JFrame {
 		
 		JButton btnListarTurmasDo = new JButton("Listar Turmas do Professor");
 		btnListarTurmasDo.setBounds(130, 140, 220, 35);
-		btnListarTurmasDo.addActionListener(new ActionListenerbtnListarTurmasDo());
+		btnListarTurmasDo.addActionListener(new ActionListenerbtnListarTurmasDoProfessor());
 		contentPane.add(btnListarTurmasDo);
 		
 		setVisible(true);
@@ -82,14 +82,12 @@ public class FormProfessor extends JFrame {
 		}
 	}
 	
-	class ActionListenerbtnListarTurmasDo implements ActionListener{
+	class ActionListenerbtnListarTurmasDoProfessor implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			
-			//editar metodo para static
-			//Professor.listarTurmas();
+			Professor.listarTurmasDoProfessor();
 		}
 	}
-
 }

@@ -129,7 +129,12 @@ public class Campus {
 		
 		Professor novoProfessor = new Professor();
 		
+		System.out.println("---------------------");
+		System.out.println("# Novo Professor Sendo Criado...\n");
+		
 		novoProfessor.cadastrarProfessor(novoProfessor);
+	
+		System.out.println("  Professor " + novoProfessor.nomeDaPessoa + " Cadastrado!\n");
 	}
 	
 	public static void criarProfessorCasoTeste() {
