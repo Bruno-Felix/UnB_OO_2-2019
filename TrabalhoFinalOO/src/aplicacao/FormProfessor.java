@@ -47,17 +47,17 @@ public class FormProfessor extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnCadastrarProfessor = new JButton("Cadastrar Professor");
-		btnCadastrarProfessor.setBounds(57, 112, 135, 31);
+		btnCadastrarProfessor.setBounds(24, 41, 190, 31);
 		btnCadastrarProfessor.addActionListener(new ActionListenerbtnCadastrarProfessor());
 		contentPane.add(btnCadastrarProfessor);
 		
 		JButton btnListarProfessor = new JButton("Listar Professor");
-		btnListarProfessor.setBounds(244, 112, 117, 31);
+		btnListarProfessor.setBounds(224, 41, 190, 31);
 		btnListarProfessor.addActionListener(new ActionListenerbtnListarProfessor());
 		contentPane.add(btnListarProfessor);
 		
 		JButton btnListarTurmasDo = new JButton("Listar Turmas do Professor");
-		btnListarTurmasDo.setBounds(145, 173, 185, 31);
+		btnListarTurmasDo.setBounds(84, 83, 265, 31);
 		btnListarTurmasDo.addActionListener(new ActionListenerbtnListarTurmasDo());
 		contentPane.add(btnListarTurmasDo);
 		
