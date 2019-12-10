@@ -81,6 +81,8 @@ public class Sala {
 
 	public static void listarSalasDeUmPredio() {
 		
+	try {
+				
 		Object[] objArrayCampus = Campus.listaDeCampus.toArray();
 		    	
 		String auxCampus = String.valueOf(JOptionPane.showInputDialog(
@@ -135,6 +137,10 @@ public class Sala {
 				}
 			}
 		}
+		
+	}catch (ArrayIndexOutOfBoundsException e) {
+		System.out.println("Nenhuma sala cadastrada!\n");
+	} 
 	}
 	
 	public void verificarAtividadeAtribuida() {

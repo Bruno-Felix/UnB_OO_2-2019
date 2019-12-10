@@ -101,6 +101,8 @@ public class Turma {
 	
 	public static void alterarTurmas() {
 		
+		try {
+		
 		Object[] objArrayDsc = Disciplina.listaDisciplina.toArray();
 		Object[] objArrayTrm = Disciplina.listaDisciplina.toArray();
 		
@@ -132,9 +134,15 @@ public class Turma {
 				}
 			}
 		}
+		
+		} catch (ArrayIndexOutOfBoundsException e) {
+    		System.out.println("Nenhuma turma cadastrada para ser alterada!\n");
+    	}
 	}
 	
 	public static void listarTurmas() {
+		
+		try {
 		
 		Object[] objArray = Disciplina.listaDisciplina.toArray();
 		
@@ -157,7 +165,11 @@ public class Turma {
 				}
 			}
 		}
+		
+	} catch (ArrayIndexOutOfBoundsException e) {
+		System.out.println("Nenhuma turma cadastrada!\n");
 	}
+}
 
 	public void inserirAlunoNaTurma(Turma turmaCriada, Aluno novoAluno) {
 		
@@ -248,6 +260,8 @@ public class Turma {
 	
 	public static void listarAlunosDaTurma() {
 		
+		try {
+		
 		Object[] objArray = Disciplina.listaDisciplina.toArray();
 		String auxDisciplina = String.valueOf(JOptionPane.showInputDialog(
 				null,"Listar Alunos - Disciplina:","Escolha",JOptionPane.QUESTION_MESSAGE,
@@ -279,7 +293,11 @@ public class Turma {
 					}
 				}
 			}
-		}		
+		}
+		
+		} catch (ArrayIndexOutOfBoundsException e) {
+    		System.out.println("Nenhuma turma cadastrada para listar Aluno!\n");
+    	}
 	}
 
 	public static void atribuirProfessor(Turma turmaCriada, Object[] objArrayProfessores) throws ArrayIndexOutOfBoundsException{

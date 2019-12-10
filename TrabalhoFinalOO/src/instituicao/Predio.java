@@ -30,11 +30,14 @@ public class Predio extends Estrutura {
     
     public static void listarPredios() {
     	
+    	try {
+    	
     	Object[] objArrayCampus = Campus.listaDeCampus.toArray();
     	
     	String auxCampus = String.valueOf(JOptionPane.showInputDialog(
 				null,"Listar Predios - Campus:","Escolha",JOptionPane.QUESTION_MESSAGE,
 				null,objArrayCampus,objArrayCampus[0]));
+    	
     	
     	for(int aux = 0; aux<Campus.listaDeCampus.size(); aux++) {
 			if(Campus.listaDeCampus.get(aux).nomeDoCampus.equalsIgnoreCase(auxCampus)) {
@@ -49,6 +52,10 @@ public class Predio extends Estrutura {
 					System.out.println("   Número de Salas: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).numeroDeSalas + "\n");
 				}
 			}
+    	}
+    	
+    	} catch (ArrayIndexOutOfBoundsException e) {
+    		System.out.println("Nenhum predio cadastrado!\n");
     	}
     }
     
