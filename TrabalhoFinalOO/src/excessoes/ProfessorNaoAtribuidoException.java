@@ -2,7 +2,7 @@ package excessoes;
 
 import instituicao.Campus;
 import instituicao.Turma;
-
+import comunidade.*;
 public class ProfessorNaoAtribuidoException {
 	
 	public static void NaoAtribuidoException(Turma turmaCriada, Object[] objArrayProfessores) {
@@ -21,7 +21,15 @@ public class ProfessorNaoAtribuidoException {
 			Campus.criarProfessor();
 			
 			Object[] objNovoArrayProfessores = Campus.listaDeProfessores.toArray();
-			Turma.atribuirProfessor(turmaCriada, objNovoArrayProfessores);
+			try{
+				Turma.atribuirProfessor(turmaCriada, objNovoArrayProfessores);
+			}
+			catch(NullPointerException n) {
+				System.out.println("---------------------");
+				System.out.println("# ERRO: Nome do professor nao informado, por favor, insira-o.\n");
+				Campus.criarProfessor();
+			}
 		}
+		
 	}
 }
