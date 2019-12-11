@@ -340,7 +340,7 @@ public class Ocupacao {
 		}
 		
 		String auxPredios = null;
-		for(int aux = 0; aux < Campus.listaDeCampus.size(); aux++) {   
+		for(int aux = 0; aux < Campus.listaDeCampus.size(); aux++) {
 			if(Campus.listaDeCampus.get(aux).nomeDoCampus.equalsIgnoreCase(auxCampus)) { 
 					
 				Object[] objArrayPredios = Campus.listaDeCampus.get(aux).listaDePredios.toArray();
@@ -368,7 +368,7 @@ public class Ocupacao {
 			}
 			
 			String auxSalas = null;
-			for(int auxB = 0; auxB < Campus.listaDeCampus.get(auxB).listaDePredios.size(); auxB++) { 
+			for(int auxB = 0; auxB < Campus.listaDeCampus.get(aux).listaDePredios.size(); auxB++) {
 				if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).nomeDaEstrutura.equalsIgnoreCase(auxPredios)) { 
 					
 					Object[] objArraySalas = Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.toArray();
@@ -396,16 +396,22 @@ public class Ocupacao {
 					
 					for(int auxC = 0; auxC < Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.size(); auxC++) { 
 						if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).nomeDaSala.equalsIgnoreCase(auxSalas)) { 
-							
+
 							novaOcupacao.salaDaOcupacao = Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC);
+							
+							System.out.println("---------------------\n");
+							System.out.println("		Sala " + novaOcupacao.salaDaOcupacao.nomeDaSala + ", do Prédio " + auxPredios + ", Campus " + auxCampus + ", Atribuida a Nova Ocupação!\n");
 						}
 					}
 				}
 			}
 		}
 		
-		System.out.println("---------------------\n");
-		System.out.println("		Sala " + novaOcupacao.salaDaOcupacao.nomeDaSala + ", do Prédio " + auxPredios + ", Campus " + auxCampus + "Atribuida a Nova Ocupação!\n");	
+		Ocupacao.listaDeOcupacoes.add(novaOcupacao);
+		
+		System.out.println(" ######################## "+ novaOcupacao.salaDaOcupacao + " " + novaOcupacao.periodoDaOcupacao + " " + novaOcupacao.turmaDaOcupacao);
+//		System.out.println("---------------------\n");
+//		System.out.println("		Sala " + novaOcupacao.salaDaOcupacao.nomeDaSala + ", do Prédio " + auxPredios + ", Campus " + auxCampus + "Atribuida a Nova Ocupação!\n");	
 	}
 
 	public static void listaDeOcupacoes() {
