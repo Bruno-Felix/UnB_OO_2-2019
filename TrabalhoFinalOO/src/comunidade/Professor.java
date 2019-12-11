@@ -43,7 +43,7 @@ public class Professor extends Pessoa {
 	public void listarTurmas() {
 		
 		if(this.getListaDeTurmasProfessor().size() == 0) {
-			System.out.println("N�o h� turmas cadastradas para o professor: "+ this.getNomeDaPessoa());
+			System.out.println("N�o h� turmas cadastradas para o professor.\n "+ this.getNomeDaPessoa());
 		}else {
 			
 			System.out.println("Turmas cadastradas do professor: "+this.getNomeDaPessoa());

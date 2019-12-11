@@ -100,57 +100,60 @@ public class Aluno extends Pessoa {
 		
 		try {
 		
-		Object[] objArrayAlunos = Campus.listaDeAlunos.toArray();
-		
-		String auxAluno = String.valueOf(JOptionPane.showInputDialog(
-				null,"Escolha O Professor dessa turma","Escolha",JOptionPane.QUESTION_MESSAGE,
-				null,objArrayAlunos,objArrayAlunos[0]));
-		
-		for(int aux = 0; aux < Campus.listaDeAlunos.size(); aux++) {
-			if(Campus.listaDeAlunos.get(aux).nomeDaPessoa.equalsIgnoreCase(auxAluno)) {
-				
-				System.out.println("---------------------");
-				System.out.println("LISTA DE TURMAS DO ALUNO " +Campus.listaDeAlunos.get(aux).nomeDaPessoa + ":\n");
-				
-				for(int auxB = 0; auxB < Disciplina.listaDisciplina.size(); auxB++) {
-					for(int auxC = 0; auxC < Disciplina.listaDisciplina.get(auxB).listaTurma.size(); auxC++) {
-						
-						for(int auxD = 0; auxD < Disciplina.listaDisciplina.get(auxB).listaTurma.get(auxC).listaDeAlunos.size(); auxD++) {
-							if(Disciplina.listaDisciplina.get(auxB).listaTurma.get(auxC).listaDeAlunos.get(auxD).nomeDaPessoa.equalsIgnoreCase(auxAluno)) {
+			Object[] objArrayAlunos = Campus.listaDeAlunos.toArray();
+			
+			String auxAluno = String.valueOf(JOptionPane.showInputDialog(
+					null,"Escolha O Professor dessa turma","Escolha",JOptionPane.QUESTION_MESSAGE,
+					null,objArrayAlunos,objArrayAlunos[0]));
+			
+			for(int aux = 0; aux < Campus.listaDeAlunos.size(); aux++) {
+				if(Campus.listaDeAlunos.get(aux).nomeDaPessoa.equalsIgnoreCase(auxAluno)) {
+					
+					System.out.println("---------------------");
+					System.out.println("LISTA DE TURMAS DO ALUNO " +Campus.listaDeAlunos.get(aux).nomeDaPessoa + ":\n");
+					
+					if(Campus.listaDeAlunos.get(aux).listaDeturmasAluno.size() == 0) {
+						System.out.println("O aluno não está cadastrado em nenhuma turma\n." );
+					}
+					else {
+						for(int auxB = 0; auxB < Disciplina.listaDisciplina.size(); auxB++) {
+							for(int auxC = 0; auxC < Disciplina.listaDisciplina.get(auxB).listaTurma.size(); auxC++) {
 								
-								System.out.println("   Nome da Disciplina : " + Disciplina.listaDisciplina.get(auxB).nomeDisciplina);
-								System.out.println("   Nome da turma: " + Disciplina.listaDisciplina.get(auxB).listaTurma.get(auxC).nomeDaTurma);
-								System.out.println("   Nome do professor: " + Disciplina.listaDisciplina.get(auxB).listaTurma.get(auxC).professorDaTurma.nomeDaPessoa + "\n");
-								
-								break;
+								for(int auxD = 0; auxD < Disciplina.listaDisciplina.get(auxB).listaTurma.get(auxC).listaDeAlunos.size(); auxD++) {
+									if(Disciplina.listaDisciplina.get(auxB).listaTurma.get(auxC).listaDeAlunos.get(auxD).nomeDaPessoa.equalsIgnoreCase(auxAluno)) {
+										
+										System.out.println("   Nome da Disciplina : " + Disciplina.listaDisciplina.get(auxB).nomeDisciplina);
+										System.out.println("   Nome da turma: " + Disciplina.listaDisciplina.get(auxB).listaTurma.get(auxC).nomeDaTurma);
+										System.out.println("   Nome do professor: " + Disciplina.listaDisciplina.get(auxB).listaTurma.get(auxC).professorDaTurma.nomeDaPessoa + "\n");
+										
+										break;
+									}
+								}
 							}
 						}
 					}
 				}
 			}
-		}
-		
-	}catch (ArrayIndexOutOfBoundsException e) {
-		System.out.println("Nenhum aluno cadastrado para listagem de turmas!\n");
-	} 
-		
-}
+		}catch (ArrayIndexOutOfBoundsException e) {
+			
+			System.out.println("# Nenhum aluno cadastrado para listagem de turmas!\n");
+		} 	
+	}
 	
 	public static void listarAlunosCampus( ) {
 		
+		System.out.println("---------------------");
+		System.out.println("LISTAR DO ALUNO:\n");
+		
 		if(Campus.listaDeAlunos.size() == 0) {
 		
-			System.out.println("Não há alunos cadastrados!");
+			System.out.println("# Não há alunos cadastrados!\n");
 		}
 		else {
-			
-			System.out.println("---------------------");
-			System.out.println("LISTA DE ALUNO:\n");
-			
 			for(int i=0; i < Campus.listaDeAlunos.size() ; i++) {
 				
 				System.out.println("Nome do Aluno: " + Campus.listaDeAlunos.get(i).nomeDaPessoa);
-				System.out.println("Matricula do Aluno: " + Campus.listaDeAlunos.get(i).nomeDaPessoa + "\n");
+				System.out.println("Matricula do Aluno: " + Campus.listaDeAlunos.get(i).matriculaDoAluno + "\n");
 			}
 		}
 	}
