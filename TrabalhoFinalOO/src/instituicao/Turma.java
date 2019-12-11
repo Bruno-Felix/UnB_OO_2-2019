@@ -147,21 +147,29 @@ public class Turma {
 		Object[] objArray = Disciplina.listaDisciplina.toArray();
 		
 		String temporaria_turma = String.valueOf(JOptionPane.showInputDialog(
-				null,"Qual a disciplina deve ter as turmas listadas?","Escolha",JOptionPane.QUESTION_MESSAGE,
+				null,"Qual a disciplina deve ter suas turmas listadas?","Escolha",JOptionPane.QUESTION_MESSAGE,
 				null,objArray,objArray[0]));
 		
 		int aux = 1;
+		int auxPrint = 0;
+		
 		for(Disciplina disciplina :  Disciplina.listaDisciplina) {
+
+			if(auxPrint == 0) {
+				
+				System.out.println("---------------------");
+				System.out.println("LISTA DE TURMAS DA DISCIPLINA " + disciplina.getNomeDisciplina() + ":\n");
+				auxPrint++;
+			}
+			
 			for(Turma turma: disciplina.listaTurma) {
 				if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_turma)) {
-					
-					System.out.println("---------------------");
-					System.out.println("LISTA DE TURMAS DA DISCIPLINA " + disciplina.getNomeDisciplina() + ":\n");
 					
 					System.out.println(" - " + aux + "ª Turma: ");
 					System.out.println("   Nome da turma: " + turma.nomeDaTurma);
 					System.out.println("   Nome do professor: " + turma.professorDaTurma.nomeDaPessoa);
 					System.out.println("   Numero de alunos: " + turma.numeroDeAlunos + "\n");
+					aux++;
 				}
 			}
 		}

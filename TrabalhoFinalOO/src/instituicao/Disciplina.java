@@ -106,17 +106,21 @@ public class Disciplina {
 			}
 			catch(ArrayIndexOutOfBoundsException e) {
 				
-				System.out.println("# ERRO: Nao existem disciplinas cadastradas para criar uma turma.\n");
+				System.out.println("---------------------");
+				System.out.println("\n# ERRO: Nao existem disciplinas cadastradas para criar uma turma.\n");
+				System.out.println("# Por favor, crie uma disciplina.\n");
+				
 				Disciplina.criarDisciplina();
+				Disciplina.criarTurma();
 				
 				
-				Object[] objNovoArray = listaDisciplina.toArray();
-				
-				auxDisciplina = String.valueOf(JOptionPane.showInputDialog(
-						null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
-						null,objNovoArray,objNovoArray[0]));
-					
-				novaTurma.cadastrasTurma(auxDisciplina, listaDisciplina, novaTurma);
+//				Object[] objNovoArray = listaDisciplina.toArray();
+//				
+//				auxDisciplina = String.valueOf(JOptionPane.showInputDialog(
+//						null,"Escolha a Disciplina dessa nova turma","Escolha",JOptionPane.QUESTION_MESSAGE,
+//						null,objNovoArray,objNovoArray[0]));
+//					
+//				novaTurma.cadastrasTurma(auxDisciplina, listaDisciplina, novaTurma);
 			}
 			System.out.println("---------------------");
 			System.out.println("   Turma " + novaTurma.nomeDaTurma + " Criada Na Disciplina " + auxDisciplina + "!\n");
