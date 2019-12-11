@@ -415,36 +415,31 @@ public class Ocupacao {
 	}
 
 	public static void listaDeOcupacoes() {
+		
 		if(listaDeOcupacoes.size() == 0 ) {
+			
+			System.out.println("---------------------");
+			System.out.println("LISTA DE OCUPAÇÕES: \n");
+			
 			System.out.println("#		ERRO: Nao existem ocupacoes cadastradas, cadastre primeiro, para depois listar.\n");
 			criarECadastrarOcupacao();
 		}
 		else {
-			for (Ocupacao ocupacao : listaDeOcupacoes) {
-				String auxDia = String
-							.valueOf(JOptionPane.showInputDialog(null, "Qual dia das ocupacoes a serem listadas?", "Escolha",
-								   JOptionPane.QUESTION_MESSAGE, null, dias, dias[0]));
-				if(ocupacao.periodoDaOcupacao.diaDaSemana.equalsIgnoreCase(auxDia)){
-					Object[] objArrayPeriodos = listaDeOcupacoes.toArray();
-					for(int i = 0; i < objArrayPeriodos.length; i++) {
-						objArrayPeriodos[i] = ocupacao.periodoDaOcupacao.horaInicio + " : " + ocupacao.periodoDaOcupacao.minutosInicio + " - " + ocupacao.periodoDaOcupacao.horaTermino + " : " + ocupacao.periodoDaOcupacao.minutosTermino;
-					}
-					String auxHorario = String
-								.valueOf(JOptionPane.showInputDialog(null, "Qual horario das ocupacoes a serem listadas?", "Escolha",
-		    						   JOptionPane.QUESTION_MESSAGE, null, objArrayPeriodos, objArrayPeriodos[0]));
-						if(ocupacao.periodoDaOcupacao.horaInicio.equals(auxHorario.substring(0,1))){
-		                   
-		                	   System.out.println("Sala: " + ocupacao.salaDaOcupacao);
-		                	   System.out.println("Disciplina: " + ocupacao.turmaDaOcupacao.disciplinaDaTurma);
-		                	   System.out.println("Turma: " + ocupacao.turmaDaOcupacao);
-		                	   System.out.println("Professor: " + ocupacao.turmaDaOcupacao.professorDaTurma);
-		                	   System.out.println("Horario: " + auxHorario); 
-		                  }
-		                   
-				}
+			
+			System.out.println("---------------------");
+			System.out.println("LISTA DE OCUPAÇÕES: \n");
+							
+			for(int i = 0; i < Ocupacao.listaDeOcupacoes.size(); i++) {
+							
+				System.out.println(" - Disciplina: " + Ocupacao.listaDeOcupacoes.get(i).turmaDaOcupacao.disciplinaDaTurma);
+				System.out.println("   Turma: " + Ocupacao.listaDeOcupacoes.get(i).turmaDaOcupacao);
+				System.out.println("   Sala: " + Ocupacao.listaDeOcupacoes.get(i).salaDaOcupacao);
+				System.out.println("   Professor: " + Ocupacao.listaDeOcupacoes.get(i).turmaDaOcupacao.professorDaTurma);
+				System.out.println("   Horario: " + Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.horaInicio + ":" + 
+											     Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.minutosInicio + " - " + 
+											     Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.horaTermino + ":" +
+											     Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.minutosTermino + "\n");      
 			}
-		
 		}
 	}
-	
 }
