@@ -22,6 +22,7 @@ public class Predio extends Estrutura {
 		for(int aux = 0; aux < Campus.listaDeCampus.size(); aux++) {
 			if(Campus.listaDeCampus.get(aux).nomeDoCampus.equalsIgnoreCase(auxCampus)) {
 				
+				Campus.listaDeCampus.get(aux).numeroDeEstruturas++;
 				Campus.listaDeCampus.get(aux).estruturasDoCampus.add(novoPredio);
 				Campus.listaDeCampus.get(aux).listaDePredios.add(novoPredio);
 			}

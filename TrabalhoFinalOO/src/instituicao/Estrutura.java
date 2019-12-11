@@ -18,6 +18,7 @@ public class Estrutura {
 				
 				novaEstrutura.campusDaEstrutura = Campus.listaDeCampus.get(aux);
 				
+				Campus.listaDeCampus.get(aux).numeroDeEstruturas++;
 				Campus.listaDeCampus.get(aux).estruturasDoCampus.add(novaEstrutura);
 			}
 		}
