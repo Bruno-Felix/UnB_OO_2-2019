@@ -43,7 +43,7 @@ public class Professor extends Pessoa {
 	public void listarTurmas() {
 		
 		if(this.getListaDeTurmasProfessor().size() == 0) {
-			System.out.println("N�o h� turmas cadastradas para o professor.\n "+ this.getNomeDaPessoa());
+			System.out.println("Não há turmas cadastradas para o professor.\n "+ this.getNomeDaPessoa());
 		}else {
 			
 			System.out.println("Turmas cadastradas do professor: "+this.getNomeDaPessoa());
@@ -62,10 +62,6 @@ public class Professor extends Pessoa {
 			System.out.println("LISTA DE PROFESSORES:\n");
 			
 			System.out.println("# Não existe professores cadastrados.\n");
-			System.out.println("# Por Favor, crie um novo professor.\n");
-			
-			Campus.criarProfessor(); 
-			listarProfessoresCampus();
 		}
 		else {
 		
@@ -74,8 +70,8 @@ public class Professor extends Pessoa {
 			
 			for(int i = 0; i < Campus.listaDeProfessores.size(); i++) {
 				
-				System.out.println("Nome do Professor: " + Campus.listaDeProfessores.get(i).nomeDaPessoa);
-				System.out.println("Cadastro do Professor: " + Campus.listaDeProfessores.get(i).cadastro + "\n");
+				System.out.println(" - Nome do Professor: " + Campus.listaDeProfessores.get(i).nomeDaPessoa);
+				System.out.println("   Cadastro do Professor: " + Campus.listaDeProfessores.get(i).cadastro + "\n");
 			}
 		}
 	}
@@ -87,11 +83,7 @@ public class Professor extends Pessoa {
 			System.out.println("---------------------");
 			System.out.println("LISTA DE TURMAS DE UM PROFESSOR:\n");
 			
-			System.out.println("# Não existe professores cadastrados.\n");
-			System.out.println("# Por Favor, crie um novo professor.\n");
-			
-			Campus.criarProfessor();
-			listarTurmasDoProfessor();
+			System.out.println("# Não existe professores cadastrados para listar suas turmas.\n");
 		}
 		else {
 			
@@ -113,8 +105,8 @@ public class Professor extends Pessoa {
 						
 						auxTemTurmasCadastradas++;
 						
-						System.out.println(" - " + (auxB+1) + "ª Turma: ");
-						System.out.println("   Nome da turma: " + Campus.listaDeProfessores.get(aux).listaDeTurmasProfessor.get(auxB).nomeDaTurma);
+						System.out.println(" - Nome da turma: " + Campus.listaDeProfessores.get(aux).listaDeTurmasProfessor.get(auxB).nomeDaTurma);
+						System.out.println("   Nome da disciplina: " + Campus.listaDeProfessores.get(aux).listaDeTurmasProfessor.get(auxB).disciplinaDaTurma.nomeDisciplina);
 						System.out.println("   Nome do professor: " + Campus.listaDeProfessores.get(aux).listaDeTurmasProfessor.get(auxB).professorDaTurma.nomeDaPessoa);
 						System.out.println("   Numero de alunos: " + Campus.listaDeProfessores.get(aux).listaDeTurmasProfessor.get(auxB).numeroDeAlunos + "\n");
 					}
@@ -123,7 +115,7 @@ public class Professor extends Pessoa {
 			
 			if(auxTemTurmasCadastradas == 0) {
 				
-				System.out.println("O Professor " + auxProfessor + " tem nenhuma turma.\n");
+				System.out.println("# O Professor " + auxProfessor + " tem nenhuma turma.\n");
 			}
 		}
 	}

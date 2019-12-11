@@ -84,12 +84,8 @@ public class Turma {
 		
 		ProfessorNaoAtribuidoException.NaoAtribuidoException(turmaCriada, objArrayProfessores);
 		
-//		turmaCriada.professorDaTurma.cadastro = Integer.parseInt(JOptionPane.showInputDialog("Digite o cadastro do Professor"));
-		
 		for(int aux = 0; aux<Disciplina.listaDisciplina.size(); aux++) {
 			if(Disciplina.listaDisciplina.get(aux).nomeDisciplina.equalsIgnoreCase(temporaria)) {
-				
-//				turmaCriada.disciplinaDaTurma = Disciplina.listaDisciplina.get(aux);
 				
 				Object[] objArrayDsc = Disciplina.listaDisciplina.toArray();
 				
@@ -144,40 +140,42 @@ public class Turma {
 		
 		try {
 		
-		Object[] objArray = Disciplina.listaDisciplina.toArray();
-		
-		String temporaria_turma = String.valueOf(JOptionPane.showInputDialog(
-				null,"Qual a disciplina deve ter suas turmas listadas?","Escolha",JOptionPane.QUESTION_MESSAGE,
-				null,objArray,objArray[0]));
-		
-		int aux = 1;
-		int auxPrint = 0;
-		
-		for(Disciplina disciplina :  Disciplina.listaDisciplina) {
-
-			if(auxPrint == 0) {
-				
-				System.out.println("---------------------");
-				System.out.println("LISTA DE TURMAS DA DISCIPLINA " + disciplina.getNomeDisciplina() + ":\n");
-				auxPrint++;
-			}
+			Object[] objArray = Disciplina.listaDisciplina.toArray();
 			
-			for(Turma turma: disciplina.listaTurma) {
-				if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_turma)) {
+			String temporaria_turma = String.valueOf(JOptionPane.showInputDialog(
+					null,"Qual a disciplina deve ter suas turmas listadas?","Escolha",JOptionPane.QUESTION_MESSAGE,
+					null,objArray,objArray[0]));
+			
+			int aux = 1;
+			int auxPrint = 0;
+			
+			for(Disciplina disciplina :  Disciplina.listaDisciplina) {
+	
+				if(auxPrint == 0) {
 					
-					System.out.println(" - " + aux + "ª Turma: ");
-					System.out.println("   Nome da turma: " + turma.nomeDaTurma);
-					System.out.println("   Nome do professor: " + turma.professorDaTurma.nomeDaPessoa);
-					System.out.println("   Numero de alunos: " + turma.numeroDeAlunos + "\n");
-					aux++;
+					System.out.println("---------------------");
+					System.out.println("LISTA DE TURMAS DA DISCIPLINA " + temporaria_turma + ":\n");
+					auxPrint++;
+				}
+				
+				for(Turma turma: disciplina.listaTurma) {
+					if(disciplina.getNomeDisciplina().equalsIgnoreCase(temporaria_turma)) {
+						
+						System.out.println(" - " + aux + "ª Turma: ");
+						System.out.println("   Nome da turma: " + turma.nomeDaTurma);
+						System.out.println("   Nome do professor: " + turma.professorDaTurma.nomeDaPessoa);
+						System.out.println("   Numero de alunos: " + turma.numeroDeAlunos + "\n");
+						aux++;
+					}
 				}
 			}
-		}
+		} catch (ArrayIndexOutOfBoundsException e) {
 		
-	} catch (ArrayIndexOutOfBoundsException e) {
-		System.out.println("Nenhuma turma cadastrada!\n");
+			System.out.println("---------------------");
+			System.out.println("LISTA DE TURMAS: \n");
+			System.out.println("# Nenhuma disciplina cadastrada para listar suas turmas.\n");
+		}
 	}
-}
 
 	public void inserirAlunoNaTurma(Turma turmaCriada, Aluno novoAluno) {
 		
@@ -304,7 +302,10 @@ public class Turma {
 		}
 		
 		} catch (ArrayIndexOutOfBoundsException e) {
-    		System.out.println("Nenhuma turma cadastrada para listar Aluno!\n");
+			
+			System.out.println("---------------------");
+			System.out.println("LISTA ALUNOS DA TURMAS: \n");
+    		System.out.println("# Nenhuma turma cadastrada para listar seus Aluno!\n");
     	}
 	}
 

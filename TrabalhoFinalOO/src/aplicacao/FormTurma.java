@@ -32,17 +32,17 @@ public class FormTurma extends JFrame {
 		btnListarTurmas.setBounds(258, 70, 200, 35);
 		contentPane.add(btnListarTurmas);
 		
-		JButton btnAlteraTurmas = new JButton("Altera Turmas");
-		btnAlteraTurmas.setBounds(22, 140, 200, 35);
-		contentPane.add(btnAlteraTurmas);
+//		JButton btnAlteraTurmas = new JButton("Altera Turmas");
+//		btnAlteraTurmas.setBounds(22, 140, 200, 35);
+//		contentPane.add(btnAlteraTurmas);
 		
 		JButton btnListaAlunosDaTurma = new JButton("Lista Alunos Da Turma");
-		btnListaAlunosDaTurma.setBounds(258, 140, 200, 35);
+		btnListaAlunosDaTurma.setBounds(130, 140, 220, 35);
 		contentPane.add(btnListaAlunosDaTurma);
 		
 		btnCadastrarTurmas.addActionListener(new ActionListenerbtnCadastrarTurmas());
 		btnListarTurmas.addActionListener(new ActionListenerbtnListarTurmas());
-		btnAlteraTurmas.addActionListener(new ActionListenerbtnAlteraTurmas());
+//		btnAlteraTurmas.addActionListener(new ActionListenerbtnAlteraTurmas());
 		btnListaAlunosDaTurma.addActionListener(new ActionListenerbtnListaAlunosDaTurma());
 		
 		setVisible(true);
@@ -66,14 +66,14 @@ public class FormTurma extends JFrame {
 		}
 	}
 	
-	class ActionListenerbtnAlteraTurmas implements ActionListener{
-
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			
-			Turma.alterarTurmas();
-		}
-	}
+//	class ActionListenerbtnAlteraTurmas implements ActionListener{
+//
+//		@Override
+//		public void actionPerformed(ActionEvent arg0) {
+//			
+//			Turma.alterarTurmas();
+//		}
+//	}
 	
 	class ActionListenerbtnListaAlunosDaTurma implements ActionListener{
 

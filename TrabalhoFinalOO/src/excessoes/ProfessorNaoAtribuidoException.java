@@ -27,6 +27,7 @@ public class ProfessorNaoAtribuidoException {
 			catch(NullPointerException n) {
 				System.out.println("---------------------");
 				System.out.println("# ERRO: Nome do professor nao informado, por favor, insira-o.\n");
+				
 				Campus.criarProfessor();
 			}
 		}
