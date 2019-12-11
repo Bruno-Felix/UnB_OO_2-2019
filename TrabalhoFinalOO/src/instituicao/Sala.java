@@ -82,66 +82,69 @@ public class Sala {
 
 	public static void listarSalasDeUmPredio() {
 		
-	try {
-				
-		Object[] objArrayCampus = Campus.listaDeCampus.toArray();
-		    	
-		String auxCampus = String.valueOf(JOptionPane.showInputDialog(
-				null,"Listar Sala - Campus:","Escolha",JOptionPane.QUESTION_MESSAGE,
-				null,objArrayCampus,objArrayCampus[0]));
-		
-		for(int aux = 0; aux<Campus.listaDeCampus.size(); aux++) {
-			if(Campus.listaDeCampus.get(aux).nomeDoCampus.equalsIgnoreCase(auxCampus)) {
-				
-				Object[] objArrayPredio = Campus.listaDeCampus.get(aux).estruturasDoCampus.toArray();
-				
-				String auxPredio = String.valueOf(JOptionPane.showInputDialog(
-						null,"Listar Sala - Predios:","Escolha",JOptionPane.QUESTION_MESSAGE,
-						null,objArrayPredio,objArrayPredio[0]));
-				
-				for(int auxB = 0; auxB < Campus.listaDeCampus.get(aux).listaDePredios.size(); auxB++) {
-					if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).nomeDaEstrutura.equalsIgnoreCase(auxPredio)) {
-						
-						System.out.println("---------------------");
-						System.out.println("LISTA DE SALAS DO PRÉDIO " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).nomeDaEstrutura +  
-								           " DO CAMPUS " + Campus.listaDeCampus.get(aux).nomeDoCampus+ ":\n");
-						
-						for(int auxC = 0; auxC < Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.size(); auxC++) {
+		try {
+					
+			Object[] objArrayCampus = Campus.listaDeCampus.toArray();
+			    	
+			String auxCampus = String.valueOf(JOptionPane.showInputDialog(
+					null,"Listar Sala - Campus:","Escolha",JOptionPane.QUESTION_MESSAGE,
+					null,objArrayCampus,objArrayCampus[0]));
+			
+			for(int aux = 0; aux<Campus.listaDeCampus.size(); aux++) {
+				if(Campus.listaDeCampus.get(aux).nomeDoCampus.equalsIgnoreCase(auxCampus)) {
+					
+					Object[] objArrayPredio = Campus.listaDeCampus.get(aux).listaDePredios.toArray();
+					
+					String auxPredio = String.valueOf(JOptionPane.showInputDialog(
+							null,"Listar Sala - Predios:","Escolha",JOptionPane.QUESTION_MESSAGE,
+							null,objArrayPredio,objArrayPredio[0]));
+					
+					for(int auxB = 0; auxB < Campus.listaDeCampus.get(aux).listaDePredios.size(); auxB++) {
+						if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).nomeDaEstrutura.equalsIgnoreCase(auxPredio)) {
 							
-							System.out.println(" - " + (auxC+1) + "º Sala:");
-							System.out.println("   Nome da Sala: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).nomeDaSala);
-							System.out.println("   Ocupação Máxima: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).ocupacaoDaSala);
-							System.out.println("   Tipo de Atividade: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).tipoDeAtividade);
+							System.out.println("---------------------");
+							System.out.println("LISTA DE SALAS DO PRÉDIO " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).nomeDaEstrutura +  
+									           " DO CAMPUS " + Campus.listaDeCampus.get(aux).nomeDoCampus+ ":\n");
 							
-							if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).possuiArCondicionado == true) {
-								System.out.println("   Possui Ar Condicionado");
+							for(int auxC = 0; auxC < Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.size(); auxC++) {
+								
+								System.out.println(" - " + (auxC+1) + "º Sala:");
+								System.out.println("   Nome da Sala: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).nomeDaSala);
+								System.out.println("   Ocupação Máxima: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).ocupacaoDaSala);
+								System.out.println("   Tipo de Atividade: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).tipoDeAtividade);
+								
+								if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).possuiArCondicionado == true) {
+									System.out.println("   Possui Ar Condicionado");
+								}
+								else {
+									System.out.println("   Não Possui Ar Condicionado");
+								}
+								
+								if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).possuiProjetor == true) {
+									System.out.println("   Possui Projetor");
+								}
+								else {
+									System.out.println("   Não Possui Projetor");
+								}
+								
+								if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).possuiTelevisao == true) {
+									System.out.println("   Possui Televisao\n");
+								}
+								else {
+									System.out.println("   Não Possui Televisao\n");
+								}	
 							}
-							else {
-								System.out.println("   Não Possui Ar Condicionado");
-							}
-							
-							if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).possuiProjetor == true) {
-								System.out.println("   Possui Projetor");
-							}
-							else {
-								System.out.println("   Não Possui Projetor");
-							}
-							
-							if(Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC).possuiTelevisao == true) {
-								System.out.println("   Possui Televisao\n");
-							}
-							else {
-								System.out.println("   Não Possui Televisao\n");
-							}	
 						}
 					}
 				}
 			}
-		}
-		
-	}catch (ArrayIndexOutOfBoundsException e) {
-		System.out.println("Nenhuma sala cadastrada!\n");
-	} 
+			
+		}catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("---------------------");
+			System.out.println("LISTA DE SALAS:\n");
+    		
+    		System.out.println("# Nenhum Campus e Prédio cadastrado para listar suas Salas!\n");
+		} 
 	}
 	
 	public void verificarAtividadeAtribuida() {

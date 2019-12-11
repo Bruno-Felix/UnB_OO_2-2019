@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class Estrutura {
 	
 	public String nomeDaEstrutura;
-	public Campus campusDaEstrutura; // Referência para o campus no qual a estrutura se localiza
+	public Campus campusDaEstrutura;
 	
 	public void cadastrarPredio(String auxCampus, Estrutura novaEstrutura,  List <Campus> listaDeCampus){
 		
@@ -42,7 +42,7 @@ public class Estrutura {
 				
 				if( Campus.listaDeCampus.get(aux).estruturasDoCampus.size() == 0) {
 					
-					System.out.println("# Nenhum Prédio Cadastrado no Campus" + Campus.listaDeCampus.get(aux).nomeDoCampus + "!\n");
+					System.out.println("# Nenhuma Estrutura Cadastrada no Campus " + Campus.listaDeCampus.get(aux).nomeDoCampus + "!\n");
 				}
 				else {
 					for(int auxB = 0; auxB < Campus.listaDeCampus.get(aux).estruturasDoCampus.size(); auxB++) {
@@ -59,7 +59,7 @@ public class Estrutura {
     		System.out.println("---------------------");
 			System.out.println("LISTA DE ESTRUTURAS DO CAMPUS:\n");
     		
-    		System.out.println("Nenhum Campus cadastrado para listar seus Estruturas!\n");
+    		System.out.println("# Nenhum Campus cadastrado para listar seus Estruturas!\n");
     	}
     }
 }

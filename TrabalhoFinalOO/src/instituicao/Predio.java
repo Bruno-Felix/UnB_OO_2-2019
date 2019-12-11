@@ -16,7 +16,7 @@ public class Predio extends Estrutura {
 	 
     public void cadastrarPredio(String auxCampus, Predio novoPredio, List <Campus> listaDeCampus) {
     	
-    	novoPredio.nomeDaEstrutura = JOptionPane.showInputDialog("Digite o nome da Estrutura: ");
+    	novoPredio.nomeDaEstrutura = JOptionPane.showInputDialog("Digite o nome do Prédio: ");
 		novoPredio.numeroDeSalas = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de Salas: "));
 		
 		for(int aux = 0; aux < Campus.listaDeCampus.size(); aux++) {
@@ -45,9 +45,9 @@ public class Predio extends Estrutura {
 				System.out.println("---------------------");
 				System.out.println("LISTA DE PREDIOS DO CAMPUS " + Campus.listaDeCampus.get(aux).nomeDoCampus+ ":\n");
 				
-				if( Campus.listaDeCampus.get(aux).estruturasDoCampus.size() == 0) {
+				if( Campus.listaDeCampus.get(aux).listaDePredios.size() == 0) {
 					
-					System.out.println("# Nenhum Prédio Cadastrado no Campus" + Campus.listaDeCampus.get(aux).nomeDoCampus + "!\n");
+					System.out.println("# Nenhum Prédio Cadastrado no Campus " + Campus.listaDeCampus.get(aux).nomeDoCampus + "!\n");
 				}
 				else {
 					for(int auxB = 0; auxB < Campus.listaDeCampus.get(aux).listaDePredios.size(); auxB++) {
@@ -65,7 +65,7 @@ public class Predio extends Estrutura {
     		System.out.println("---------------------");
 			System.out.println("LISTA DE PREDIOS DO CAMPUS:\n");
     		
-    		System.out.println("Nenhum Campus cadastrado para listar seus Prédios!\n");
+    		System.out.println("# Nenhum Campus cadastrado para listar seus Prédios!\n");
     	}
     }
     
