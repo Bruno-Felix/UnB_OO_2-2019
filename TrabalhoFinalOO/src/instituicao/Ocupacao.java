@@ -21,8 +21,9 @@ public class Ocupacao {
 		Ocupacao novaOcupacao = new Ocupacao();
 		
 		System.out.println("---------------------");
-		System.out.println("\n      # Nova Ocupacao Sendo Gerada...\n");
-		System.out.println("		1º Passo: Escolher um Perído para a Ocupacao.\n");
+		System.out.println("		######################## Nova Ocupacao Sendo Gerada...\n");
+		System.out.println("		######################## 1º Passo: Escolher um Perído para a Ocupacao.\n");
+		System.out.println("---------------------\n");
 		
 		System.out.println("		Perído para a Ocupacao Sendo Escolhido...\n");
 		String auxDiaPeriodo = String.valueOf(JOptionPane.showInputDialog(null, "Escolha o Dia da Semana dessa Ocupação?", "Escolha",
@@ -53,9 +54,8 @@ public class Ocupacao {
 						
 						novaOcupacao.periodoDaOcupacao = Periodos.listaSegunda.get(auxB);
 						
-						System.out.println("---------------------\n");
-						System.out.println("		" + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
-						System.out.println("   		Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+						System.out.println("---------------------");
+						System.out.println("		######################## Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
 														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosTermino +
@@ -89,9 +89,8 @@ public class Ocupacao {
 						
 						novaOcupacao.periodoDaOcupacao = Periodos.listaTerca.get(auxB);
 						
-						System.out.println("---------------------\n");
-						System.out.println("   " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
-						System.out.println("   Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+						System.out.println("---------------------");
+						System.out.println("		######################## Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
 														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosTermino +
@@ -125,9 +124,8 @@ public class Ocupacao {
 						
 						novaOcupacao.periodoDaOcupacao = Periodos.listaQuarta.get(auxB);
 						
-						System.out.println("---------------------\n");
-						System.out.println("   " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
-						System.out.println("   Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+						System.out.println("---------------------");
+						System.out.println("		######################## Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
 														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosTermino +
@@ -161,9 +159,8 @@ public class Ocupacao {
 						
 						novaOcupacao.periodoDaOcupacao = Periodos.listaQuinta.get(auxB);
 						
-						System.out.println("---------------------\n");
-						System.out.println("   " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
-						System.out.println("   Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+						System.out.println("---------------------");
+						System.out.println("		######################## Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
 														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosTermino +
@@ -197,9 +194,8 @@ public class Ocupacao {
 						
 						novaOcupacao.periodoDaOcupacao = Periodos.listaSexta.get(auxB);
 						
-						System.out.println("---------------------\n");
-						System.out.println("   " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
-						System.out.println("   Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+						System.out.println("---------------------");
+						System.out.println("		######################## Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
 														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosTermino +
@@ -233,9 +229,8 @@ public class Ocupacao {
 						
 						novaOcupacao.periodoDaOcupacao = Periodos.listaSabado.get(auxB);
 						
-						System.out.println("---------------------\n");
-						System.out.println("   " + novaOcupacao.periodoDaOcupacao.diaDaSemana + " da Semana Atribuida a Nova Ocupação!\n");
-						System.out.println("   Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
+						System.out.println("---------------------");
+						System.out.println("		######################## Periodo " + novaOcupacao.periodoDaOcupacao.horaInicio + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosInicio + " - " +	
 														   novaOcupacao.periodoDaOcupacao.horaTermino + ":" +
 														   novaOcupacao.periodoDaOcupacao.minutosTermino +
@@ -246,8 +241,9 @@ public class Ocupacao {
 		}
 		
 		
-		System.out.println("---------------------");
-		System.out.println("		2º Passo: Escolher uma Turma para a Ocupacao.\n");
+		
+		System.out.println("		######################## 2º Passo: Escolher uma Turma para a Ocupacao.\n");
+		System.out.println("---------------------\n");
 		
 		Object[] objArrayDisciplina = Disciplina.listaDisciplina.toArray();
 		
@@ -309,11 +305,11 @@ public class Ocupacao {
 			}
 		}
 		
-		System.out.println("---------------------\n");
-		System.out.println("     Turma " + novaOcupacao.turmaDaOcupacao.nomeDaTurma + ", da Disciplina " + auxDisciplina + ", Atribuida a Nova Ocupação!\n");
+		System.out.println("---------------------");
+		System.out.println("		######################## Turma " + novaOcupacao.turmaDaOcupacao.nomeDaTurma + ", da Disciplina " + auxDisciplina + ", Atribuida a Nova Ocupação!\n");
 	
-		System.out.println("     3º Passo: Escolher uma Sala para a Ocupacao.\n");
-		
+		System.out.println("		######################## 3º Passo: Escolher uma Sala para a Ocupacao.\n");
+		System.out.println("---------------------\n");
 		
 		Object[] objArrayCampus = Campus.listaDeCampus.toArray();
 		
@@ -399,8 +395,9 @@ public class Ocupacao {
 
 							novaOcupacao.salaDaOcupacao = Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).listaSala.get(auxC);
 							
+							System.out.println("---------------------");
+							System.out.println("		######################## Sala " + novaOcupacao.salaDaOcupacao.nomeDaSala + ", do Prédio " + auxPredios + ", Campus " + auxCampus + ", Atribuida a Nova Ocupação!\n");
 							System.out.println("---------------------\n");
-							System.out.println("		Sala " + novaOcupacao.salaDaOcupacao.nomeDaSala + ", do Prédio " + auxPredios + ", Campus " + auxCampus + ", Atribuida a Nova Ocupação!\n");
 						}
 					}
 				}
@@ -409,9 +406,12 @@ public class Ocupacao {
 		
 		Ocupacao.listaDeOcupacoes.add(novaOcupacao);
 		
-		System.out.println(" ######################## "+ novaOcupacao.salaDaOcupacao + " " + novaOcupacao.periodoDaOcupacao + " " + novaOcupacao.turmaDaOcupacao);
-//		System.out.println("---------------------\n");
-//		System.out.println("		Sala " + novaOcupacao.salaDaOcupacao.nomeDaSala + ", do Prédio " + auxPredios + ", Campus " + auxCampus + "Atribuida a Nova Ocupação!\n");	
+		System.out.println("---------------------");
+		System.out.println("		######################## Nova Ocupação Criada: A turma " + novaOcupacao.turmaDaOcupacao + ", da disciplina " + 
+																							   novaOcupacao.turmaDaOcupacao.disciplinaDaTurma.nomeDisciplina + " terá Aula na Sala " +
+																							   novaOcupacao.salaDaOcupacao + ", no Período " + 
+																							   novaOcupacao.periodoDaOcupacao + "\n");
+		System.out.println("---------------------");
 	}
 
 	public static void listaDeOcupacoes() {
@@ -432,13 +432,13 @@ public class Ocupacao {
 			for(int i = 0; i < Ocupacao.listaDeOcupacoes.size(); i++) {
 							
 				System.out.println(" - Disciplina: " + Ocupacao.listaDeOcupacoes.get(i).turmaDaOcupacao.disciplinaDaTurma);
-				System.out.println("   Turma: " + Ocupacao.listaDeOcupacoes.get(i).turmaDaOcupacao);
-				System.out.println("   Sala: " + Ocupacao.listaDeOcupacoes.get(i).salaDaOcupacao);
+				System.out.println("   Turma: " + Ocupacao.listaDeOcupacoes.get(i).turmaDaOcupacao.nomeDaTurma);
+				System.out.println("   Sala: " + Ocupacao.listaDeOcupacoes.get(i).salaDaOcupacao.nomeDaSala);
 				System.out.println("   Professor: " + Ocupacao.listaDeOcupacoes.get(i).turmaDaOcupacao.professorDaTurma);
-				System.out.println("   Horario: " + Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.horaInicio + ":" + 
-											     Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.minutosInicio + " - " + 
-											     Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.horaTermino + ":" +
-											     Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.minutosTermino + "\n");      
+//				System.out.println("   Horario: " + Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.horaInicio + ":" + 
+//											     Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.minutosInicio + " - " + 
+//											     Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.horaTermino + ":" +
+//											     Ocupacao.listaDeOcupacoes.get(i).periodoDaOcupacao.minutosTermino + "\n");      
 			}
 		}
 	}

@@ -9,10 +9,10 @@ public class Periodos {
 	
 	public int numeroDePeriodos;
 	public String diaDaSemana;
-	String horaInicio;
-	String minutosInicio;
-	String horaTermino;
-	String minutosTermino;
+	public String horaInicio;
+	public String minutosInicio;
+	public String horaTermino;
+	public String minutosTermino;
 
 	public static List<Periodos> listaSegunda = new ArrayList<Periodos>();
 	public static List<Periodos> listaTerca = new ArrayList<Periodos>();
