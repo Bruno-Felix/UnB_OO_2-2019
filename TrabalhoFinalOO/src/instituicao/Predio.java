@@ -39,23 +39,33 @@ public class Predio extends Estrutura {
 				null,objArrayCampus,objArrayCampus[0]));
     	
     	
-    	for(int aux = 0; aux<Campus.listaDeCampus.size(); aux++) {
+    	for(int aux = 0; aux < Campus.listaDeCampus.size(); aux++) {
 			if(Campus.listaDeCampus.get(aux).nomeDoCampus.equalsIgnoreCase(auxCampus)) {
 				
 				System.out.println("---------------------");
 				System.out.println("LISTA DE PREDIOS DO CAMPUS " + Campus.listaDeCampus.get(aux).nomeDoCampus+ ":\n");
 				
-				for(int auxB = 0; auxB < Campus.listaDeCampus.get(aux).estruturasDoCampus.size(); auxB++) {
+				if( Campus.listaDeCampus.get(aux).estruturasDoCampus.size() == 0) {
 					
-					System.out.println(" - " + (auxB+1) + "º Predio:");
-					System.out.println("   Nome do Predio: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).nomeDaEstrutura);
-					System.out.println("   Número de Salas: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).numeroDeSalas + "\n");
+					System.out.println("# Nenhum Prédio Cadastrado no Campus" + Campus.listaDeCampus.get(aux).nomeDoCampus + "!\n");
+				}
+				else {
+					for(int auxB = 0; auxB < Campus.listaDeCampus.get(aux).listaDePredios.size(); auxB++) {
+						
+						System.out.println(" - " + (auxB+1) + "º Predio:");
+						System.out.println("   Nome do Predio: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).nomeDaEstrutura);
+						System.out.println("   Número de Salas: " + Campus.listaDeCampus.get(aux).listaDePredios.get(auxB).numeroDeSalas + "\n");
+					}
 				}
 			}
     	}
     	
     	} catch (ArrayIndexOutOfBoundsException e) {
-    		System.out.println("Nenhum predio cadastrado!\n");
+    		
+    		System.out.println("---------------------");
+			System.out.println("LISTA DE PREDIOS DO CAMPUS:\n");
+    		
+    		System.out.println("Nenhum Campus cadastrado para listar seus Prédios!\n");
     	}
     }
     

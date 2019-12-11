@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import excessoes.CampusNaoCriadoException;
+import instituicao.Campus;
+import instituicao.Estrutura;
 import instituicao.Predio;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -46,14 +48,24 @@ public class FormPredio extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnCadastrarPredios = new JButton("Cadastrar Predios");
-		btnCadastrarPredios.setBounds(22, 90, 200, 35);
+		btnCadastrarPredios.setBounds(22, 70, 200, 35);
 		btnCadastrarPredios.addActionListener(new ActionListenerbtnCadastrarPredios());
 		contentPane.add(btnCadastrarPredios);
 		
 		JButton btnListarPredios = new JButton("Listar Predios");
-		btnListarPredios.setBounds(258, 90, 200, 35);
+		btnListarPredios.setBounds(258, 70, 200, 35);
 		btnListarPredios.addActionListener(new ActionListenerbtnListarPredios());
 		contentPane.add(btnListarPredios);
+		
+		JButton btnCadastrarEstruturas = new JButton("Cadastrar Estruturas");
+		btnCadastrarEstruturas.setBounds(22, 140, 200, 35);
+		btnCadastrarEstruturas.addActionListener(new ActionListenerbtnCadastrarEstruturas());
+		contentPane.add(btnCadastrarEstruturas);
+		
+		JButton btnListarEstruturas = new JButton("Listar Estruturas");
+		btnListarEstruturas.setBounds(258, 140, 200, 35);
+		btnListarEstruturas.addActionListener(new ActionListenerbtnListarEstruturas());
+		contentPane.add(btnListarEstruturas);
 		
 		setVisible(true);
 	}
@@ -74,6 +86,25 @@ public class FormPredio extends JFrame {
 		public void actionPerformed(ActionEvent arg0) {
 			
 			Predio.listarPredios();
+		}
+	}
+	
+	class ActionListenerbtnCadastrarEstruturas implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			Campus.criarEstrutura();
+			
+		}
+	}
+	
+	class ActionListenerbtnListarEstruturas implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			Estrutura.listarEstruturas();
 		}
 	}
 }
